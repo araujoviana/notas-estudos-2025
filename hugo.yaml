@@ -1,0 +1,33 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Anotações de Estudos - 2025
+theme: ["PaperMod"]
+
+menu:
+  main:
+    - identifier: categories
+      name: Categorias
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 20
+
+taxonomies:
+  category: categories
+  tag: tags
+
+params:
+  math: true
+
+  homeInfoParams:
+    Title: "Bem-vindo."
+    Content: "Anotações de aulas e materiais de estudo da universidade. Organizadas por matéria."
+  socialIcons:
+    - name: github
+      url: "https://github.com/araujoviana"
+
+  cover:
+    linkFullImages: true
+  ShowPostNavLinks: true
