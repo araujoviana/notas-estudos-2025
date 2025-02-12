@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Revisão de Estatística | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="estatistica, ciencia de dados, dificil">
+<meta name="description" content="⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
+Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
+Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Revisão de Estatística
+    </h1>
+    <div class="post-meta"><span title='2025-02-11 17:39:43 -0300 -03'>February 11, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<p>⚠️  -  As contas e lógica precisam ser verificadas, dado que a revisão <strong>não</strong> teve explicação.</p>
+</blockquote>
+<h2 id="enunciado">Enunciado<a hidden class="anchor" aria-hidden="true" href="#enunciado">#</a></h2>
+<hr>
+<p>Ao longo dessa explicação será usado o seguinte problema de exemplo:</p>
+<blockquote>
+<p>Dados que o menor e o maior salário dos 60 funcionários da Empresa X são
+respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados
+em 6 classes com amplitude de 5000,00 reais e as frequências das classes são
+respectivamente: 21, 16, 12, 7, 3, 1:</p>
+</blockquote>
+<h2 id="revisão-de-conceitos">Revisão de conceitos<a hidden class="anchor" aria-hidden="true" href="#revisão-de-conceitos">#</a></h2>
+<hr>
+<h3 id="distribuição-de-frequência">Distribuição de frequência<a hidden class="anchor" aria-hidden="true" href="#distribuição-de-frequência">#</a></h3>
+<p>Agrupa valores quantitativos em intervalos chamados de <strong>classes</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Intervalo de Salário</th>
+<th>Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classe 1</td>
+<td>[ 600,00,  5600,00)</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Classe 2</td>
+<td>[ 5600,00, 10600,00)</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Classe 3</td>
+<td>[ 10600,00,  15600,00)</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Classe 4</td>
+<td>[ 15600,00,  20600,00)</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Classe 5</td>
+<td>[ 20600,00,  25600,00)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Classe 6</td>
+<td>[ 25600,00,  30000,00]</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>60</strong></td>
+</tr>
+</tbody>
+</table>
+<p>&lsquo;[&rsquo; representa inclusão e &lsquo;(&rsquo; representa exclusão.</p>
+<h3 id="percentuais">Percentuais<a hidden class="anchor" aria-hidden="true" href="#percentuais">#</a></h3>
+<p>Se precisarmos encontrar o percentual de funcionários com salários maiores ou menores que $x$ precisamos fazer:</p>
+<ol>
+<li>
+<p>Extraímos as classes inclusas no intervalo. Nesse exemplo vamos usar as classes que possuem salários maiores ou iguais a R$15000,00</p>
+</li>
+<li>
+<p>Extrair a frequência total para cada classe inclusa, definida como:</p>
+</li>
+</ol>
+<p>$$F_\text{Total} = \sum{\text{Frequências}}$$</p>
+<p>No caso do exemplo, temos:</p>
+<p>$$F_\text{Total} = 7 + 3 + 1 = 11$$</p>
+<ol start="3">
+<li>Calcular a porcentagem</li>
+</ol>
+<p>$$\text{Percentual} = \frac{11}{60} \cdot 100 \approx 18,333% $$</p>
+<h3 id="encontrar-classes-através-de-um-atributo">Encontrar classes através de um atributo<a hidden class="anchor" aria-hidden="true" href="#encontrar-classes-através-de-um-atributo">#</a></h3>
+<p>Usa-se a distribuição da frequência acumulada para encontrar:</p>
+<table>
+<thead>
+<tr>
+<th>Classe</th>
+<th>Intervalo de Salário</th>
+<th>Frequência</th>
+<th>Frequência Acumulada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classe 1</td>
+<td>[ 0,00,  5000,00)</td>
+<td>21</td>
+<td>21</td>
+</tr>
+<tr>
+<td>Classe 2</td>
+<td>[ 5000,00,  10000,00)</td>
+<td>16</td>
+<td>21 + 16 = 37</td>
+</tr>
+<tr>
+<td>Classe 3</td>
+<td>[ 10000,00,  15000,00)</td>
+<td>12</td>
+<td>37 + 12 = 49</td>
+</tr>
+<tr>
+<td>Classe 4</td>
+<td>[ 15000,00,  20000,00)</td>
+<td>7</td>
+<td>49 + 7 = 56</td>
+</tr>
+<tr>
+<td>Classe 5</td>
+<td>[ 20000,00,  25000,00)</td>
+<td>3</td>
+<td>56 + 3 = 59</td>
+</tr>
+<tr>
+<td>Classe 6</td>
+<td>[ 25000,00,  30000,00]</td>
+<td>1</td>
+<td>59 + 1 = 60</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td><strong>60</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Por exemplo, podemos inferir que:</p>
+<ol>
+<li>O 18º funcionário percente à <em>classe 1</em>, com o intervalo de salário de [0,00, 5000,00).</li>
+<li>O 50º funcionário percente à <em>classe 4</em>, com o intervalo de salário de [15000,00, 20000,00).</li>
+</ol>
+<h3 id="separatrizes">Separatrizes<a hidden class="anchor" aria-hidden="true" href="#separatrizes">#</a></h3>
+<p>As separatrizes dividem os dados em partes iguais, elas são compostas por:</p>
+<ul>
+<li>Decis (D): Dividem os dados em <strong>10</strong> partes iguais.</li>
+<li>Quartis (Q): Dividem os dados em <strong>4</strong> partes iguais.</li>
+<li>Centis (C ou P - Percentis): Dividem os dados em <strong>100</strong> partes iguais.</li>
+</ul>
+<p>A separatriz pode ser calculada através da seguinte fórmula:</p>
+<p>$$\text{Separatriz} = \ell_{i} + \left( \frac{P-FA_{ant}}{f_{separatriz}} \right)a_c$$</p>
+<p>Dado que:</p>
+<ul>
+<li>$\ell_{i}$: Limite inferior da classe que contém a separatriz</li>
+<li>$P$: Posição da separatriz na distribuição ordenada dos dados (8 para D8, 1 para Q1, etc).</li>
+<li>$FA_{ant}$: Frequência acumulada da classe anterior à classe que contém a separatriz, se ela estiver na primeira classe então será 0.</li>
+<li>$f_{separatriz}$: Frequência absoluta da classe que contém a separatriz.</li>
+<li>$a_c$: Amplitude da classe.</li>
+</ul>
+<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
+<p>Vamos encontrar o <strong>D8</strong>:
+Dados respectivos aos mencionados anteriormente:</p>
+<ol>
+<li>
+<p><strong>Posição (P) de D8:</strong>
+$$ P = \left(\frac{8}{10}\right) \times N_{total} $$
+$$ P = \left(\frac{8}{10}\right) \times 60 $$
+$$ P = 48 $$</p>
+</li>
+<li>
+<p><strong>Classe que contém D8:</strong></p>
+<ul>
+<li>Consultando a tabela de frequências acumuladas:
+<ul>
+<li>Classe 1: FA = 21 (Menor que 48)</li>
+<li>Classe 2: FA = 37 (Menor que 48)</li>
+<li>Classe 3: FA = 49 (Maior ou igual a 48)</li>
+<li>Portanto, D8 está na <strong>Classe 3</strong>.</li>
+</ul>
+</li>
+<li>Intervalo da Classe 3: [R$ 10000,00, R$ 15000,00)</li>
+</ul>
+</li>
+<li>
+<p><strong>Valores para a fórmula:</strong></p>
+<ul>
+<li>$\ell_{i}$ = R$ 10000,00 (Limite inferior da Classe 3)</li>
+<li>$P$ = 48 (Posição calculada)</li>
+<li>$FA_{ant}$ = 37 (Frequência acumulada da classe anterior, Classe 2)</li>
+<li>$f_{separatriz}$ = 12 (Frequência da Classe 3)</li>
+<li>$a_c$ = R$ 5000,00 (Amplitude da classe)</li>
+</ul>
+</li>
+<li>
+<p><strong>Cálculo de D8:</strong>
+$$ D8 = 10000 + \left( \frac{48 - 37}{12} \right) \times 5000 $$
+$$ D8 = 10000 + \left( \frac{11}{12} \right) \times 5000 $$
+$$ D8 = 10000 + (0.91666\ldots) \times 5000 $$
+$$ D8 = 10000 + 4583.33\ldots $$
+$$ D8 \approx 14583,33 \text{ reais} $$</p>
+</li>
+<li>
+<p><strong>Interpretação de D8:</strong></p>
+<ul>
+<li>Aproximadamente 80% dos funcionários da Empresa X ganham salários iguais ou inferiores a R$ 14583,33. E 20% ganham salários superiores a este valor.</li>
+</ul>
+</li>
+</ol>
+<h3 id="mediana">Mediana<a hidden class="anchor" aria-hidden="true" href="#mediana">#</a></h3>
+<p>Ela é responsável por dividir a distribuição em duas partes iguais, definida como:</p>
+<p>$$\text{mediana} = \ell_i + \left( \frac{\frac{n}{2}-F_{ant}}{f_{mediana}} \right)a_c$$</p>
+<p>As variáveis são as mesmas das da separatriz. (😴)</p>
+<h4 id="exemplo-1">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
+<p>Vamos encontrar a mediana do nosso exemplo:</p>
+<p>$$n = \frac{60}{2} = 30$$</p>
+<p>A posição 30 está na classe <strong>2</strong>, vamos calcular o resto:</p>
+<p>$$ \text{Mediana} = 5000 + \left( \frac{30 - 21}{16} \right) \times 5000 $$
+$$ \text{Mediana} = 5000 + \left( \frac{9}{16} \right) \times 5000 $$
+$$ \text{Mediana} = 5000 + (0.5625) \times 5000 $$
+$$ \text{Mediana} = 5000 + 2812,5 $$
+$$ \text{Mediana} =  7812,50 $$</p>
+<h3 id="outros-cálculos">Outros cálculos<a hidden class="anchor" aria-hidden="true" href="#outros-cálculos">#</a></h3>
+<p>Por falta de tempo, os outros exercícios do enunciado que ainda precisam ser elaborados:</p>
+<ul>
+<li>Quais os salários que limitam os 50% centrais?</li>
+<li>Qual é o salário que separa os ¾ dos funcionários que têm maior salário?</li>
+<li>Qual é o salário que separa os 40% que tem menor salário?</li>
+</ul>
+<p>Todas podem ser resolvidas com as fórmulas da próxima seção.</p>
+<h2 id="outras-fórmulas">Outras fórmulas<a hidden class="anchor" aria-hidden="true" href="#outras-fórmulas">#</a></h2>
+<p>Outras fórmulas que acabei não usando mas provavelmente deveria ter usado porquê estavam no enunciado original:</p>
+<ol>
+<li>
+<p>Moda
+$$\text{moda}=\ell_i + \left( \frac{\Delta_1}{\Delta_1 + \Delta_2} \right) a_c$$</p>
+</li>
+<li>
+<p>Variância
+$$s^{2} = \sum^n_{i=1}\frac{(x_i-\bar{x})^2\cdot F}{n}$$</p>
+</li>
+<li>
+<p>Desvio padrão
+$$S = \sqrt{S(x)^2}$$</p>
+</li>
+<li>
+<p>Coeficiente de variação
+$$C.V = \frac{S}{\bar{x}}\cdot 100$$</p>
+</li>
+<li>
+<p>Distribuição de frequência discreta
+$$\bar{x} = \frac{\sum^n_{i=1}f_{i}x_{i}}{n}$$</p>
+</li>
+<li>
+<p>Distribuição de frequência continua
+$$\bar{x} = \frac{\sum^n_{i=1}f_{i}m_{i}}{n}$$</p>
+</li>
+</ol>
+<p>Faltou a fórmula da média, mas tudo que estava no documento original está presente aqui.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/estatistica/">Estatistica</a></li>
+      <li><a href="http://localhost:1313/tags/ciencia-de-dados/">Ciencia De Dados</a></li>
+      <li><a href="http://localhost:1313/tags/dificil/">Dificil</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-1/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ENIAC e Sistemas em Lote</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

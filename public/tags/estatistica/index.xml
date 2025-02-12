@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Anotações de Estudos - 2025</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Anotações de Estudos - 2025</description>
+    <title>Estatistica on Anotações de Estudos - 2025</title>
+    <link>http://localhost:1313/tags/estatistica/</link>
+    <description>Recent content in Estatistica on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 11 Feb 2025 17:39:43 -0300</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/estatistica/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Revisão de Estatística</title>
       <link>http://localhost:1313/posts/aula-0/</link>
@@ -16,14 +16,6 @@
       <description>Enunciado Ao longo dessa explicação será usado o seguinte problema:
 Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente R$ 600,00 e R$ 30000,00 e sabendo que os dados foram agrupados em 6 classes com amplitude de R$ 5000,00 e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:
 Revisão de conceitos Distribuição de frequência Agrupa valores quantitativos em intervalos chamados de classes.</description>
-    </item>
-    <item>
-      <title>ENIAC e Sistemas em Lote</title>
-      <link>http://localhost:1313/posts/aula-1/</link>
-      <pubDate>Tue, 11 Feb 2025 15:04:39 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula-1/</guid>
-      <description>Definição de computador Computador :: Entrada -&amp;gt; Saida Computador entrada = ... Todo computador deve ter entradas e saídas.
-ENIAC Usava válvulas Operadores de Computador Sistema monoprogramado (1 programa por vez) Sistema em lote (BATCH) Sistema gerencia a fila Cada processo -&amp;gt; job Sem interação com o usuário jobs independentes Dispositivos de E/S Programadores precisavam conhecer as particularidades do hardware de cada dispositivo </description>
     </item>
   </channel>
 </rss>
