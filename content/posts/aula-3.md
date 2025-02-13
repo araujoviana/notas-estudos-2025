@@ -64,44 +64,48 @@ As funções recursivas costumam ser mais simples que as iterativas, mas as iter
 
 ### Códigos
 
-Abaixo temos um contador de chamadas recursivas da função de Fibonacci, escrita em Rust (e algumas otimizações como o uso de HashMap):
+Abaixo temos um contador de chamadas recursivas da função de Fibonacci, escrita em Rust:
 
 ```rust
-use std::collections::HashMap;
 use std::io;
 
-fn fib(n: i32, memo: &mut HashMap<i32, i32>, p: &mut i32) -> i32 {
+fn fib(n: i32, p: &mut i32) -> i32 {
     *p += 1;
-    if let Some(&val) = memo.get(&n) {
-        return val;
-    }
 
-    let result = match n {
+    match n {
         0 => 0,
         1 => 1,
-        _ => fib(n - 1, memo, p) + fib(n - 2, memo, p),
-    };
-
-    memo.insert(n, result);
-    result
+        _ => fib(n - 1, p) + fib(n - 2, p),
+    }
 }
 
 fn main() {
+    // Escreva a sua solução aqui
+    // Code your solution here
+    // Escriba su solución aquí
+
     let mut entrada = String::with_capacity(3);
-    io::stdin().read_line(&mut entrada).expect("Erro de entrada");
+    io::stdin()
+        .read_line(&mut entrada)
+        .expect("Erro de entrada");
+
     let repeticoes: i32 = entrada.trim().parse().expect("Erro de conversão");
 
     let mut numeros: Vec<i32> = vec![];
+
     for _ in 0..repeticoes {
         entrada.clear();
-        io::stdin().read_line(&mut entrada).expect("Erro de entrada");
+
+        io::stdin()
+            .read_line(&mut entrada)
+            .expect("Erro de entrada");
+
         numeros.push(entrada.trim().parse().expect("Erro de conversão"));
     }
 
     for numero in numeros {
         let mut passos: i32 = -1;
-        let mut memo = HashMap::new();
-        let resultado = fib(numero, &mut memo, &mut passos);
+        let resultado = fib(numero, &mut passos);
         println!("fib({}) = {} calls = {}", numero, passos, resultado);
     }
 }
