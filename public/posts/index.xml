@@ -6,16 +6,34 @@
     <description>Recent content in Posts on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 17:39:43 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 13 Feb 2025 13:26:05 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Técnicas de Projetos de Algoritmos</title>
+      <link>http://localhost:1313/posts/aula-3/</link>
+      <pubDate>Thu, 13 Feb 2025 13:26:05 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-3/</guid>
+      <description>Técnicas gerais Backtracking Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.
+Seu método de funcionamento é semelhante ao Depth First Search.
+Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.</description>
+    </item>
+    <item>
+      <title>Classes em Java</title>
+      <link>http://localhost:1313/posts/aula-2/</link>
+      <pubDate>Thu, 13 Feb 2025 13:14:22 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-2/</guid>
+      <description>Classes em Java Linguagens como Java, C# e C++ seguem o paradigma da Programação orientada a objeto, onde os componentes do programa são designados por classes e objetos.
+Cachorro Definição Exemplo de uma classe do tipo Cachorro em Java, contendo os componentes básicos de uma classe.
+// Classe public class Cachorro { // Atributos // Constantes private final int anoDeNascimento; private final String raca; private final String cor; // Variáveis mutáveis private int energia; private boolean acordado; // Métodos // Construtores public Cachorro() { anoDeNascimento = 2025; raca = &amp;#34;Vira lata&amp;#34;; cor = &amp;#34;Caramelo&amp;#34;; energia = 5; acordado = true; } public Cachorro(int anoDeNascimento, String raca, String cor) { this.</description>
+    </item>
     <item>
       <title>Revisão de Estatística</title>
       <link>http://localhost:1313/posts/aula-0/</link>
       <pubDate>Tue, 11 Feb 2025 17:39:43 -0300</pubDate>
       <guid>http://localhost:1313/posts/aula-0/</guid>
-      <description>Enunciado Ao longo dessa explicação será usado o seguinte problema:
-Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente R$ 600,00 e R$ 30000,00 e sabendo que os dados foram agrupados em 6 classes com amplitude de R$ 5000,00 e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:
-Revisão de conceitos Distribuição de frequência Agrupa valores quantitativos em intervalos chamados de classes.</description>
+      <description>⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
+Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
+Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:</description>
     </item>
     <item>
       <title>ENIAC e Sistemas em Lote</title>

@@ -3,7 +3,7 @@ title = 'Revisão de Estatística'
 date = 2025-02-11T17:39:43-03:00
 draft = false
 categories = ['Modelagem Matemática II']
-tags = ['estatistica', 'ciencia de dados', 'dificil']
+tags = ['Estatística', 'Ciência de dados', 'Revisão', 'Difícil']
 +++
 
 > ⚠️  -  As contas e lógica precisam ser verificadas, dado que a revisão **não** teve explicação.

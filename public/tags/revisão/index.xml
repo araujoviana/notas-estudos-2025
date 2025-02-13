@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Revisão on Anotações de Estudos - 2025</title>
+    <link>http://localhost:1313/tags/revis%C3%A3o/</link>
+    <description>Recent content in Revisão on Anotações de Estudos - 2025</description>
+    <generator>Hugo -- 0.126.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Feb 2025 13:14:22 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/revis%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classes em Java</title>
+      <link>http://localhost:1313/posts/aula-2/</link>
+      <pubDate>Thu, 13 Feb 2025 13:14:22 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-2/</guid>
+      <description>Classes em Java Linguagens como Java, C# e C++ seguem o paradigma da Programação orientada a objeto, onde os componentes do programa são designados por classes e objetos.
+Cachorro Definição Exemplo de uma classe do tipo Cachorro em Java, contendo os componentes básicos de uma classe.
+// Classe public class Cachorro { // Atributos // Constantes private final int anoDeNascimento; private final String raca; private final String cor; // Variáveis mutáveis private int energia; private boolean acordado; // Métodos // Construtores public Cachorro() { anoDeNascimento = 2025; raca = &amp;#34;Vira lata&amp;#34;; cor = &amp;#34;Caramelo&amp;#34;; energia = 5; acordado = true; } public Cachorro(int anoDeNascimento, String raca, String cor) { this.</description>
+    </item>
+    <item>
+      <title>Revisão de Estatística</title>
+      <link>http://localhost:1313/posts/aula-0/</link>
+      <pubDate>Tue, 11 Feb 2025 17:39:43 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-0/</guid>
+      <description>⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
+Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
+Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:</description>
+    </item>
+  </channel>
+</rss>

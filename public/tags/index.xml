@@ -6,20 +6,62 @@
     <description>Recent content in Tags on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 17:39:43 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 13 Feb 2025 13:26:05 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Ciencia De Dados</title>
-      <link>http://localhost:1313/tags/ciencia-de-dados/</link>
+      <title>Algorítmos</title>
+      <link>http://localhost:1313/tags/algor%C3%ADtmos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ciencia-de-dados/</guid>
+      <guid>http://localhost:1313/tags/algor%C3%ADtmos/</guid>
       <description></description>
     </item>
     <item>
-      <title>Estatistica</title>
-      <link>http://localhost:1313/tags/estatistica/</link>
+      <title>Recursão</title>
+      <link>http://localhost:1313/tags/recurs%C3%A3o/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/estatistica/</guid>
+      <guid>http://localhost:1313/tags/recurs%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programação Orientada a Objetos</title>
+      <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Revisão</title>
+      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ciência De Dados</title>
+      <link>http://localhost:1313/tags/ci%C3%AAncia-de-dados/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ci%C3%AAncia-de-dados/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Difícil</title>
+      <link>http://localhost:1313/tags/dif%C3%ADcil/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dif%C3%ADcil/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estatística</title>
+      <link>http://localhost:1313/tags/estat%C3%ADstica/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/estat%C3%ADstica/</guid>
       <description></description>
     </item>
     <item>

@@ -3,7 +3,7 @@ title = 'ENIAC e Sistemas em Lote'
 date = 2025-02-11T15:04:39-03:00
 draft = false
 categories = ['Sistemas Operacionais']
-tags = ['hardware']
+tags = ['Hardware']
 +++
 
 ## Definição de computador

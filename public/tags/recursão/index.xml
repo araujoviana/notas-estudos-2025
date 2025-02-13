@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Recursão on Anotações de Estudos - 2025</title>
+    <link>http://localhost:1313/tags/recurs%C3%A3o/</link>
+    <description>Recent content in Recursão on Anotações de Estudos - 2025</description>
+    <generator>Hugo -- 0.126.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Feb 2025 13:26:05 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/recurs%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Técnicas de Projetos de Algoritmos</title>
+      <link>http://localhost:1313/posts/aula-3/</link>
+      <pubDate>Thu, 13 Feb 2025 13:26:05 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-3/</guid>
+      <description>Técnicas gerais Backtracking Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.
+Seu método de funcionamento é semelhante ao Depth First Search.
+Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.</description>
+    </item>
+  </channel>
+</rss>
