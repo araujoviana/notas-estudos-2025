@@ -6,8 +6,18 @@
     <description>Recent content in Projeto E Análise De Algoritmos II on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Feb 2025 13:26:05 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 15:18:20 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/projeto-e-an%C3%A1lise-de-algoritmos-ii/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Provas de Complexidade - O(n), Ω(n), θ(n)</title>
+      <link>http://localhost:1313/posts/aula-4/</link>
+      <pubDate>Fri, 14 Feb 2025 15:18:20 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-4/</guid>
+      <description>O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &amp;gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
+Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
+Nesse caso, $O(n^3) $ é o limite superior.
+No caso, a linha vermelha corresponde ao $O(n^3)$</description>
+    </item>
     <item>
       <title>Técnicas de Projetos de Algoritmos</title>
       <link>http://localhost:1313/posts/aula-3/</link>

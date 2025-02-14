@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Provas de Complexidade - O(n), Ω(n), θ(n) | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Revisão, Algoritmos, Big O">
+<meta name="description" content="O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
+Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
+Nesse caso, $O(n^3) $ é o limite superior.
+No caso, a linha vermelha corresponde ao $O(n^3)$">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-4/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-4/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Provas de Complexidade - O(n), Ω(n), θ(n)
+    </h1>
+    <div class="post-meta"><span title='2025-02-14 15:18:20 -0300 -03'>February 14, 2025</span>&nbsp;·&nbsp;4 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#on---pior-caso" aria-label="O(n) - Pior caso">O(n) - Pior caso</a><ul>
+                        
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o" aria-label="Definição">Definição</a><ul>
+                        
+                <li>
+                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#provas-para-on" aria-label="Provas para O(n)">Provas para O(n)</a><ul>
+                        
+                <li>
+                    <a href="#prova" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-1" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-2" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-3" aria-label="Prova">Prova</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%cf%89n---melhor-caso" aria-label="Ω(n) - Melhor caso">Ω(n) - Melhor caso</a></li>
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o-1" aria-label="Definição">Definição</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-1" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%ce%b8n---caso-m%c3%a9dio" aria-label="Θ(n) - Caso Médio">Θ(n) - Caso Médio</a></li>
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o-2" aria-label="Definição">Definição</a><ul>
+                        
+                <li>
+                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#provas-para-%ce%b8n" aria-label="Provas para θ(n)">Provas para θ(n)</a><ul>
+                        
+                <li>
+                    <a href="#parte-1" aria-label="Parte 1">Parte 1</a></li>
+                <li>
+                    <a href="#parte-2" aria-label="Parte 2">Parte 2</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="on---pior-caso">O(n) - Pior caso<a hidden class="anchor" aria-hidden="true" href="#on---pior-caso">#</a></h2>
+<h3 id="definição">Definição<a hidden class="anchor" aria-hidden="true" href="#definição">#</a></h3>
+<p>$$O(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
+<p>$$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\left\{ 3n^2, 5n^2, \dots \right\}$$
+$$\left\{ 3n, 5n, \dots \right\}$$
+$$\left\{ 1, 5, 7, 9, \dots \right\}$$
+$$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$</p>
+<p>Nesse caso, $O(n^3) $ é o limite superior.</p>
+<p><img alt="Complexidade O(n)" loading="lazy" src="/big-o.png"></p>
+<p>No caso, a linha vermelha corresponde ao $O(n^3)$</p>
+<h3 id="provas-para-on">Provas para O(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-on">#</a></h3>
+<p>$$n^2 + 3n = O(n^3)$$</p>
+<h4 id="prova">Prova<a hidden class="anchor" aria-hidden="true" href="#prova">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
+<p>tal que
+$$n^3+3n \leq cn^3$$
+temos
+$$n^2 + 3n \leq n^3 + 3n^3  \rightarrow 4n^3$$</p>
+<p>isto vale para $c=4$ e $n_0=0$, portanto</p>
+<p>$$n^2 + 3n = O(n^3)$$</p>
+<p>$\blacksquare$</p>
+<p>$$n^2+3n=O(n)$$</p>
+<h4 id="prova-1">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-1">#</a></h4>
+<p>Por <strong>contradição</strong> suponha que $n^2+3n = O(n)$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
+<p>tal que</p>
+<p>$$\frac{n^2+3n}{n} \leq \frac{c n}{n}$$</p>
+<p>(A operação de divisão aplicada preserva a desigualdade)</p>
+<p>$$n+3\leq c$$</p>
+<p>Isso é um <em>absurdo</em>, portanto $n^2+3n \neq O(n)$</p>
+<p>$\blacksquare$</p>
+<p>$$\frac{1}{n^2} = O(n^3)$$</p>
+<h4 id="prova-2">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-2">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\frac{1}{n^2} \leq cn^3$$</p>
+<p>temos que</p>
+<p>$$\frac{1}{n^2}=n^{-2} \leq (1)n^3$$</p>
+<p>Para $c=1, n_0\geq 1$ essa expressão vale.</p>
+<p>Portanto $\frac{1}{n^2} = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<p>$$\sqrt{n} + 5 \log_{\frac{3}{2}}n \leq cn^3$$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\sqrt{n} +  \log_{\frac{3}{2}}n \leq cn^3$$</p>
+<p>temos que</p>
+<p>$$  \sqrt{n} + \log_{\frac{3}{2}}n = n^{\frac{1}{2}} + 5 \log_{\frac{3}{2}}n  \leq n^3 + 5n^3 \rightarrow 6n^3   $$</p>
+<p>Para $n_0 \geq 1$ e $c = 6$, a expressão vale. Logo   $\frac{1}{n^2} = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<p>$$5n^3 + 3n^2 - 25 =  O(n^3)$$</p>
+<h4 id="prova-3">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-3">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$5n^3 + 3n^2 - 25 \leq cn^3$$</p>
+<p>temos</p>
+<p>$$5n^3 + 3n^2 - 25 \leq 5n^3+3n^2 \leq 5n^3 + 3n^3 = 8n^3$$</p>
+<p>(os expoentes são diferentes)</p>
+<p>Para $n_0 \leq 0$ e $c=8$, $5n^3 + 3n^2 - 25 = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<blockquote>
+<p>Esse aqui é chato de escrever 🙃</p>
+</blockquote>
+<p>$$\log_{10} n + \log_{\frac{3}{2}}n + \log_2 n = O(\log_3 n)$$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\frac{\log_3 n}{\log_{10} n} + \frac{\log_3 n}{\log_{\frac{3}{2}} n} + \frac{\log_3 n}{\log_2 n} =
+\boxed{\frac{1}{\log_{10} n} + \frac{1}{\log_{\frac{3}{2}} n} + \frac{1}{\log_2 n}}\log_3 n$$</p>
+<p>Para $n_0 \geq 1$, a expressão vale.</p>
+<p>$\blacksquare$</p>
+<h3 id="ωn---melhor-caso">Ω(n) - Melhor caso<a hidden class="anchor" aria-hidden="true" href="#ωn---melhor-caso">#</a></h3>
+<h3 id="definição-1">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-1">#</a></h3>
+<p>$$\Omega(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \geq cg(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplo-1">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
+<p>$$\Omega(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\left\{ 3n^4, 5n^4, \dots \right\}$$
+$$\left\{ 3n^5, 5n^5, \dots \right\}$$
+$$\left\{ n^n, 2^n, 3^n, \dots \right\}$$
+$$\left\{ n \log n, n^2 \log n, \dots \right\}$$</p>
+<p>Nesse caso, $\Omega(n^3) $ é o limite inferior.</p>
+<p><img alt="Complexidade Omega(n)" loading="lazy" src="/big-omega.png"></p>
+<p>A linha vermelha corresponde ao $\Omega(n^3)$ (ele eventualmente é ultrapassado pelos outros).</p>
+<blockquote>
+<p>Professor não deu nenhuma prova para esse caso 🤷,
+mas ele é incluso nas provas para θ(n)</p>
+</blockquote>
+<h3 id="θn---caso-médio">Θ(n) - Caso Médio<a hidden class="anchor" aria-hidden="true" href="#θn---caso-médio">#</a></h3>
+<h3 id="definição-2">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-2">#</a></h3>
+<p>$$\Theta(g(n)) = \{ f(n): \exists \ c_1, c_2 &gt; 0, n_{0} \geq 0 \text{ tal que } c_1 g(n) \leq f(n) \leq c_2 g(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h4>
+<p>$$\Theta(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\Theta(n^4) = \left\{ 3n^4, 5n^4, \dots \right\}$$
+$$\Theta(n^5) = \left\{ 3n^5, 5n^5, \dots \right\}$$
+$$\Theta(n \log n) = \left\{ 2n \log n, 5n \log n, \dots \right\}$$</p>
+<p>Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.</p>
+<p><img alt="Complexidade Tetha(n)" loading="lazy" src="/big-tetha.png"></p>
+<p>A linha vermelha corresponde ao $ \theta (n^3)$.</p>
+<h3 id="provas-para-θn">Provas para θ(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-θn">#</a></h3>
+<p>$$\frac{1}{2}n^2-3n=\theta(n^2)$$</p>
+<p>Pela definição da notação θ <strong>(esse é diferente dos outros)</strong>, $\exists c_1, c_2 &gt; 0 \text{ e } n_0 \geq 0$</p>
+<p>tal que</p>
+<p>$$c_1n^2 \leq \frac{1}{2}n^2-3n \leq c_2n^2$$</p>
+<h4 id="parte-1">Parte 1<a hidden class="anchor" aria-hidden="true" href="#parte-1">#</a></h4>
+<p>Provar que $\frac{1}{2}n^2-3n \leq c_2n^2$</p>
+<p>temos que $\frac{1}{2}n^2-3n \leq \frac{1}{2}n^2$</p>
+<p>isto vale $c_2 = \frac{1}{2}$ e $n_0 \geq 0$</p>
+<h4 id="parte-2">Parte 2<a hidden class="anchor" aria-hidden="true" href="#parte-2">#</a></h4>
+<p>$$c_1n^2\leq\frac{1}{2}n^2-3n$$
+$$\frac{1}{2}n^2 -3n \geq c_1n^2$$</p>
+<p>temos que</p>
+<p>$$\frac{1}{2}n^2 -3n \geq \frac{1}{4}n^2 + \boxed{\frac{1}{4}n^2-3n} \geq \frac{1}{4}n^2$$</p>
+<p>A parte dentro do quadrado é $\geq 0$,</p>
+<p>Quando $\frac{1}{4}n^2-3n \geq 0$</p>
+<p>temos $\frac{1}{4}n^2 \geq 3n $</p>
+<p>$$c_1 = \frac{1}{4} \text{ e } n_0 \geq 12 $$</p>
+<p>Para $c_1=\frac{1}{4}$, $c_2 = \frac{1}{2}$ e $n_0 = max(0,12) = 12$</p>
+<p>A expressão vale.</p>
+<p>Logo $\frac{1}{2}n^2-3n=\theta(n^2)$</p>
+<p>$\blacksquare$</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
+      <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
+      <li><a href="http://localhost:1313/tags/big-o/">Big O</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-3/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Técnicas de Projetos de Algoritmos</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

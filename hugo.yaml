@@ -20,6 +20,8 @@ taxonomies:
 
 params:
   math: true
+  ShowReadingTime: true
+  ShowToc: true
 
   homeInfoParams:
     Title: "Bem-vindo."
@@ -30,4 +32,7 @@ params:
 
   cover:
     linkFullImages: true
+
   ShowPostNavLinks: true
+
+  ShowCodeCopyButtons: true

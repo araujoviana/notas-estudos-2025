@@ -6,13 +6,27 @@
     <description>Recent content in Tags on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 13 Feb 2025 13:26:05 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 14 Feb 2025 15:18:20 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algorítmos</title>
-      <link>http://localhost:1313/tags/algor%C3%ADtmos/</link>
+      <title>Algoritmos</title>
+      <link>http://localhost:1313/tags/algoritmos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/algor%C3%ADtmos/</guid>
+      <guid>http://localhost:1313/tags/algoritmos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Big O</title>
+      <link>http://localhost:1313/tags/big-o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/big-o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Revisão</title>
+      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
       <description></description>
     </item>
     <item>
@@ -34,20 +48,6 @@
       <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Revisão</title>
-      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ciência De Dados</title>
-      <link>http://localhost:1313/tags/ci%C3%AAncia-de-dados/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ci%C3%AAncia-de-dados/</guid>
       <description></description>
     </item>
     <item>

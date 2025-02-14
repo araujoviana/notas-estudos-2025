@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
 <title>Revisão de Estatística | Anotações de Estudos - 2025</title>
-<meta name="keywords" content="Estatística, Ciência de dados, Revisão, Difícil">
+<meta name="keywords" content="Estatística, Revisão, Difícil">
 <meta name="description" content="⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
 Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
 Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:">
@@ -141,10 +141,50 @@ document.addEventListener("DOMContentLoaded", function() {
     <h1 class="post-title entry-hint-parent">
       Revisão de Estatística
     </h1>
-    <div class="post-meta"><span title='2025-02-11 17:39:43 -0300 -03'>February 11, 2025</span>
+    <div class="post-meta"><span title='2025-02-11 17:39:43 -0300 -03'>February 11, 2025</span>&nbsp;·&nbsp;5 min
 
 </div>
-  </header> 
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#enunciado" aria-label="Enunciado">Enunciado</a></li>
+                <li>
+                    <a href="#revis%c3%a3o-de-conceitos" aria-label="Revisão de conceitos">Revisão de conceitos</a><ul>
+                        
+                <li>
+                    <a href="#distribui%c3%a7%c3%a3o-de-frequ%c3%aancia" aria-label="Distribuição de frequência">Distribuição de frequência</a></li>
+                <li>
+                    <a href="#percentuais" aria-label="Percentuais">Percentuais</a></li>
+                <li>
+                    <a href="#encontrar-classes-atrav%c3%a9s-de-um-atributo" aria-label="Encontrar classes através de um atributo">Encontrar classes através de um atributo</a></li>
+                <li>
+                    <a href="#separatrizes" aria-label="Separatrizes">Separatrizes</a><ul>
+                        
+                <li>
+                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#mediana" aria-label="Mediana">Mediana</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-1" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#outros-c%c3%a1lculos" aria-label="Outros cálculos">Outros cálculos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#outras-f%c3%b3rmulas" aria-label="Outras fórmulas">Outras fórmulas</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
   <div class="post-content"><blockquote>
 <p>⚠️  -  As contas e lógica precisam ser verificadas, dado que a revisão <strong>não</strong> teve explicação.</p>
 </blockquote>
@@ -409,7 +449,6 @@ $$\bar{x} = \frac{\sum^n_{i=1}f_{i}m_{i}}{n}$$</p>
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="http://localhost:1313/tags/estat%C3%ADstica/">Estatística</a></li>
-      <li><a href="http://localhost:1313/tags/ci%C3%AAncia-de-dados/">Ciência De Dados</a></li>
       <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
       <li><a href="http://localhost:1313/tags/dif%C3%ADcil/">Difícil</a></li>
     </ul>
@@ -498,6 +537,53 @@ $$\bar{x} = \frac{\sum^n_{i=1}f_{i}m_{i}}{n}$$</p>
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 
