@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/categories/estrutura-de-dados-ii/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classes em Java</title>
-      <link>http://localhost:1313/posts/aula-2/</link>
+      <link>http://localhost:1313/posts/aula_2/</link>
       <pubDate>Thu, 13 Feb 2025 13:14:22 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula-2/</guid>
+      <guid>http://localhost:1313/posts/aula_2/</guid>
       <description>Classes em Java Linguagens como Java, C# e C++ seguem o paradigma da Programação orientada a objeto, onde os componentes do programa são designados por classes e objetos.
 Cachorro Definição Exemplo de uma classe do tipo Cachorro em Java, contendo os componentes básicos de uma classe.
 // Classe public class Cachorro { // Atributos // Constantes private final int anoDeNascimento; private final String raca; private final String cor; // Variáveis mutáveis private int energia; private boolean acordado; // Métodos // Construtores public Cachorro() { anoDeNascimento = 2025; raca = &amp;#34;Vira lata&amp;#34;; cor = &amp;#34;Caramelo&amp;#34;; energia = 5; acordado = true; } public Cachorro(int anoDeNascimento, String raca, String cor) { this.</description>

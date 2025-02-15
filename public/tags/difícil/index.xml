@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/dif%C3%ADcil/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Revisão de Estatística</title>
-      <link>http://localhost:1313/posts/aula-0/</link>
+      <link>http://localhost:1313/posts/aula_0/</link>
       <pubDate>Tue, 11 Feb 2025 17:39:43 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula-0/</guid>
+      <guid>http://localhost:1313/posts/aula_0/</guid>
       <description>⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
 Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
 Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:</description>
