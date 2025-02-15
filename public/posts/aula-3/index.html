@@ -5,11 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Técnicas de Projetos de Algoritmos | Anotações de Estudos - 2025</title>
-<meta name="keywords" content="Recursão, Algoritmos">
-<meta name="description" content="Técnicas gerais Backtracking Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.
-Seu método de funcionamento é semelhante ao Depth First Search.
-Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.">
+<title>Provas de Complexidade - O(n), Ω(n), θ(n) | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Revisão, Algoritmos, Big O">
+<meta name="description" content="O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
+Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
+Nesse caso, $O(n^3) $ é o limite superior.
+Provas para O(n) $$n^2 &#43; 3n = O(n^3)$$">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/aula-3/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
@@ -139,9 +140,9 @@ document.addEventListener("DOMContentLoaded", function() {
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Técnicas de Projetos de Algoritmos
+      Provas de Complexidade - O(n), Ω(n), θ(n)
     </h1>
-    <div class="post-meta"><span title='2025-02-13 13:26:05 -0300 -03'>February 13, 2025</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2025-02-14 15:18:20 -0300 -03'>February 14, 2025</span>&nbsp;·&nbsp;4 min
 
 </div>
   </header> <div class="toc">
@@ -152,23 +153,52 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#t%c3%a9cnicas-gerais" aria-label="Técnicas gerais">Técnicas gerais</a><ul>
+                    <a href="#on---pior-caso" aria-label="O(n) - Pior caso">O(n) - Pior caso</a><ul>
                         
                 <li>
-                    <a href="#backtracking" aria-label="Backtracking">Backtracking</a></li>
-                <li>
-                    <a href="#algoritmos-gulosos-greedy" aria-label="Algoritmos gulosos (Greedy)">Algoritmos gulosos (Greedy)</a></li>
-                <li>
-                    <a href="#programa%c3%a7%c3%a3o-din%c3%a2mica" aria-label="Programação dinâmica">Programação dinâmica</a></li></ul>
-                </li>
-                <li>
-                    <a href="#recurs%c3%a3o" aria-label="Recursão">Recursão</a><ul>
+                    <a href="#defini%c3%a7%c3%a3o" aria-label="Definição">Definição</a><ul>
                         
                 <li>
-                    <a href="#c%c3%b3digos" aria-label="Códigos">Códigos</a></li>
-                <li>
-                    <a href="#refer%c3%aancias-relevantes" aria-label="Referências relevantes">Referências relevantes</a>
+                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
                 </li>
+                <li>
+                    <a href="#provas-para-on" aria-label="Provas para O(n)">Provas para O(n)</a><ul>
+                        
+                <li>
+                    <a href="#prova" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-1" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-2" aria-label="Prova">Prova</a></li>
+                <li>
+                    <a href="#prova-3" aria-label="Prova">Prova</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%cf%89n---melhor-caso" aria-label="Ω(n) - Melhor caso">Ω(n) - Melhor caso</a></li>
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o-1" aria-label="Definição">Definição</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-1" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#%ce%b8n---caso-m%c3%a9dio" aria-label="Θ(n) - Caso Médio">Θ(n) - Caso Médio</a></li>
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o-2" aria-label="Definição">Definição</a><ul>
+                        
+                <li>
+                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#provas-para-%ce%b8n" aria-label="Provas para θ(n)">Provas para θ(n)</a><ul>
+                        
+                <li>
+                    <a href="#parte-1" aria-label="Parte 1">Parte 1</a></li>
+                <li>
+                    <a href="#parte-2" aria-label="Parte 2">Parte 2</a>
+                </li>
+            </ul>
+            </li>
             </ul>
             </li>
             </ul>
@@ -176,138 +206,134 @@ document.addEventListener("DOMContentLoaded", function() {
     </details>
 </div>
 
-  <div class="post-content"><h2 id="técnicas-gerais">Técnicas gerais<a hidden class="anchor" aria-hidden="true" href="#técnicas-gerais">#</a></h2>
-<h3 id="backtracking">Backtracking<a hidden class="anchor" aria-hidden="true" href="#backtracking">#</a></h3>
-<p>Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.</p>
-<p>Seu método de funcionamento é semelhante ao <em>Depth First Search</em>.</p>
-<p>Um exemplo de uso é o <a href="https://pt.wikipedia.org/wiki/Problema_das_oito_damas">Problema das oito damas</a>, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.</p>
-<p><img alt="Problema das oito damas animado" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Eight-queens-animation.gif"></p>
-<h3 id="algoritmos-gulosos-greedy">Algoritmos gulosos (Greedy)<a hidden class="anchor" aria-hidden="true" href="#algoritmos-gulosos-greedy">#</a></h3>
-<p>Abordagem em que algoritmos buscam resolver o problema escolhendo, em cada etapa, a melhor opção disponível no momento, ou a que não infringe nenhuma restrição, com o objetivo de (teoricamente) encontrar a melhor solução.</p>
-<p><strong>Porém</strong>, algoritmos gulosos podem não encontrar a solução ótima, pois tomam decisões locais sem considerar o impacto a longo prazo, o que pode levar a uma solução subótima.</p>
-<h3 id="programação-dinâmica">Programação dinâmica<a hidden class="anchor" aria-hidden="true" href="#programação-dinâmica">#</a></h3>
-<p>É a técnica que busca encontrar a solução de vários subproblemas para então, encontrar a solução do problema geral. Ao contrário do backtracking que busca <em>todas</em> as soluções.</p>
-<p><em>Memoization</em> (memorização) é uma das técnicas usadas em programação dinâmica, ela <strong>armazena os resultados de subproblemas para evitar recalculá-los</strong>, o que diminui a complexidade de um algoritmo de fibonacci recursivo de $O(n^2)$ para $O(n)$.</p>
-<h2 id="recursão">Recursão<a hidden class="anchor" aria-hidden="true" href="#recursão">#</a></h2>
-<p>Função ou procedimento que possui uma chamada para si mesmo.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">fatorial</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">-- Caso base</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fatorial</span> n <span style="color:#f92672">=</span> n <span style="color:#f92672">*</span> fatorial (n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#75715e">-- Caso recursivo</span>
-</span></span></code></pre></div><p>O número de chamadas recursivas (sem contar a primeira que é feita antes da recursão iniciar) de uma função é denominado <strong>profundidade de recursão</strong>, <em>NÃO</em> confunda com a <em>altura</em> da árvore da recursão.</p>
-<p>A profundidade da função fatorial cresce linearmente:</p>
-<ul>
-<li>fatorial(4) -&gt; 4</li>
-<li>fatorial(10) -&gt; 10</li>
-</ul>
-<p>Ter uma profundidade de recursão muito grande pode prejudicar a performance do programa, isso ocorre por conta do acúmulo de dados na pilha de execução (stack), o que pode até causar um <em>stack overflow</em> (transbordamento da pilha).</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">fib</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fib</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fib</span> n <span style="color:#f92672">=</span> fib (n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fib (n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
-</span></span></code></pre></div><p>Essa função é <em>extremamente</em> lenta, tendo complexidade quase exponencial, aculumando muitas chamadas recursivas.</p>
-<ul>
-<li>fib(4) -&gt; 8</li>
-<li>fib(10) -&gt; 177</li>
-</ul>
-<p>Toda função recursiva pode ter uma versão iterativa, mas nem sempre o contrário é possível.</p>
-<p>As funções recursivas costumam ser mais simples que as iterativas, mas as iterativas costumam ser mais rápidas que as recursivas.</p>
-<h3 id="códigos">Códigos<a hidden class="anchor" aria-hidden="true" href="#códigos">#</a></h3>
-<p>Abaixo temos um contador de chamadas recursivas da função de Fibonacci, escrita em Rust:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">use</span> std::io;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">fib</span>(n: <span style="color:#66d9ef">i32</span>, p: <span style="color:#66d9ef">&amp;</span><span style="color:#a6e22e">mut</span> <span style="color:#66d9ef">i32</span>) -&gt; <span style="color:#66d9ef">i32</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">*</span>p <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">match</span> n {
-</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">0</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#ae81ff">1</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
-</span></span><span style="display:flex;"><span>        _ <span style="color:#f92672">=&gt;</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, p) <span style="color:#f92672">+</span> fib(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>, p),
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Escreva a sua solução aqui
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Code your solution here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// Escriba su solución aquí
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> entrada <span style="color:#f92672">=</span> String::with_capacity(<span style="color:#ae81ff">3</span>);
-</span></span><span style="display:flex;"><span>    io::stdin()
-</span></span><span style="display:flex;"><span>        .read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> entrada)
-</span></span><span style="display:flex;"><span>        .expect(<span style="color:#e6db74">&#34;Erro de entrada&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> repeticoes: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> entrada.trim().parse().expect(<span style="color:#e6db74">&#34;Erro de conversão&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> numeros: Vec<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">i32</span><span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> vec![];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> _ <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">..</span>repeticoes {
-</span></span><span style="display:flex;"><span>        entrada.clear();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        io::stdin()
-</span></span><span style="display:flex;"><span>            .read_line(<span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> entrada)
-</span></span><span style="display:flex;"><span>            .expect(<span style="color:#e6db74">&#34;Erro de entrada&#34;</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        numeros.push(entrada.trim().parse().expect(<span style="color:#e6db74">&#34;Erro de conversão&#34;</span>));
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> numero <span style="color:#66d9ef">in</span> numeros {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> passos: <span style="color:#66d9ef">i32</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">let</span> resultado <span style="color:#f92672">=</span> fib(numero, <span style="color:#f92672">&amp;</span><span style="color:#66d9ef">mut</span> passos);
-</span></span><span style="display:flex;"><span>        println!(<span style="color:#e6db74">&#34;fib(</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">) = </span><span style="color:#e6db74">{}</span><span style="color:#e6db74"> calls = </span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, numero, passos, resultado);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>E outro igual, mas em C:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fib</span>(<span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p) {
-</span></span><span style="display:flex;"><span>    (<span style="color:#f92672">*</span>p)<span style="color:#f92672">++</span>;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fib</span>(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>, p) <span style="color:#f92672">+</span> <span style="color:#a6e22e">fib</span>(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>, p);
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> repeticoes;
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>repeticoes);
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> numeros[repeticoes];
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> repeticoes; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>numeros[i]);
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> repeticoes; i<span style="color:#f92672">++</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> passos <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> resultado <span style="color:#f92672">=</span> <span style="color:#a6e22e">fib</span>(numeros[i], <span style="color:#f92672">&amp;</span>passos);
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;fib(%d) = %d calls = %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, numeros[i], passos, resultado);
-</span></span><span style="display:flex;"><span>     
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h3 id="referências-relevantes">Referências relevantes<a hidden class="anchor" aria-hidden="true" href="#referências-relevantes">#</a></h3>
-<ul>
-<li><a href="http://www.ime.usp.br/~pf/analise_de_algoritmos/">http://www.ime.usp.br/~pf/analise_de_algoritmos/</a></li>
-<li><a href="https://www.ime.usp.br/~pf/algoritmos/">https://www.ime.usp.br/~pf/algoritmos/</a></li>
-<li><a href="http://wiki.inf.ufpr.br/maziero/doku.php?id=prog2:start">http://wiki.inf.ufpr.br/maziero/doku.php?id=prog2:start</a></li>
-</ul>
+  <div class="post-content"><h2 id="on---pior-caso">O(n) - Pior caso<a hidden class="anchor" aria-hidden="true" href="#on---pior-caso">#</a></h2>
+<h3 id="definição">Definição<a hidden class="anchor" aria-hidden="true" href="#definição">#</a></h3>
+<p>$$O(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
+<p>$$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\left\{ 3n^2, 5n^2, \dots \right\}$$
+$$\left\{ 3n, 5n, \dots \right\}$$
+$$\left\{ 1, 5, 7, 9, \dots \right\}$$
+$$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$</p>
+<p><img alt="Complexidade O(n)" loading="lazy" src="/posts/aula-3/images/big-o.png"></p>
+<p>Nesse caso, $O(n^3) $ é o limite superior.</p>
+<h3 id="provas-para-on">Provas para O(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-on">#</a></h3>
+<p>$$n^2 + 3n = O(n^3)$$</p>
+<h4 id="prova">Prova<a hidden class="anchor" aria-hidden="true" href="#prova">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
+<p>tal que
+$$n^3+3n \leq cn^3$$
+temos
+$$n^2 + 3n \leq n^3 + 3n^3  \rightarrow 4n^3$$</p>
+<p>isto vale para $c=4$ e $n_0=0$, portanto</p>
+<p>$$n^2 + 3n = O(n^3)$$</p>
+<p>$\blacksquare$</p>
+<p>$$n^2+3n=O(n)$$</p>
+<h4 id="prova-1">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-1">#</a></h4>
+<p>Por <strong>contradição</strong> suponha que $n^2+3n = O(n)$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
+<p>tal que</p>
+<p>$$\frac{n^2+3n}{n} \leq \frac{c n}{n}$$</p>
+<p>(A operação de divisão aplicada preserva a desigualdade)</p>
+<p>$$n+3\leq c$$</p>
+<p>Isso é um <em>absurdo</em>, portanto $n^2+3n \neq O(n)$</p>
+<p>$\blacksquare$</p>
+<p>$$\frac{1}{n^2} = O(n^3)$$</p>
+<h4 id="prova-2">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-2">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\frac{1}{n^2} \leq cn^3$$</p>
+<p>temos que</p>
+<p>$$\frac{1}{n^2}=n^{-2} \leq (1)n^3$$</p>
+<p>Para $c=1, n_0\geq 1$ essa expressão vale.</p>
+<p>Portanto $\frac{1}{n^2} = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<p>$$\sqrt{n} + 5 \log_{\frac{3}{2}}n \leq cn^3$$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\sqrt{n} +  \log_{\frac{3}{2}}n \leq cn^3$$</p>
+<p>temos que</p>
+<p>$$  \sqrt{n} + \log_{\frac{3}{2}}n = n^{\frac{1}{2}} + 5 \log_{\frac{3}{2}}n  \leq n^3 + 5n^3 \rightarrow 6n^3   $$</p>
+<p>Para $n_0 \geq 1$ e $c = 6$, a expressão vale. Logo   $\frac{1}{n^2} = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<p>$$5n^3 + 3n^2 - 25 =  O(n^3)$$</p>
+<h4 id="prova-3">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-3">#</a></h4>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$5n^3 + 3n^2 - 25 \leq cn^3$$</p>
+<p>temos</p>
+<p>$$5n^3 + 3n^2 - 25 \leq 5n^3+3n^2 \leq 5n^3 + 3n^3 = 8n^3$$</p>
+<p>(os expoentes são diferentes)</p>
+<p>Para $n_0 \leq 0$ e $c=8$, $5n^3 + 3n^2 - 25 = O(n^3)$</p>
+<p>$\blacksquare$</p>
+<blockquote>
+<p>Esse aqui é chato de escrever 🙃</p>
+</blockquote>
+<p>$$\log_{10} n + \log_{\frac{3}{2}}n + \log_2 n = O(\log_3 n)$$</p>
+<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
+<p>$$\frac{\log_3 n}{\log_{10} n} + \frac{\log_3 n}{\log_{\frac{3}{2}} n} + \frac{\log_3 n}{\log_2 n} =
+\boxed{\frac{1}{\log_{10} n} + \frac{1}{\log_{\frac{3}{2}} n} + \frac{1}{\log_2 n}}\log_3 n$$</p>
+<p>Para $n_0 \geq 1$, a expressão vale.</p>
+<p>$\blacksquare$</p>
+<h3 id="ωn---melhor-caso">Ω(n) - Melhor caso<a hidden class="anchor" aria-hidden="true" href="#ωn---melhor-caso">#</a></h3>
+<h3 id="definição-1">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-1">#</a></h3>
+<p>$$\Omega(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \geq cg(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplo-1">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
+<p>$$\Omega(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\left\{ 3n^4, 5n^4, \dots \right\}$$
+$$\left\{ 3n^5, 5n^5, \dots \right\}$$
+$$\left\{ n^n, 2^n, 3^n, \dots \right\}$$
+$$\left\{ n \log n, n^2 \log n, \dots \right\}$$</p>
+<p><img alt="Complexidade Omega(n)" loading="lazy" src="/posts/aula-3/images/big-omega.png"></p>
+<p>Nesse caso, $\Omega(n^3) $ é o limite inferior.</p>
+<blockquote>
+<p>Professor não deu nenhuma prova para esse caso 🤷,
+mas ele é incluso nas provas para θ(n)</p>
+</blockquote>
+<h3 id="θn---caso-médio">Θ(n) - Caso Médio<a hidden class="anchor" aria-hidden="true" href="#θn---caso-médio">#</a></h3>
+<h3 id="definição-2">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-2">#</a></h3>
+<p>$$\Theta(g(n)) = \{ f(n): \exists \ c_1, c_2 &gt; 0, n_{0} \geq 0 \text{ tal que } c_1 g(n) \leq f(n) \leq c_2 g(n), \forall n \geq n_0 \}$$</p>
+<h4 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h4>
+<p>$$\Theta(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
+$$\Theta(n^4) = \left\{ 3n^4, 5n^4, \dots \right\}$$
+$$\Theta(n^5) = \left\{ 3n^5, 5n^5, \dots \right\}$$
+$$\Theta(n \log n) = \left\{ 2n \log n, 5n \log n, \dots \right\}$$</p>
+<p><img alt="Complexidade Tetha(n)" loading="lazy" src="/posts/aula-3/images/big-tetha.png"></p>
+<p>Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.</p>
+<h3 id="provas-para-θn">Provas para θ(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-θn">#</a></h3>
+<p>$$\frac{1}{2}n^2-3n=\theta(n^2)$$</p>
+<p>Pela definição da notação θ <strong>(esse é diferente dos outros)</strong>, $\exists c_1, c_2 &gt; 0 \text{ e } n_0 \geq 0$</p>
+<p>tal que</p>
+<p>$$c_1n^2 \leq \frac{1}{2}n^2-3n \leq c_2n^2$$</p>
+<h4 id="parte-1">Parte 1<a hidden class="anchor" aria-hidden="true" href="#parte-1">#</a></h4>
+<p>Provar que $\frac{1}{2}n^2-3n \leq c_2n^2$</p>
+<p>temos que $\frac{1}{2}n^2-3n \leq \frac{1}{2}n^2$</p>
+<p>isto vale $c_2 = \frac{1}{2}$ e $n_0 \geq 0$</p>
+<h4 id="parte-2">Parte 2<a hidden class="anchor" aria-hidden="true" href="#parte-2">#</a></h4>
+<p>$$c_1n^2\leq\frac{1}{2}n^2-3n$$
+$$\frac{1}{2}n^2 -3n \geq c_1n^2$$</p>
+<p>temos que</p>
+<p>$$\frac{1}{2}n^2 -3n \geq \frac{1}{4}n^2 + \boxed{\frac{1}{4}n^2-3n} \geq \frac{1}{4}n^2$$</p>
+<p>A parte dentro do quadrado é $\geq 0$,</p>
+<p>Quando $\frac{1}{4}n^2-3n \geq 0$</p>
+<p>temos $\frac{1}{4}n^2 \geq 3n $</p>
+<p>$$c_1 = \frac{1}{4} \text{ e } n_0 \geq 12 $$</p>
+<p>Para $c_1=\frac{1}{4}$, $c_2 = \frac{1}{2}$ e $n_0 = max(0,12) = 12$</p>
+<p>A expressão vale.</p>
+<p>Logo $\frac{1}{2}n^2-3n=\theta(n^2)$</p>
+<p>$\blacksquare$</p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/recurs%C3%A3o/">Recursão</a></li>
+      <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
       <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
+      <li><a href="http://localhost:1313/tags/big-o/">Big O</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/aula_4/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Provas de Complexidade - O(n), Ω(n), θ(n)</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/aula-1/">
+  <a class="next" href="http://localhost:1313/posts/aula-2/">
     <span class="title">Next »</span>
     <br>
-    <span>Classes em Java</span>
+    <span>Técnicas de Projetos de Algoritmos</span>
   </a>
 </nav>
 

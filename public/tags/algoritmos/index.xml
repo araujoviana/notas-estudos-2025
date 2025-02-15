@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/algoritmos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Provas de Complexidade - O(n), Ω(n), θ(n)</title>
-      <link>http://localhost:1313/posts/aula_4/</link>
+      <link>http://localhost:1313/posts/aula-3/</link>
       <pubDate>Fri, 14 Feb 2025 15:18:20 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula_4/</guid>
+      <guid>http://localhost:1313/posts/aula-3/</guid>
       <description>O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &amp;gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
 Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
 Nesse caso, $O(n^3) $ é o limite superior.
@@ -20,9 +20,9 @@ No caso, a linha vermelha corresponde ao $O(n^3)$</description>
     </item>
     <item>
       <title>Técnicas de Projetos de Algoritmos</title>
-      <link>http://localhost:1313/posts/aula_3/</link>
+      <link>http://localhost:1313/posts/aula-2/</link>
       <pubDate>Thu, 13 Feb 2025 13:26:05 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula_3/</guid>
+      <guid>http://localhost:1313/posts/aula-2/</guid>
       <description>Técnicas gerais Backtracking Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.
 Seu método de funcionamento é semelhante ao Depth First Search.
 Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.</description>

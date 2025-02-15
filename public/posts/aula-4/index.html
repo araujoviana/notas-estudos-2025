@@ -5,12 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Provas de Complexidade - O(n), Ω(n), θ(n) | Anotações de Estudos - 2025</title>
-<meta name="keywords" content="Revisão, Algoritmos, Big O">
-<meta name="description" content="O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
-Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
-Nesse caso, $O(n^3) $ é o limite superior.
-No caso, a linha vermelha corresponde ao $O(n^3)$">
+<title>ENIAC e Sistemas em Lote | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Hardware">
+<meta name="description" content="Definição de computador Computador :: Entrada -&gt; Saida Computador entrada = ... Todo computador deve ter entradas e saídas.
+ENIAC Usava válvulas Operadores de Computador Sistema monoprogramado (1 programa por vez) Sistema em lote (BATCH) Sistema gerencia a fila Cada processo -&gt; job Sem interação com o usuário jobs independentes Dispositivos de E/S Programadores precisavam conhecer as particularidades do hardware de cada dispositivo ">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/aula-4/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
@@ -140,9 +138,9 @@ document.addEventListener("DOMContentLoaded", function() {
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Provas de Complexidade - O(n), Ω(n), θ(n)
+      ENIAC e Sistemas em Lote
     </h1>
-    <div class="post-meta"><span title='2025-02-14 15:18:20 -0300 -03'>February 14, 2025</span>&nbsp;·&nbsp;4 min
+    <div class="post-meta"><span title='2025-02-11 15:04:39 -0300 -03'>February 11, 2025</span>&nbsp;·&nbsp;1 min
 
 </div>
   </header> <div class="toc">
@@ -153,190 +151,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#on---pior-caso" aria-label="O(n) - Pior caso">O(n) - Pior caso</a><ul>
-                        
+                    <a href="#defini%c3%a7%c3%a3o-de-computador" aria-label="Definição de computador">Definição de computador</a></li>
                 <li>
-                    <a href="#defini%c3%a7%c3%a3o" aria-label="Definição">Definição</a><ul>
-                        
+                    <a href="#eniac" aria-label="ENIAC">ENIAC</a></li>
                 <li>
-                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
+                    <a href="#sistema-em-lote-batch" aria-label="Sistema em lote (BATCH)">Sistema em lote (BATCH)</a></li>
+                <li>
+                    <a href="#dispositivos-de-es" aria-label="Dispositivos de E/S">Dispositivos de E/S</a>
                 </li>
-                <li>
-                    <a href="#provas-para-on" aria-label="Provas para O(n)">Provas para O(n)</a><ul>
-                        
-                <li>
-                    <a href="#prova" aria-label="Prova">Prova</a></li>
-                <li>
-                    <a href="#prova-1" aria-label="Prova">Prova</a></li>
-                <li>
-                    <a href="#prova-2" aria-label="Prova">Prova</a></li>
-                <li>
-                    <a href="#prova-3" aria-label="Prova">Prova</a></li></ul>
-                </li>
-                <li>
-                    <a href="#%cf%89n---melhor-caso" aria-label="Ω(n) - Melhor caso">Ω(n) - Melhor caso</a></li>
-                <li>
-                    <a href="#defini%c3%a7%c3%a3o-1" aria-label="Definição">Definição</a><ul>
-                        
-                <li>
-                    <a href="#exemplo-1" aria-label="Exemplo">Exemplo</a></li></ul>
-                </li>
-                <li>
-                    <a href="#%ce%b8n---caso-m%c3%a9dio" aria-label="Θ(n) - Caso Médio">Θ(n) - Caso Médio</a></li>
-                <li>
-                    <a href="#defini%c3%a7%c3%a3o-2" aria-label="Definição">Definição</a><ul>
-                        
-                <li>
-                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a></li></ul>
-                </li>
-                <li>
-                    <a href="#provas-para-%ce%b8n" aria-label="Provas para θ(n)">Provas para θ(n)</a><ul>
-                        
-                <li>
-                    <a href="#parte-1" aria-label="Parte 1">Parte 1</a></li>
-                <li>
-                    <a href="#parte-2" aria-label="Parte 2">Parte 2</a>
-                </li>
-            </ul>
-            </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><h2 id="on---pior-caso">O(n) - Pior caso<a hidden class="anchor" aria-hidden="true" href="#on---pior-caso">#</a></h2>
-<h3 id="definição">Definição<a hidden class="anchor" aria-hidden="true" href="#definição">#</a></h3>
-<p>$$O(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
-<p>$$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\left\{ 3n^2, 5n^2, \dots \right\}$$
-$$\left\{ 3n, 5n, \dots \right\}$$
-$$\left\{ 1, 5, 7, 9, \dots \right\}$$
-$$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$</p>
-<p>Nesse caso, $O(n^3) $ é o limite superior.</p>
-<p><img alt="Complexidade O(n)" loading="lazy" src="/big-o.png"></p>
-<p>No caso, a linha vermelha corresponde ao $O(n^3)$</p>
-<h3 id="provas-para-on">Provas para O(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-on">#</a></h3>
-<p>$$n^2 + 3n = O(n^3)$$</p>
-<h4 id="prova">Prova<a hidden class="anchor" aria-hidden="true" href="#prova">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
-<p>tal que
-$$n^3+3n \leq cn^3$$
-temos
-$$n^2 + 3n \leq n^3 + 3n^3  \rightarrow 4n^3$$</p>
-<p>isto vale para $c=4$ e $n_0=0$, portanto</p>
-<p>$$n^2 + 3n = O(n^3)$$</p>
-<p>$\blacksquare$</p>
-<p>$$n^2+3n=O(n)$$</p>
-<h4 id="prova-1">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-1">#</a></h4>
-<p>Por <strong>contradição</strong> suponha que $n^2+3n = O(n)$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
-<p>tal que</p>
-<p>$$\frac{n^2+3n}{n} \leq \frac{c n}{n}$$</p>
-<p>(A operação de divisão aplicada preserva a desigualdade)</p>
-<p>$$n+3\leq c$$</p>
-<p>Isso é um <em>absurdo</em>, portanto $n^2+3n \neq O(n)$</p>
-<p>$\blacksquare$</p>
-<p>$$\frac{1}{n^2} = O(n^3)$$</p>
-<h4 id="prova-2">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-2">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\frac{1}{n^2} \leq cn^3$$</p>
-<p>temos que</p>
-<p>$$\frac{1}{n^2}=n^{-2} \leq (1)n^3$$</p>
-<p>Para $c=1, n_0\geq 1$ essa expressão vale.</p>
-<p>Portanto $\frac{1}{n^2} = O(n^3)$</p>
-<p>$\blacksquare$</p>
-<p>$$\sqrt{n} + 5 \log_{\frac{3}{2}}n \leq cn^3$$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\sqrt{n} +  \log_{\frac{3}{2}}n \leq cn^3$$</p>
-<p>temos que</p>
-<p>$$  \sqrt{n} + \log_{\frac{3}{2}}n = n^{\frac{1}{2}} + 5 \log_{\frac{3}{2}}n  \leq n^3 + 5n^3 \rightarrow 6n^3   $$</p>
-<p>Para $n_0 \geq 1$ e $c = 6$, a expressão vale. Logo   $\frac{1}{n^2} = O(n^3)$</p>
-<p>$\blacksquare$</p>
-<p>$$5n^3 + 3n^2 - 25 =  O(n^3)$$</p>
-<h4 id="prova-3">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-3">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$5n^3 + 3n^2 - 25 \leq cn^3$$</p>
-<p>temos</p>
-<p>$$5n^3 + 3n^2 - 25 \leq 5n^3+3n^2 \leq 5n^3 + 3n^3 = 8n^3$$</p>
-<p>(os expoentes são diferentes)</p>
-<p>Para $n_0 \leq 0$ e $c=8$, $5n^3 + 3n^2 - 25 = O(n^3)$</p>
-<p>$\blacksquare$</p>
-<blockquote>
-<p>Esse aqui é chato de escrever 🙃</p>
-</blockquote>
-<p>$$\log_{10} n + \log_{\frac{3}{2}}n + \log_2 n = O(\log_3 n)$$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\frac{\log_3 n}{\log_{10} n} + \frac{\log_3 n}{\log_{\frac{3}{2}} n} + \frac{\log_3 n}{\log_2 n} =
-\boxed{\frac{1}{\log_{10} n} + \frac{1}{\log_{\frac{3}{2}} n} + \frac{1}{\log_2 n}}\log_3 n$$</p>
-<p>Para $n_0 \geq 1$, a expressão vale.</p>
-<p>$\blacksquare$</p>
-<h3 id="ωn---melhor-caso">Ω(n) - Melhor caso<a hidden class="anchor" aria-hidden="true" href="#ωn---melhor-caso">#</a></h3>
-<h3 id="definição-1">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-1">#</a></h3>
-<p>$$\Omega(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \geq cg(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplo-1">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
-<p>$$\Omega(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\left\{ 3n^4, 5n^4, \dots \right\}$$
-$$\left\{ 3n^5, 5n^5, \dots \right\}$$
-$$\left\{ n^n, 2^n, 3^n, \dots \right\}$$
-$$\left\{ n \log n, n^2 \log n, \dots \right\}$$</p>
-<p>Nesse caso, $\Omega(n^3) $ é o limite inferior.</p>
-<p><img alt="Complexidade Omega(n)" loading="lazy" src="/big-omega.png"></p>
-<p>A linha vermelha corresponde ao $\Omega(n^3)$ (ele eventualmente é ultrapassado pelos outros).</p>
-<blockquote>
-<p>Professor não deu nenhuma prova para esse caso 🤷,
-mas ele é incluso nas provas para θ(n)</p>
-</blockquote>
-<h3 id="θn---caso-médio">Θ(n) - Caso Médio<a hidden class="anchor" aria-hidden="true" href="#θn---caso-médio">#</a></h3>
-<h3 id="definição-2">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-2">#</a></h3>
-<p>$$\Theta(g(n)) = \{ f(n): \exists \ c_1, c_2 &gt; 0, n_{0} \geq 0 \text{ tal que } c_1 g(n) \leq f(n) \leq c_2 g(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h4>
-<p>$$\Theta(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\Theta(n^4) = \left\{ 3n^4, 5n^4, \dots \right\}$$
-$$\Theta(n^5) = \left\{ 3n^5, 5n^5, \dots \right\}$$
-$$\Theta(n \log n) = \left\{ 2n \log n, 5n \log n, \dots \right\}$$</p>
-<p>Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.</p>
-<p><img alt="Complexidade Tetha(n)" loading="lazy" src="/big-tetha.png"></p>
-<p>A linha vermelha corresponde ao $ \theta (n^3)$.</p>
-<h3 id="provas-para-θn">Provas para θ(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-θn">#</a></h3>
-<p>$$\frac{1}{2}n^2-3n=\theta(n^2)$$</p>
-<p>Pela definição da notação θ <strong>(esse é diferente dos outros)</strong>, $\exists c_1, c_2 &gt; 0 \text{ e } n_0 \geq 0$</p>
-<p>tal que</p>
-<p>$$c_1n^2 \leq \frac{1}{2}n^2-3n \leq c_2n^2$$</p>
-<h4 id="parte-1">Parte 1<a hidden class="anchor" aria-hidden="true" href="#parte-1">#</a></h4>
-<p>Provar que $\frac{1}{2}n^2-3n \leq c_2n^2$</p>
-<p>temos que $\frac{1}{2}n^2-3n \leq \frac{1}{2}n^2$</p>
-<p>isto vale $c_2 = \frac{1}{2}$ e $n_0 \geq 0$</p>
-<h4 id="parte-2">Parte 2<a hidden class="anchor" aria-hidden="true" href="#parte-2">#</a></h4>
-<p>$$c_1n^2\leq\frac{1}{2}n^2-3n$$
-$$\frac{1}{2}n^2 -3n \geq c_1n^2$$</p>
-<p>temos que</p>
-<p>$$\frac{1}{2}n^2 -3n \geq \frac{1}{4}n^2 + \boxed{\frac{1}{4}n^2-3n} \geq \frac{1}{4}n^2$$</p>
-<p>A parte dentro do quadrado é $\geq 0$,</p>
-<p>Quando $\frac{1}{4}n^2-3n \geq 0$</p>
-<p>temos $\frac{1}{4}n^2 \geq 3n $</p>
-<p>$$c_1 = \frac{1}{4} \text{ e } n_0 \geq 12 $$</p>
-<p>Para $c_1=\frac{1}{4}$, $c_2 = \frac{1}{2}$ e $n_0 = max(0,12) = 12$</p>
-<p>A expressão vale.</p>
-<p>Logo $\frac{1}{2}n^2-3n=\theta(n^2)$</p>
-<p>$\blacksquare$</p>
+  <div class="post-content"><h2 id="definição-de-computador">Definição de computador<a hidden class="anchor" aria-hidden="true" href="#definição-de-computador">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#66d9ef">Computador</span> <span style="color:#f92672">::</span> <span style="color:#66d9ef">Entrada</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">Saida</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">Computador</span> entrada <span style="color:#f92672">=</span> <span style="color:#f92672">...</span>
+</span></span></code></pre></div><p>Todo computador deve ter entradas e saídas.</p>
+<h2 id="eniac">ENIAC<a hidden class="anchor" aria-hidden="true" href="#eniac">#</a></h2>
+<ul>
+<li>Usava válvulas</li>
+<li>Operadores de Computador</li>
+<li>Sistema <strong>monoprogramado</strong> (1 programa por vez)</li>
+</ul>
+<h2 id="sistema-em-lote-batch">Sistema em lote (BATCH)<a hidden class="anchor" aria-hidden="true" href="#sistema-em-lote-batch">#</a></h2>
+<ul>
+<li>Sistema gerencia a fila</li>
+<li>Cada processo -&gt; <em>job</em></li>
+<li>Sem interação com o usuário</li>
+<li><em>jobs</em> independentes</li>
+</ul>
+<h2 id="dispositivos-de-es">Dispositivos de E/S<a hidden class="anchor" aria-hidden="true" href="#dispositivos-de-es">#</a></h2>
+<ul>
+<li>Programadores precisavam conhecer as particularidades do hardware de cada dispositivo</li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
-      <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
-      <li><a href="http://localhost:1313/tags/big-o/">Big O</a></li>
+      <li><a href="http://localhost:1313/tags/hardware/">Hardware</a></li>
     </ul>
 <nav class="paginav">
-  <a class="next" href="http://localhost:1313/posts/aula-3/">
-    <span class="title">Next »</span>
+  <a class="prev" href="http://localhost:1313/posts/aula-0/">
+    <span class="title">« Prev</span>
     <br>
-    <span>Técnicas de Projetos de Algoritmos</span>
+    <span>Revisão de Estatística</span>
   </a>
 </nav>
 

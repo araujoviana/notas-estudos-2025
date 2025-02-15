@@ -18,11 +18,11 @@ $$\left\\{ 3n, 5n, \dots \right\\}$$
 $$\left\\{ 1, 5, 7, 9, \dots \right\\}$$
 $$\left\\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\\}$$
 
-Nesse caso, $O(n^3) $ é o limite superior.
 
 ![Complexidade O(n)](/images/big-o.png)
 
-No caso, a linha vermelha corresponde ao $O(n^3)$
+Nesse caso, $O(n^3) $ é o limite superior.
+
 
 ### Provas para O(n)
 
@@ -140,11 +140,10 @@ $$\left\\{ 3n^5, 5n^5, \dots \right\\}$$
 $$\left\\{ n^n, 2^n, 3^n, \dots \right\\}$$ 
 $$\left\\{ n \log n, n^2 \log n, \dots \right\\}$$ 
 
-Nesse caso, $\Omega(n^3) $ é o limite inferior.
 
 ![Complexidade Omega(n)](/images/big-omega.png)
 
-A linha vermelha corresponde ao $\Omega(n^3)$ (ele eventualmente é ultrapassado pelos outros).
+Nesse caso, $\Omega(n^3) $ é o limite inferior.
 
 > Professor não deu nenhuma prova para esse caso 🤷,
 > mas ele é incluso nas provas para θ(n) 
@@ -160,11 +159,10 @@ $$\Theta(n^4) = \left\\{ 3n^4, 5n^4, \dots \right\\}$$
 $$\Theta(n^5) = \left\\{ 3n^5, 5n^5, \dots \right\\}$$ 
 $$\Theta(n \log n) = \left\\{ 2n \log n, 5n \log n, \dots \right\\}$$ 
 
-Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.
 
 ![Complexidade Tetha(n)](/images/big-tetha.png)
 
-A linha vermelha corresponde ao $ \theta (n^3)$.
+Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.
 
 ### Provas para θ(n)
 

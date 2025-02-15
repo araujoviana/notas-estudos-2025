@@ -1,0 +1,27 @@
+\documentclass[tikz,12pt]{article}
+\usepackage{pgfplots}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = middle,
+    xlabel = $n$, ylabel = {$f(n)$},
+    enlargelimits,
+    width=15cm, height=10cm,
+    xtick={1,5,10,15,20},
+    ytick={1,5,10,50,100,500,1000},
+    domain=1:20,
+    legend style={at={(0.5,-0.15)}, anchor=north, legend columns=3}
+]
+    \addplot[blue, thick] {3*x^3};
+    \addplot[red, thick] {5*x^3};
+    \addplot[green, thick] {10*x^3};
+    \addplot[orange, thick] {50*x^3};
+    \addplot[cyan, thick] {3*x^2};
+    \addplot[purple, thick] {5*x};
+    \addplot[magenta, thick] {1/(x^3)};
+
+    \legend{$3n^3$, $5n^3$, $10n^3$, $50n^3$, $3n^2$, $5n$, $\frac{1}{n^3}$}
+\end{axis}
+\end{tikzpicture}
+\end{document}
