@@ -20,7 +20,7 @@ $$\left\\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\\}$$
 
 Nesse caso, $O(n^3) $ é o limite superior.
 
-![Complexidade O(n)](/big-o.png)
+![Complexidade O(n)](/images/big-o.png)
 
 No caso, a linha vermelha corresponde ao $O(n^3)$
 
@@ -142,7 +142,7 @@ $$\left\\{ n \log n, n^2 \log n, \dots \right\\}$$
 
 Nesse caso, $\Omega(n^3) $ é o limite inferior.
 
-![Complexidade Omega(n)](/big-omega.png)
+![Complexidade Omega(n)](/images/big-omega.png)
 
 A linha vermelha corresponde ao $\Omega(n^3)$ (ele eventualmente é ultrapassado pelos outros).
 
@@ -162,7 +162,7 @@ $$\Theta(n \log n) = \left\\{ 2n \log n, 5n \log n, \dots \right\\}$$
 
 Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.
 
-![Complexidade Tetha(n)](/big-tetha.png)
+![Complexidade Tetha(n)](/images/big-tetha.png)
 
 A linha vermelha corresponde ao $ \theta (n^3)$.
 
