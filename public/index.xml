@@ -20,27 +20,27 @@ No caso, a linha vermelha corresponde ao $O(n^3)$</description>
     </item>
     <item>
       <title>Técnicas de Projetos de Algoritmos</title>
-      <link>http://localhost:1313/posts/aula_3/</link>
+      <link>http://localhost:1313/posts/aula-3/</link>
       <pubDate>Thu, 13 Feb 2025 13:26:05 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula_3/</guid>
+      <guid>http://localhost:1313/posts/aula-3/</guid>
       <description>Técnicas gerais Backtracking Categoria de algorítmos que consistem em enumerar todas as combinações possíveis (provavelmente em uma árvore) para uma solução e avaliar se satisfazem o problema. Costuma ser recursivo.
 Seu método de funcionamento é semelhante ao Depth First Search.
 Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posicionadas em um tabuleiro de modo que nenhuma delas estejam na mesma linha, coluna e diagonal.</description>
     </item>
     <item>
       <title>Classes em Java</title>
-      <link>http://localhost:1313/posts/aula_2/</link>
+      <link>http://localhost:1313/posts/aula-1/</link>
       <pubDate>Thu, 13 Feb 2025 13:14:22 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula_2/</guid>
+      <guid>http://localhost:1313/posts/aula-1/</guid>
       <description>Classes em Java Linguagens como Java, C# e C++ seguem o paradigma da Programação orientada a objeto, onde os componentes do programa são designados por classes e objetos.
 Cachorro Definição Exemplo de uma classe do tipo Cachorro em Java, contendo os componentes básicos de uma classe.
 // Classe public class Cachorro { // Atributos // Constantes private final int anoDeNascimento; private final String raca; private final String cor; // Variáveis mutáveis private int energia; private boolean acordado; // Métodos // Construtores public Cachorro() { anoDeNascimento = 2025; raca = &amp;#34;Vira lata&amp;#34;; cor = &amp;#34;Caramelo&amp;#34;; energia = 5; acordado = true; } public Cachorro(int anoDeNascimento, String raca, String cor) { this.</description>
     </item>
     <item>
       <title>Revisão de Estatística</title>
-      <link>http://localhost:1313/posts/aula_0/</link>
+      <link>http://localhost:1313/posts/aula-0/</link>
       <pubDate>Tue, 11 Feb 2025 17:39:43 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula_0/</guid>
+      <guid>http://localhost:1313/posts/aula-0/</guid>
       <description>⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
 Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
 Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:</description>
