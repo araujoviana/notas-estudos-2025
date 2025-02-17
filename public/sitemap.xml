@@ -2,31 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-5/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/estrutura-de-dados-ii/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/revis%C3%A3o/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/algoritmos/</loc>
     <lastmod>2025-02-14T15:18:20-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-02-14T15:18:20-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/big-o/</loc>
-    <lastmod>2025-02-14T15:18:20-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-02-14T15:18:20-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2025-02-14T15:18:20-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/projeto-e-an%C3%A1lise-de-algoritmos-ii/</loc>
     <lastmod>2025-02-14T15:18:20-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-3/</loc>
-    <lastmod>2025-02-14T15:18:20-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/revis%C3%A3o/</loc>
-    <lastmod>2025-02-14T15:18:20-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-02-14T15:18:20-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/recurs%C3%A3o/</loc>
@@ -36,15 +48,6 @@
     <lastmod>2025-02-13T13:26:05-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-1/</loc>
-    <lastmod>2025-02-13T13:14:22-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/estrutura-de-dados-ii/</loc>
-    <lastmod>2025-02-13T13:14:22-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/java/</loc>
-    <lastmod>2025-02-13T13:14:22-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</loc>
     <lastmod>2025-02-13T13:14:22-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/dif%C3%ADcil/</loc>

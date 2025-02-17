@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Vetores, Pilhas e Filas em Java | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Java, Programação orientada a objetos, Revisão">
+<meta name="description" content="Vetores em Java Definição Usado pra armazenar múltiplos valores do mesmo tipo.
+double [] notas; int[] notas = new int[1000]; Use double ao invés de float em Java.
+Costumam ser populadas com um loop for
+import java.util.Random; public class Vetores { public static void main(String []args) { int []w = new Random(); // O(n) for(int i = 0; i &lt; w.length; i&#43;&#43;) { w[i] = r.nextInt(11); } // Agora a matriz está populada } } Nomenclatura A nomenclatura muda de acordo com a dimensionalidade do vetor:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-5/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Vetores, Pilhas e Filas em Java
+    </h1>
+    <div class="post-meta"><span title='2025-02-17 19:28:32 -0300 -03'>February 17, 2025</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#vetores-em-java" aria-label="Vetores em Java">Vetores em Java</a><ul>
+                        
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o" aria-label="Definição">Definição</a></li>
+                <li>
+                    <a href="#nomenclatura" aria-label="Nomenclatura">Nomenclatura</a></li>
+                <li>
+                    <a href="#pilhas-usando-vetores" aria-label="Pilhas usando vetores">Pilhas usando vetores</a><ul>
+                        
+                <li>
+                    <a href="#obrigat%c3%b3rias" aria-label="Obrigatórias">Obrigatórias</a></li>
+                <li>
+                    <a href="#opcionais" aria-label="Opcionais">Opcionais</a></li></ul>
+                </li>
+                <li>
+                    <a href="#implementa%c3%a7%c3%a3o-de-m%c3%a9todos-b%c3%a1sicos" aria-label="Implementação de métodos básicos">Implementação de métodos básicos</a></li>
+                <li>
+                    <a href="#filas-usando-vetores" aria-label="Filas usando vetores">Filas usando vetores</a><ul>
+                        
+                <li>
+                    <a href="#obrigat%c3%b3rias-1" aria-label="Obrigatórias">Obrigatórias</a></li>
+                <li>
+                    <a href="#opcionais-1" aria-label="Opcionais">Opcionais</a></li></ul>
+                </li>
+                <li>
+                    <a href="#filas-circulares" aria-label="Filas circulares">Filas circulares</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="vetores-em-java">Vetores em Java<a hidden class="anchor" aria-hidden="true" href="#vetores-em-java">#</a></h2>
+<h3 id="definição">Definição<a hidden class="anchor" aria-hidden="true" href="#definição">#</a></h3>
+<p>Usado pra armazenar múltiplos valores do mesmo tipo.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#f92672">[]</span> notas;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> notas <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>1000<span style="color:#f92672">]</span>;
+</span></span></code></pre></div><blockquote>
+<p>Use double ao invés de float em Java.</p>
+</blockquote>
+<p>Costumam ser populadas com um loop <code>for</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Random;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Vetores</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String <span style="color:#f92672">[]</span>args) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> <span style="color:#f92672">[]</span>w <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// O(n)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0; i <span style="color:#f92672">&lt;</span> w.<span style="color:#a6e22e">length</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>            w<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> r.<span style="color:#a6e22e">nextInt</span>(11);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Agora a matriz está populada</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="nomenclatura">Nomenclatura<a hidden class="anchor" aria-hidden="true" href="#nomenclatura">#</a></h3>
+<p>A nomenclatura muda de acordo com a dimensionalidade do vetor:</p>
+<ol>
+<li><strong>Vetores</strong>: 1 dimensão.</li>
+<li><strong>Matrizes</strong>: 2 dimensões.</li>
+<li><strong>Arrays</strong>: 3 ou mais dimensões.</li>
+</ol>
+<h3 id="pilhas-usando-vetores">Pilhas usando vetores<a hidden class="anchor" aria-hidden="true" href="#pilhas-usando-vetores">#</a></h3>
+<p>Toda pilha contém dados que podem ser armazenados em vetores (ou listas encadeadas), e possui as seguintes operações:</p>
+<blockquote>
+<p>Lembrando que pilhas são <strong>LIFO</strong> e filas são <strong>FIFO</strong></p>
+</blockquote>
+<h4 id="obrigatórias">Obrigatórias<a hidden class="anchor" aria-hidden="true" href="#obrigatórias">#</a></h4>
+<ol>
+<li><code>push()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">push</span>(<span style="color:#66d9ef">int</span> valor) {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>pop()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">pop</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="opcionais">Opcionais<a hidden class="anchor" aria-hidden="true" href="#opcionais">#</a></h4>
+<ol>
+<li><code>peek()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>isEmpty()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> bool <span style="color:#a6e22e">isEmpty</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>isFull()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> bool <span style="color:#a6e22e">isFull</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<h3 id="implementação-de-métodos-básicos">Implementação de métodos básicos<a hidden class="anchor" aria-hidden="true" href="#implementação-de-métodos-básicos">#</a></h3>
+<h3 id="filas-usando-vetores">Filas usando vetores<a hidden class="anchor" aria-hidden="true" href="#filas-usando-vetores">#</a></h3>
+<p>Toda fila contém dados que podem ser armazenados em vetores (ou listas encadeadas), e possui as seguintes operações:</p>
+<h4 id="obrigatórias-1">Obrigatórias<a hidden class="anchor" aria-hidden="true" href="#obrigatórias-1">#</a></h4>
+<ol>
+<li><code>enqueue()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">enqueue</span>(<span style="color:#66d9ef">int</span> valor) {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>dequeue()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">dequeue</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="opcionais-1">Opcionais<a hidden class="anchor" aria-hidden="true" href="#opcionais-1">#</a></h4>
+<ol>
+<li><code>peek()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">peek</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>isEmpty()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> bool <span style="color:#a6e22e">isEmpty</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li><code>isFull()</code> $O(1)$
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> bool <span style="color:#a6e22e">isFull</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#960050;background-color:#1e0010">\\</span> ...
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ol>
+<p>As pilhas <em>e</em> filas <strong>não</strong> foram feitas para operações de busca ao contrário da maioria das estrutura de dados.</p>
+<h3 id="filas-circulares">Filas circulares<a hidden class="anchor" aria-hidden="true" href="#filas-circulares">#</a></h3>
+<p>O maior problema das filas normais é o desperdício de espaço ocasionado pelo movimento dos dois ponteiros, o que não ocorre na pilha, pois temos apenas um ponteiro para rastrear os elementos dela.</p>
+<p><img alt="Fila não circular" loading="lazy" src="/posts/aula-5/images/noncircular-queue.png"></p>
+<p>Então usamos a <strong>fila circular</strong>, que &ldquo;dá a volta&rdquo; ao redor dela mesma, assim ela só precisaria alocar mais memória quando absolutamente necessário.</p>
+<p><img alt="Fila circular" loading="lazy" src="/posts/aula-5/images/circular-queue.png"></p>
+<p>Ela possui a mesma funcionalidade da fila normal, mas consegue manter um ciclo de armazenamento sem desperdiçar memória.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/java/">Java</a></li>
+      <li><a href="http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/">Programação Orientada a Objetos</a></li>
+      <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-3/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Provas de Complexidade - O(n), Ω(n), θ(n)</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

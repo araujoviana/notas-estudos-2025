@@ -6,8 +6,18 @@
     <description>Recent content in Posts on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2025 15:18:20 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2025 19:28:32 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aula 5</title>
+      <link>http://localhost:1313/posts/aula-5/</link>
+      <pubDate>Mon, 17 Feb 2025 19:28:32 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-5/</guid>
+      <description>Vetores em Java Definição Usado pra armazenar múltiplos valores do mesmo tipo.
+double [] notas; int[] notas = new int[1000]; Use double ao invés de float em Java.
+Costumam ser populadas com um loop for
+import java.util.Random; public class Vetores { public static void main(String []args) { int []w = new Random(); // O(n) for(int i = 0; i &amp;lt; w.length; i++) { w[i] = r.nextInt(11); } // Agora a matriz está populada } } Nomenclatura A nomenclatura muda de acordo com a dimensionalidade do vetor:</description>
+    </item>
     <item>
       <title>Provas de Complexidade - O(n), Ω(n), θ(n)</title>
       <link>http://localhost:1313/posts/aula-3/</link>
@@ -16,7 +26,7 @@
       <description>O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &amp;gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
 Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
 Nesse caso, $O(n^3) $ é o limite superior.
-No caso, a linha vermelha corresponde ao $O(n^3)$</description>
+Provas para O(n) $$n^2 + 3n = O(n^3)$$</description>
     </item>
     <item>
       <title>Técnicas de Projetos de Algoritmos</title>

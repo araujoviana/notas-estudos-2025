@@ -159,6 +159,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Vetores, Pilhas e Filas em Java
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Vetores em Java Definição Usado pra armazenar múltiplos valores do mesmo tipo.
+double [] notas; int[] notas = new int[1000]; Use double ao invés de float em Java.
+Costumam ser populadas com um loop for
+import java.util.Random; public class Vetores { public static void main(String []args) { int []w = new Random(); // O(n) for(int i = 0; i &lt; w.length; i&#43;&#43;) { w[i] = r.nextInt(11); } // Agora a matriz está populada } } Nomenclatura A nomenclatura muda de acordo com a dimensionalidade do vetor:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-17 19:28:32 -0300 -03'>February 17, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Vetores, Pilhas e Filas em Java" href="http://localhost:1313/posts/aula-5/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Provas de Complexidade - O(n), Ω(n), θ(n)
     </h2>
   </header>
@@ -166,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <p>O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
 Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
 Nesse caso, $O(n^3) $ é o limite superior.
-No caso, a linha vermelha corresponde ao $O(n^3)$...</p>
+Provas para O(n) $$n^2 &#43; 3n = O(n^3)$$...</p>
   </div>
   <footer class="entry-footer"><span title='2025-02-14 15:18:20 -0300 -03'>February 14, 2025</span>&nbsp;·&nbsp;4 min</footer>
   <a class="entry-link" aria-label="post link to Provas de Complexidade - O(n), Ω(n), θ(n)" href="http://localhost:1313/posts/aula-3/"></a>

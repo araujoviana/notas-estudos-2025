@@ -1,0 +1,52 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+\begin{document}
+\begin{tikzpicture}[
+    segment/.style={draw=red, thick},
+    filledsegment/.style={draw=red, thick, fill=red!30},
+    index/.style={font=\small, inner sep=1pt},
+    pointer/.style={->, thick, shorten >=2pt, >=Stealth},
+    textnode/.style={font=\small, align=center}
+  ]
+  % Parameters
+  \def\nsegments{5}    % Total number of segments
+  \def\radius{2cm}     % Radius of the circular queue
+  \def\front{3}        % Index of the front pointer
+  \def\rear{4}         % Index of the rear pointer
+
+  % Draw circular segments
+  \foreach \i in {0,...,\numexpr\nsegments-1\relax}{
+    \pgfmathsetmacro{\startAngle}{360/\nsegments * \i}
+    \pgfmathsetmacro{\endAngle}{360/\nsegments * (\i+1)}
+    % Fill segments if occupied (here, indices 3 and 4 are considered filled)
+    \ifnum\i=3
+      \draw[filledsegment] (\startAngle:\radius)
+        arc[start angle=\startAngle, end angle=\endAngle, radius=\radius] -- (\startAngle:\radius);
+    \else\ifnum\i=4
+      \draw[filledsegment] (\startAngle:\radius)
+        arc[start angle=\startAngle, end angle=\endAngle, radius=\radius] -- (\startAngle:\radius);
+    \else
+      \draw[segment] (\startAngle:\radius)
+        arc[start angle=\startAngle, end angle=\endAngle, radius=\radius] -- (\startAngle:\radius);
+    \fi\fi
+  }
+
+  % Draw index labels on each segment
+  \foreach \i in {0,...,\numexpr\nsegments-1\relax}{
+    \pgfmathsetmacro{\midAngle}{360/\nsegments * (\i+0.5)}
+    \node[index] at (\midAngle:\radius+0.4cm) {\i};
+  }
+
+  % Draw the 'Frente' (front) pointer
+  \pgfmathsetmacro{\frontAngle}{360/\nsegments * (\front+0.5)}
+  \node[textnode] (frontLabel) at (\frontAngle:\radius+1cm) {Frente = \front};
+
+  % Draw the 'Fim' (rear) pointer
+  \pgfmathsetmacro{\rearAngle}{360/\nsegments * (\rear+0.5)}
+  \node[textnode] (rearLabel) at (\rearAngle:\radius+1cm) {Fim = \rear};
+
+\end{tikzpicture}
+\end{document}

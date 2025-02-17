@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2025 15:18:20 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 17 Feb 2025 19:28:32 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programação Orientada a Objetos</title>
+      <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Revisão</title>
+      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Algoritmos</title>
       <link>http://localhost:1313/tags/algoritmos/</link>
@@ -23,31 +44,10 @@
       <description></description>
     </item>
     <item>
-      <title>Revisão</title>
-      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Recursão</title>
       <link>http://localhost:1313/tags/recurs%C3%A3o/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/recurs%C3%A3o/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Java</title>
-      <link>http://localhost:1313/tags/java/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/java/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Programação Orientada a Objetos</title>
-      <link>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/programa%C3%A7%C3%A3o-orientada-a-objetos/</guid>
       <description></description>
     </item>
     <item>
