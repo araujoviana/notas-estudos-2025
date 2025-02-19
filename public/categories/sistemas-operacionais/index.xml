@@ -6,8 +6,15 @@
     <description>Recent content in Sistemas Operacionais on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 15:04:39 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2025 15:16:46 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/sistemas-operacionais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Evolução do Gerenciamento de Processos</title>
+      <link>http://localhost:1313/posts/aula-6/</link>
+      <pubDate>Tue, 18 Feb 2025 15:16:46 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-6/</guid>
+      <description>Sistemas Tipos de tratamento de programas Sistemas monoprogramados - Carrega apenas um programa por vez. Sistemas multiprogramados - Carrega múltiplos programas na memória. Problemas dos computadores (da época) A CPU ficava ociosa quando precisava interagir com um dispositivo de E/S. Programadores precisavam levar em consideração as particularidades de hardware de cada sistema para programar. Soluções Problema 1 (CPU ociosa) Preemptividade: Sistema era capaz de pausar um processo que estivesse aguardando por uma operação de E/S, liberando a CPU (Troca de contexto).</description>
+    </item>
     <item>
       <title>ENIAC e Sistemas em Lote</title>
       <link>http://localhost:1313/posts/aula-4/</link>

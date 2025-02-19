@@ -7,6 +7,7 @@ tags = ['Revisão', 'Algoritmos', 'Big O']
 +++
 
 ## O(n) - Pior caso
+---
 
 ### Definição
 $$O(g(n)) = \\{ f(n): \exists \ c  > 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \\}$$
@@ -129,6 +130,7 @@ $\blacksquare$
 
 
 ### Ω(n) - Melhor caso
+---
 
 ### Definição
 $$\Omega(g(n)) = \\{ f(n): \exists \ c  > 0, n_{0} \geq 0 \text{ tal que } f(n) \geq cg(n), \forall n \geq n_0 \\}$$
@@ -149,6 +151,7 @@ Nesse caso, $\Omega(n^3) $ é o limite inferior.
 > mas ele é incluso nas provas para θ(n) 
 
 ### Θ(n) - Caso Médio
+---
 
 ### Definição
 $$\Theta(g(n)) = \\{ f(n): \exists \ c_1, c_2 > 0, n_{0} \geq 0 \text{ tal que } c_1 g(n) \leq f(n) \leq c_2 g(n), \forall n \geq n_0 \\}$$

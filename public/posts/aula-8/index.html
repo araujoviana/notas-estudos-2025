@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Introdução a Probabilidades | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Estatística, Probabilidade">
+<meta name="description" content="Conceitos Básicos Experimento aleatório Procedimento cujo resultado é incerto
+Exemplos:
+Jogar uma moeda Sortear um número inteiro de um a cem Lançar um dado Espaço amostral O conjunto de todos os resultados possíveis de um experimento aleatório, representado por $\Omega$
+Exemplos:
+Jogar uma moeda $\Omega = $ {$\text{cara}, \text{coroa}$} Sortear um número inteiro de um a cem $\Omega = $ {$1,2,\dots,99,100$} Lançar um dado $\Omega = $ {$1,2,3,4,5,6$} Evento Qualquer subconjunto do espaço amostral, ou seja,">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-8/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-8/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Introdução a Probabilidades
+    </h1>
+    <div class="post-meta"><span title='2025-02-19 16:41:58 -0300 -03'>February 19, 2025</span>&nbsp;·&nbsp;6 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#conceitos-b%c3%a1sicos" aria-label="Conceitos Básicos">Conceitos Básicos</a><ul>
+                        
+                <li>
+                    <a href="#experimento-aleat%c3%b3rio" aria-label="Experimento aleatório">Experimento aleatório</a></li>
+                <li>
+                    <a href="#espa%c3%a7o-amostral" aria-label="Espaço amostral">Espaço amostral</a></li>
+                <li>
+                    <a href="#evento" aria-label="Evento">Evento</a><ul>
+                        
+                <li>
+                    <a href="#tipos-de-evento-espec%c3%adficos" aria-label="Tipos de evento específicos">Tipos de evento específicos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#eventos-complementares" aria-label="Eventos complementares">Eventos complementares</a></li></ul>
+                </li>
+                <li>
+                    <a href="#uni%c3%a3o-e-interse%c3%a7%c3%a3o-de-eventos" aria-label="União e interseção de eventos">União e interseção de eventos</a><ul>
+                        
+                <li>
+                    <a href="#uni%c3%a3o-ou" aria-label="União (OU)">União (OU)</a></li>
+                <li>
+                    <a href="#interse%c3%a7%c3%a3o-e" aria-label="Interseção (E)">Interseção (E)</a></li>
+                <li>
+                    <a href="#propriedades-da-uni%c3%a3o-e-interse%c3%a7%c3%a3o" aria-label="Propriedades da união e interseção">Propriedades da união e interseção</a></li></ul>
+                </li>
+                <li>
+                    <a href="#diferen%c3%a7a-entre-eventos" aria-label="Diferença entre eventos">Diferença entre eventos</a></li>
+                <li>
+                    <a href="#implica%c3%a7%c3%a3o-e-exclusividade" aria-label="Implicação e exclusividade">Implicação e exclusividade</a></li>
+                <li>
+                    <a href="#probabilidades" aria-label="Probabilidades">Probabilidades</a><ul>
+                        
+                <li>
+                    <a href="#teorema" aria-label="Teorema">Teorema</a></li>
+                <li>
+                    <a href="#c%c3%a1lculo-da-probabilidade" aria-label="Cálculo da Probabilidade">Cálculo da Probabilidade</a></li>
+                <li>
+                    <a href="#maneiras-de-atribuir-probabilidades" aria-label="Maneiras de Atribuir Probabilidades">Maneiras de Atribuir Probabilidades</a></li></ul>
+                </li>
+                <li>
+                    <a href="#adi%c3%a7%c3%a3o-de-probabilidades" aria-label="Adição de Probabilidades">Adição de Probabilidades</a></li>
+                <li>
+                    <a href="#eventos-independentes-e-dependentes" aria-label="Eventos Independentes e Dependentes">Eventos Independentes e Dependentes</a></li>
+                <li>
+                    <a href="#multiplica%c3%a7%c3%a3o-de-probabilidades" aria-label="Multiplicação de Probabilidades">Multiplicação de Probabilidades</a><ul>
+                        
+                <li>
+                    <a href="#probabilidade-condicional" aria-label="Probabilidade Condicional">Probabilidade Condicional</a></li>
+                <li>
+                    <a href="#regra-da-multiplica%c3%a7%c3%a3o-generalizada" aria-label="Regra da Multiplicação Generalizada">Regra da Multiplicação Generalizada</a></li>
+                <li>
+                    <a href="#teorema-de-bayes" aria-label="Teorema de Bayes">Teorema de Bayes</a></li>
+                <li>
+                    <a href="#eventos-independentes" aria-label="Eventos Independentes">Eventos Independentes</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="conceitos-básicos">Conceitos Básicos<a hidden class="anchor" aria-hidden="true" href="#conceitos-básicos">#</a></h2>
+<hr>
+<h3 id="experimento-aleatório">Experimento aleatório<a hidden class="anchor" aria-hidden="true" href="#experimento-aleatório">#</a></h3>
+<p>Procedimento cujo resultado é <em>incerto</em></p>
+<p>Exemplos:</p>
+<ul>
+<li>Jogar uma moeda</li>
+<li>Sortear um número inteiro de um a cem</li>
+<li>Lançar um dado</li>
+</ul>
+<h3 id="espaço-amostral">Espaço amostral<a hidden class="anchor" aria-hidden="true" href="#espaço-amostral">#</a></h3>
+<p>O conjunto de <strong>todos os resultados possíveis</strong> de um experimento aleatório, representado por $\Omega$</p>
+<p>Exemplos:</p>
+<ul>
+<li>Jogar uma moeda
+<ul>
+<li>$\Omega = $ {$\text{cara}, \text{coroa}$}</li>
+</ul>
+</li>
+<li>Sortear um número inteiro de um a cem
+<ul>
+<li>$\Omega = $ {$1,2,\dots,99,100$}</li>
+</ul>
+</li>
+<li>Lançar um dado
+<ul>
+<li>$\Omega = $ {$1,2,3,4,5,6$}</li>
+</ul>
+</li>
+</ul>
+<h3 id="evento">Evento<a hidden class="anchor" aria-hidden="true" href="#evento">#</a></h3>
+<p>Qualquer <strong>subconjunto</strong> do espaço amostral, ou seja,</p>
+<p>$$E \subseteq \Omega$$</p>
+<p>Exemplos:</p>
+<ul>
+<li>Jogar uma moeda
+<ul>
+<li>$E = $ {$\text{cara}$} (sortear cara) $n(E) = 1$</li>
+</ul>
+</li>
+<li>Sortear um número inteiro de um a cem
+<ul>
+<li>$E = $ {$25,27,26$} (sortear número entre 24 e 28) $n(E) = 3$</li>
+</ul>
+</li>
+<li>Lançar um dado
+<ul>
+<li>$E = $ {$3,5,1$} (lançar número impar no dado) $n(E) = 3$</li>
+</ul>
+</li>
+</ul>
+<h4 id="tipos-de-evento-específicos">Tipos de evento específicos<a hidden class="anchor" aria-hidden="true" href="#tipos-de-evento-específicos">#</a></h4>
+<ol>
+<li>Evento nulo</li>
+</ol>
+<p>Nunca ocorre, representado por</p>
+<p>$$\phi \subset \Omega$$</p>
+<p>Exemplo: Jogar um dado e obter o número 7. $n(E) = 0$</p>
+<ol start="2">
+<li>Evento certo</li>
+</ol>
+<p>Sempre ocorre, representado por</p>
+<p>$$\Omega \subset \Omega$$</p>
+<blockquote>
+<p>É a mesma coisa que o espaço amostral, que contém todas os resultados possíveis.</p>
+</blockquote>
+<p>Exemplo: Jogar um dado e obter um número entre 1 e 7. $n(E) = 6 = n(\Omega)$</p>
+<h3 id="eventos-complementares">Eventos complementares<a hidden class="anchor" aria-hidden="true" href="#eventos-complementares">#</a></h3>
+<p>A cada evento $E$ está associado um evento complementar $E^c$ (ou $E&rsquo;$), o evento $E^c$ ocorre <strong>se e somente se</strong> o evento E não ocorre.</p>
+<p><img alt="Evento complementar" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Diagram_of_the_Complement.png"></p>
+<p>Exemplo: $E  = $ jogar uma moeda e obter cara: $E = $ { $\text{cara}$ }</p>
+<p>$E^c  = $ jogar uma moeda e obter coroa: $E = $ { $\text{coroa}$ }</p>
+<p>Propriedades:</p>
+<p>$$(E^c)^c=E$$
+$$\phi^c = \Omega$$
+$$\Omega^c = \phi$$</p>
+<h2 id="união-e-interseção-de-eventos">União e interseção de eventos<a hidden class="anchor" aria-hidden="true" href="#união-e-interseção-de-eventos">#</a></h2>
+<h3 id="união-ou">União (OU)<a hidden class="anchor" aria-hidden="true" href="#união-ou">#</a></h3>
+<p>Ocorre se e somente se um dos dois eventos ocorre, representado por</p>
+<p>$$E \cup F$$</p>
+<p><img alt="União de 3 conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Venn_0111_1111.svg"></p>
+<h3 id="interseção-e">Interseção (E)<a hidden class="anchor" aria-hidden="true" href="#interseção-e">#</a></h3>
+<p>Ocorre se e somente se os dos dois eventos ocorrem, representado por</p>
+<p>$$E \cap F$$</p>
+<p><img alt="Interseção de 3 conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Venn_0000_0001.svg"></p>
+<h3 id="propriedades-da-união-e-interseção">Propriedades da união e interseção<a hidden class="anchor" aria-hidden="true" href="#propriedades-da-união-e-interseção">#</a></h3>
+<blockquote>
+<p>Aparentemente o conjunto/evento vazio pode ser representado por qualquer circulo riscado, então $\phi$ e $\emptyset$ parecem ser válidos?</p>
+</blockquote>
+<p>$$ 1. \quad E \cup E = E; \quad E \cup \emptyset = E; \quad E \cup \Omega = \Omega; \quad E \cup E^c = \Omega
+$$</p>
+<p>$$
+2. \quad E \cap E = E; \quad E \cap \emptyset = \emptyset; \quad E \cap \Omega = E; \quad E \cap E^c = \emptyset
+$$</p>
+<p>$$
+3. \quad E^c \cap F^c = (E \cup F)^c; \quad (E \cap F)^c = E^c \cup F^c
+$$</p>
+<p>$$
+4. \quad (E \cup F) \cap G = (E \cap G) \cup (F \cap G); \quad (E \cap F) \cup G = (E \cup G) \cap (F \cup G)
+$$</p>
+<blockquote>
+<p>A 4. são as lei de De Morgan</p>
+</blockquote>
+<h2 id="diferença-entre-eventos">Diferença entre eventos<a hidden class="anchor" aria-hidden="true" href="#diferença-entre-eventos">#</a></h2>
+<p>Ocorre se e o evento E ocorre e o evento F não ocorre simultaneamente, representado por,</p>
+<p>$$E - F$$</p>
+<p><img alt="Diferença de conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/23/Relative_compliment.svg"></p>
+<h2 id="implicação-e-exclusividade">Implicação e exclusividade<a hidden class="anchor" aria-hidden="true" href="#implicação-e-exclusividade">#</a></h2>
+<ol>
+<li>Implicação</li>
+</ol>
+<p>Diz-se que $E$ <strong>implica</strong> $F$ se e somente se $E \subset F$. Ou seja, se o evento $E$ ocorre, o evento $F$ também ocorrerá.</p>
+<p><img alt="Implicação de conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Subset.svg/300px-Subset.svg.png"></p>
+<ol start="2">
+<li>Exclusividade</li>
+</ol>
+<p>Diz-se que $E$ e $F$ são <strong>exclusivos</strong> (ou mutuamente exclusivos) se e somente se $E \cap F = \emptyset$. Isto é, o fato de $E$ acontecer <strong>não influencia</strong> na ocorrência de $F$, e vice-versa.</p>
+<p><img alt="Disjunção de conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/56/Example_of_A_is_a_proper_subset_of_B.svg"></p>
+<h2 id="probabilidades">Probabilidades<a hidden class="anchor" aria-hidden="true" href="#probabilidades">#</a></h2>
+<p>As probabilidades, $P(E)$, dos eventos, $E \subset \Omega$, valoram a incerteza acerca da ocorrência ou não ocorrência de eventos relacionados com um processo aleatório e devem satisfazer as seguintes <strong>condições (axiomas)</strong>:</p>
+<ol>
+<li>
+<p>$P(E) \in [0,1]$, para todo evento $E \subset \Omega$;</p>
+</li>
+<li>
+<p>$P(\Omega) = 1$;</p>
+</li>
+<li>
+<p>$P(E) = P(E_1) + P(E_2) + P(E_3) + \dots$ se o evento $E$ for uma união de eventos exclusivos $E_1, E_2, E_3, \dots$</p>
+</li>
+</ol>
+<h3 id="teorema">Teorema<a hidden class="anchor" aria-hidden="true" href="#teorema">#</a></h3>
+<p>As probabilidades dos eventos satisfazem as seguintes propriedades:</p>
+<ol>
+<li>
+<p>$P(\emptyset) = 0$;</p>
+</li>
+<li>
+<p>$P(E^c) = 1 - P(E)$;</p>
+</li>
+<li>
+<p>$P(E - F) = P(E) - P(E \cap F)$. Em particular, se $F$ implica $E$ então $P(E - F) = P(E) - P(F)$ e, consequentemente, $P(F) \leq P(E)$;</p>
+</li>
+<li>
+<p>$P(E \cup F) = P(E) + P(F) - P(E \cap F)$.</p>
+</li>
+</ol>
+<h3 id="cálculo-da-probabilidade">Cálculo da Probabilidade<a hidden class="anchor" aria-hidden="true" href="#cálculo-da-probabilidade">#</a></h3>
+<p>A probabilidade de um evento $ A $ (com $ A \subset \Omega $) é definida como:</p>
+<p>$$
+P(A) = \frac{n(A)}{n(\Omega)}
+$$</p>
+<p>onde:</p>
+<ul>
+<li>$ n(A) $ é o número de resultados favoráveis a $ A $;</li>
+<li>$ n(\Omega) $ é o total de resultados possíveis.</li>
+</ul>
+<blockquote>
+<p><strong>Exemplo Único:</strong><br>
+Ao lançar uma moeda, o espaço amostral é $\Omega = {\text{cara}, \text{coroa}}$ com $ n(\Omega)=2 $. Se $ A $ é o evento “obter cara” (com $ n(A)=1 $), então<br>
+$$
+P(A) = \frac{1}{2}.
+$$</p>
+</blockquote>
+<h3 id="maneiras-de-atribuir-probabilidades">Maneiras de Atribuir Probabilidades<a hidden class="anchor" aria-hidden="true" href="#maneiras-de-atribuir-probabilidades">#</a></h3>
+<ol>
+<li>
+<p><strong>Teórica:</strong><br>
+Supõe-se que o mecanismo é simétrico. Por exemplo, ao lançar um dado balanceado, cada face tem chance igual:<br>
+$$
+P(1)=P(2)=\cdots=P(6)=\frac{1}{6}.
+$$</p>
+</li>
+<li>
+<p><strong>Empírica (Frequência Relativa):</strong><br>
+A probabilidade é definida pela razão entre o número de vezes que o evento ocorre e o total de experimentos realizados.</p>
+</li>
+</ol>
+<h2 id="adição-de-probabilidades">Adição de Probabilidades<a hidden class="anchor" aria-hidden="true" href="#adição-de-probabilidades">#</a></h2>
+<p>Para dois eventos $ A $ e $ B $, a probabilidade de ocorrer pelo menos um deles é:</p>
+<p>$$
+P(A \cup B) = P(A) + P(B) - P(A \cap B)
+$$</p>
+<p>Se $ A $ e $ B $ não podem ocorrer juntos (são mutuamente exclusivos), então:</p>
+<p>$$
+P(A \cup B) = P(A) + P(B)
+$$</p>
+<p><img alt="Adição de múltiplos conjuntos" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Inclusion-exclusion-3sets.png"></p>
+<h2 id="eventos-independentes-e-dependentes">Eventos Independentes e Dependentes<a hidden class="anchor" aria-hidden="true" href="#eventos-independentes-e-dependentes">#</a></h2>
+<ul>
+<li>
+<p><strong>Independentes:</strong><br>
+A ocorrência de um evento não altera a probabilidade do outro.<br>
+<em>Exemplo:</em> Lançar uma moeda duas vezes.</p>
+</li>
+<li>
+<p><strong>Dependentes:</strong><br>
+A ocorrência de um evento influencia a probabilidade do outro.<br>
+<em>Exemplo:</em> Retirar cartas de um baralho sem reposição.</p>
+</li>
+</ul>
+<h2 id="multiplicação-de-probabilidades">Multiplicação de Probabilidades<a hidden class="anchor" aria-hidden="true" href="#multiplicação-de-probabilidades">#</a></h2>
+<blockquote>
+<p>Não achei foto pra essa operação 😥</p>
+</blockquote>
+<p>A probabilidade de dois eventos ocorrerem juntos ($ A $ e $ B $) é dada por:</p>
+<ul>
+<li>
+<p><strong>Para eventos independentes:</strong>
+$$
+P(A \cap B) = P(A) \cdot P(B)
+$$</p>
+</li>
+<li>
+<p><strong>Para eventos dependentes:</strong>
+$$
+P(A \cap B) = P(A) \cdot P(B|A)
+$$
+onde $ P(B|A) $ é a probabilidade de $ B $ ocorrer dado que $ A $ já ocorreu.</p>
+</li>
+</ul>
+<h3 id="probabilidade-condicional">Probabilidade Condicional<a hidden class="anchor" aria-hidden="true" href="#probabilidade-condicional">#</a></h3>
+<p>A probabilidade de um evento $ E $ ocorrer, dado que $ F $ ocorreu, é definida por:</p>
+<p>$$
+P(E|F) = \frac{P(E \cap F)}{P(F)} \quad (\text{com } P(F) &gt; 0)
+$$</p>
+<h3 id="regra-da-multiplicação-generalizada">Regra da Multiplicação Generalizada<a hidden class="anchor" aria-hidden="true" href="#regra-da-multiplicação-generalizada">#</a></h3>
+<p>Para vários eventos $ E_1, E_2, \dots, E_n $:</p>
+<p>$$
+P(E_1 \cap E_2 \cap \dots \cap E_n) = $$
+$$  P(E_1) \cdot P(E_2|E_1) \cdot P(E_3|E_1 \cap E_2) \cdots P(E_n|E_1 \cap \dots \cap E_{n-1})
+$$</p>
+<p>Se os eventos forem independentes, essa regra simplifica para:</p>
+<p>$$
+P(E_1 \cap E_2 \cap \dots \cap E_n) = P(E_1) \cdot P(E_2) \cdots P(E_n)
+$$</p>
+<h3 id="teorema-de-bayes">Teorema de Bayes<a hidden class="anchor" aria-hidden="true" href="#teorema-de-bayes">#</a></h3>
+<blockquote>
+<p>Esse requer um estudo separado e detalhado.</p>
+</blockquote>
+<p>O Teorema de Bayes permite “inverter” a probabilidade condicional, calculando $ P(F_i|E) $ quando conhecemos $ P(E|F_i) $ e as probabilidades dos eventos $ F_i $ (que são mutuamente exclusivos e abrangem todas as possibilidades):</p>
+<p>$$
+P(F_i|E) = \frac{P(F_i) \cdot P(E|F_i)}{\sum_{j} P(F_j) \cdot P(E|F_j)}
+$$</p>
+<h3 id="eventos-independentes">Eventos Independentes<a hidden class="anchor" aria-hidden="true" href="#eventos-independentes">#</a></h3>
+<p>Dois eventos $ E $ e $ F $ são <strong>independentes</strong> se:</p>
+<p>$$
+P(E \cap F) = P(E) \cdot P(F)
+$$</p>
+<p>Isso implica também que, se $ E $ e $ F $ são independentes, seus complementos e combinações (como $ E $ com $ F^c $) são independentes, desde que as condições de probabilidade sejam respeitadas.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/estat%C3%ADstica/">Estatística</a></li>
+      <li><a href="http://localhost:1313/tags/probabilidade/">Probabilidade</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-7/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Definição de software</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -5,14 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Provas de Complexidade - O(n), Ω(n), θ(n) | Anotações de Estudos - 2025</title>
-<meta name="keywords" content="Revisão, Algoritmos, Big O">
-<meta name="description" content="O(n) - Pior caso Definição $$O(g(n)) = \{ f(n): \exists \ c &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$
-Exemplo $$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$ $$\left\{ 3n^2, 5n^2, \dots \right\}$$ $$\left\{ 3n, 5n, \dots \right\}$$ $$\left\{ 1, 5, 7, 9, \dots \right\}$$ $$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$
-Nesse caso, $O(n^3) $ é o limite superior.
-Provas para O(n) $$n^2 &#43; 3n = O(n^3)$$">
+<title>Evolução do Gerenciamento de Processos | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Hardware, UNIX">
+<meta name="description" content="Sistemas Tipos de tratamento de programas Sistemas monoprogramados - Carrega apenas um programa por vez. Sistemas multiprogramados - Carrega múltiplos programas na memória. Problemas dos computadores (da época) A CPU ficava ociosa quando precisava interagir com um dispositivo de E/S. Programadores precisavam levar em consideração as particularidades de hardware de cada sistema para programar. Soluções Problema 1 (CPU ociosa) Preemptividade: Sistema era capaz de pausar um processo que estivesse aguardando por uma operação de E/S, liberando a CPU (Troca de contexto).">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/aula-3/">
+<link rel="canonical" href="http://localhost:1313/posts/aula-6/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -21,7 +18,7 @@ Provas para O(n) $$n^2 &#43; 3n = O(n^3)$$">
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-3/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-6/">
 <noscript>
     <style>
         #theme-toggle,
@@ -140,9 +137,9 @@ document.addEventListener("DOMContentLoaded", function() {
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Provas de Complexidade - O(n), Ω(n), θ(n)
+      Evolução do Gerenciamento de Processos
     </h1>
-    <div class="post-meta"><span title='2025-02-14 15:18:20 -0300 -03'>February 14, 2025</span>&nbsp;·&nbsp;4 min
+    <div class="post-meta"><span title='2025-02-18 15:16:46 -0300 -03'>February 18, 2025</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
@@ -153,52 +150,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#on---pior-caso" aria-label="O(n) - Pior caso">O(n) - Pior caso</a><ul>
+                    <a href="#sistemas" aria-label="Sistemas">Sistemas</a><ul>
                         
                 <li>
-                    <a href="#defini%c3%a7%c3%a3o" aria-label="Definição">Definição</a><ul>
+                    <a href="#tipos-de-tratamento-de-programas" aria-label="Tipos de tratamento de programas">Tipos de tratamento de programas</a></li>
+                <li>
+                    <a href="#problemas-dos-computadores-da-%c3%a9poca" aria-label="Problemas dos computadores (da época)">Problemas dos computadores (da época)</a></li>
+                <li>
+                    <a href="#solu%c3%a7%c3%b5es" aria-label="Soluções">Soluções</a><ul>
                         
                 <li>
-                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
+                    <a href="#problema-1-cpu-ociosa" aria-label="Problema 1 (CPU ociosa)">Problema 1 (CPU ociosa)</a></li></ul>
                 </li>
                 <li>
-                    <a href="#provas-para-on" aria-label="Provas para O(n)">Provas para O(n)</a><ul>
-                        
+                    <a href="#controle-de-acesso-compartilhado-multiusu%c3%a1rios" aria-label="Controle de acesso compartilhado (multiusuários)">Controle de acesso compartilhado (multiusuários)</a></li>
                 <li>
-                    <a href="#prova" aria-label="Prova">Prova</a></li>
+                    <a href="#multics-e-unix" aria-label="Multics e UNIX">Multics e UNIX</a></li>
                 <li>
-                    <a href="#prova-1" aria-label="Prova">Prova</a></li>
+                    <a href="#tipos-de-sistema" aria-label="Tipos de sistema">Tipos de sistema</a></li>
                 <li>
-                    <a href="#prova-2" aria-label="Prova">Prova</a></li>
+                    <a href="#papeis-do-sistema-operacional" aria-label="Papeis do Sistema Operacional">Papeis do Sistema Operacional</a></li>
                 <li>
-                    <a href="#prova-3" aria-label="Prova">Prova</a></li></ul>
+                    <a href="#chamadas-de-sistema-syscalls" aria-label="Chamadas de sistema (syscalls)">Chamadas de sistema (syscalls)</a>
                 </li>
-                <li>
-                    <a href="#%cf%89n---melhor-caso" aria-label="Ω(n) - Melhor caso">Ω(n) - Melhor caso</a></li>
-                <li>
-                    <a href="#defini%c3%a7%c3%a3o-1" aria-label="Definição">Definição</a><ul>
-                        
-                <li>
-                    <a href="#exemplo-1" aria-label="Exemplo">Exemplo</a></li></ul>
-                </li>
-                <li>
-                    <a href="#%ce%b8n---caso-m%c3%a9dio" aria-label="Θ(n) - Caso Médio">Θ(n) - Caso Médio</a></li>
-                <li>
-                    <a href="#defini%c3%a7%c3%a3o-2" aria-label="Definição">Definição</a><ul>
-                        
-                <li>
-                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a></li></ul>
-                </li>
-                <li>
-                    <a href="#provas-para-%ce%b8n" aria-label="Provas para θ(n)">Provas para θ(n)</a><ul>
-                        
-                <li>
-                    <a href="#parte-1" aria-label="Parte 1">Parte 1</a></li>
-                <li>
-                    <a href="#parte-2" aria-label="Parte 2">Parte 2</a>
-                </li>
-            </ul>
-            </li>
             </ul>
             </li>
             </ul>
@@ -206,142 +180,82 @@ document.addEventListener("DOMContentLoaded", function() {
     </details>
 </div>
 
-  <div class="post-content"><h2 id="on---pior-caso">O(n) - Pior caso<a hidden class="anchor" aria-hidden="true" href="#on---pior-caso">#</a></h2>
-<hr>
-<h3 id="definição">Definição<a hidden class="anchor" aria-hidden="true" href="#definição">#</a></h3>
-<p>$$O(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \leq cg(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
-<p>$$O(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\left\{ 3n^2, 5n^2, \dots \right\}$$
-$$\left\{ 3n, 5n, \dots \right\}$$
-$$\left\{ 1, 5, 7, 9, \dots \right\}$$
-$$\left\{ \frac{1}{n}, \frac{1}{n^2}, \frac{1}{n^3} \right\}$$</p>
-<p><img alt="Complexidade O(n)" loading="lazy" src="/posts/aula-3/images/big-o.png"></p>
-<p>Nesse caso, $O(n^3) $ é o limite superior.</p>
-<h3 id="provas-para-on">Provas para O(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-on">#</a></h3>
-<p>$$n^2 + 3n = O(n^3)$$</p>
-<h4 id="prova">Prova<a hidden class="anchor" aria-hidden="true" href="#prova">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
-<p>tal que
-$$n^3+3n \leq cn^3$$
-temos
-$$n^2 + 3n \leq n^3 + 3n^3  \rightarrow 4n^3$$</p>
-<p>isto vale para $c=4$ e $n_0=0$, portanto</p>
-<p>$$n^2 + 3n = O(n^3)$$</p>
-<p>$\blacksquare$</p>
-<p>$$n^2+3n=O(n)$$</p>
-<h4 id="prova-1">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-1">#</a></h4>
-<p>Por <strong>contradição</strong> suponha que $n^2+3n = O(n)$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$,</p>
-<p>tal que</p>
-<p>$$\frac{n^2+3n}{n} \leq \frac{c n}{n}$$</p>
-<p>(A operação de divisão aplicada preserva a desigualdade)</p>
-<p>$$n+3\leq c$$</p>
-<p>Isso é um <em>absurdo</em>, portanto $n^2+3n \neq O(n)$</p>
-<p>$\blacksquare$</p>
-<p>$$\frac{1}{n^2} = O(n^3)$$</p>
-<h4 id="prova-2">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-2">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\frac{1}{n^2} \leq cn^3$$</p>
-<p>temos que</p>
-<p>$$\frac{1}{n^2}=n^{-2} \leq (1)n^3$$</p>
-<p>Para $c=1, n_0\geq 1$ essa expressão vale.</p>
-<p>Portanto $\frac{1}{n^2} = O(n^3)$</p>
-<p>$\blacksquare$</p>
-<p>$$\sqrt{n} + 5 \log_{\frac{3}{2}}n \leq cn^3$$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\sqrt{n} +  \log_{\frac{3}{2}}n \leq cn^3$$</p>
-<p>temos que</p>
-<p>$$  \sqrt{n} + \log_{\frac{3}{2}}n = n^{\frac{1}{2}} + 5 \log_{\frac{3}{2}}n  \leq n^3 + 5n^3 \rightarrow 6n^3   $$</p>
-<p>Para $n_0 \geq 1$ e $c = 6$, a expressão vale. Logo   $\frac{1}{n^2} = O(n^3)$</p>
-<p>$\blacksquare$</p>
-<p>$$5n^3 + 3n^2 - 25 =  O(n^3)$$</p>
-<h4 id="prova-3">Prova<a hidden class="anchor" aria-hidden="true" href="#prova-3">#</a></h4>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$5n^3 + 3n^2 - 25 \leq cn^3$$</p>
-<p>temos</p>
-<p>$$5n^3 + 3n^2 - 25 \leq 5n^3+3n^2 \leq 5n^3 + 3n^3 = 8n^3$$</p>
-<p>(os expoentes são diferentes)</p>
-<p>Para $n_0 \leq 0$ e $c=8$, $5n^3 + 3n^2 - 25 = O(n^3)$</p>
-<p>$\blacksquare$</p>
+  <div class="post-content"><h2 id="sistemas">Sistemas<a hidden class="anchor" aria-hidden="true" href="#sistemas">#</a></h2>
+<h3 id="tipos-de-tratamento-de-programas">Tipos de tratamento de programas<a hidden class="anchor" aria-hidden="true" href="#tipos-de-tratamento-de-programas">#</a></h3>
+<ul>
+<li>Sistemas monoprogramados - Carrega apenas um programa por vez.</li>
+<li>Sistemas multiprogramados - Carrega múltiplos programas na memória.</li>
+</ul>
+<h3 id="problemas-dos-computadores-da-época">Problemas dos computadores (da época)<a hidden class="anchor" aria-hidden="true" href="#problemas-dos-computadores-da-época">#</a></h3>
+<ol>
+<li>A CPU ficava ociosa quando precisava interagir com um dispositivo de E/S.</li>
+<li>Programadores precisavam levar em consideração as particularidades de hardware de cada sistema para programar.</li>
+</ol>
+<h3 id="soluções">Soluções<a hidden class="anchor" aria-hidden="true" href="#soluções">#</a></h3>
+<h4 id="problema-1-cpu-ociosa">Problema 1 (CPU ociosa)<a hidden class="anchor" aria-hidden="true" href="#problema-1-cpu-ociosa">#</a></h4>
+<ul>
+<li>Preemptividade: Sistema era capaz de pausar um processo que estivesse aguardando por uma operação de E/S, liberando a CPU (<strong>Troca de contexto</strong>).</li>
+<li>Escalonamento: Sistema escolhe os processos para serem executados de acordo com algumas políticas.</li>
+</ul>
 <blockquote>
-<p>Esse aqui é chato de escrever 🙃</p>
+<p>Problema 2 não é mencionado no resto da aula.</p>
 </blockquote>
-<p>$$\log_{10} n + \log_{\frac{3}{2}}n + \log_2 n = O(\log_3 n)$$</p>
-<p>Pela definição da notação, $\exists c, n_0 &gt; 0$, tal que</p>
-<p>$$\frac{\log_3 n}{\log_{10} n} + \frac{\log_3 n}{\log_{\frac{3}{2}} n} + \frac{\log_3 n}{\log_2 n} =
-\boxed{\frac{1}{\log_{10} n} + \frac{1}{\log_{\frac{3}{2}} n} + \frac{1}{\log_2 n}}\log_3 n$$</p>
-<p>Para $n_0 \geq 1$, a expressão vale.</p>
-<p>$\blacksquare$</p>
-<h3 id="ωn---melhor-caso">Ω(n) - Melhor caso<a hidden class="anchor" aria-hidden="true" href="#ωn---melhor-caso">#</a></h3>
-<hr>
-<h3 id="definição-1">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-1">#</a></h3>
-<p>$$\Omega(g(n)) = \{ f(n): \exists \ c  &gt; 0, n_{0} \geq 0 \text{ tal que } f(n) \geq cg(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplo-1">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
-<p>$$\Omega(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\left\{ 3n^4, 5n^4, \dots \right\}$$
-$$\left\{ 3n^5, 5n^5, \dots \right\}$$
-$$\left\{ n^n, 2^n, 3^n, \dots \right\}$$
-$$\left\{ n \log n, n^2 \log n, \dots \right\}$$</p>
-<p><img alt="Complexidade Omega(n)" loading="lazy" src="/posts/aula-3/images/big-omega.png"></p>
-<p>Nesse caso, $\Omega(n^3) $ é o limite inferior.</p>
-<blockquote>
-<p>Professor não deu nenhuma prova para esse caso 🤷,
-mas ele é incluso nas provas para θ(n)</p>
-</blockquote>
-<h3 id="θn---caso-médio">Θ(n) - Caso Médio<a hidden class="anchor" aria-hidden="true" href="#θn---caso-médio">#</a></h3>
-<hr>
-<h3 id="definição-2">Definição<a hidden class="anchor" aria-hidden="true" href="#definição-2">#</a></h3>
-<p>$$\Theta(g(n)) = \{ f(n): \exists \ c_1, c_2 &gt; 0, n_{0} \geq 0 \text{ tal que } c_1 g(n) \leq f(n) \leq c_2 g(n), \forall n \geq n_0 \}$$</p>
-<h4 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h4>
-<p>$$\Theta(n^3) = \left\{ 3n^3, 5n^3, 10n^3, 50n^3, \dots \right\}$$
-$$\Theta(n^4) = \left\{ 3n^4, 5n^4, \dots \right\}$$
-$$\Theta(n^5) = \left\{ 3n^5, 5n^5, \dots \right\}$$
-$$\Theta(n \log n) = \left\{ 2n \log n, 5n \log n, \dots \right\}$$</p>
-<p><img alt="Complexidade Tetha(n)" loading="lazy" src="/posts/aula-3/images/big-tetha.png"></p>
-<p>Nesse caso, $\Theta(n^3)$ representa uma faixa de crescimento assintótico em que a função está limitada superior e inferiormente por múltiplos constantes de $n^3$.</p>
-<h3 id="provas-para-θn">Provas para θ(n)<a hidden class="anchor" aria-hidden="true" href="#provas-para-θn">#</a></h3>
-<p>$$\frac{1}{2}n^2-3n=\theta(n^2)$$</p>
-<p>Pela definição da notação θ <strong>(esse é diferente dos outros)</strong>, $\exists c_1, c_2 &gt; 0 \text{ e } n_0 \geq 0$</p>
-<p>tal que</p>
-<p>$$c_1n^2 \leq \frac{1}{2}n^2-3n \leq c_2n^2$$</p>
-<h4 id="parte-1">Parte 1<a hidden class="anchor" aria-hidden="true" href="#parte-1">#</a></h4>
-<p>Provar que $\frac{1}{2}n^2-3n \leq c_2n^2$</p>
-<p>temos que $\frac{1}{2}n^2-3n \leq \frac{1}{2}n^2$</p>
-<p>isto vale $c_2 = \frac{1}{2}$ e $n_0 \geq 0$</p>
-<h4 id="parte-2">Parte 2<a hidden class="anchor" aria-hidden="true" href="#parte-2">#</a></h4>
-<p>$$c_1n^2\leq\frac{1}{2}n^2-3n$$
-$$\frac{1}{2}n^2 -3n \geq c_1n^2$$</p>
-<p>temos que</p>
-<p>$$\frac{1}{2}n^2 -3n \geq \frac{1}{4}n^2 + \boxed{\frac{1}{4}n^2-3n} \geq \frac{1}{4}n^2$$</p>
-<p>A parte dentro do quadrado é $\geq 0$,</p>
-<p>Quando $\frac{1}{4}n^2-3n \geq 0$</p>
-<p>temos $\frac{1}{4}n^2 \geq 3n $</p>
-<p>$$c_1 = \frac{1}{4} \text{ e } n_0 \geq 12 $$</p>
-<p>Para $c_1=\frac{1}{4}$, $c_2 = \frac{1}{2}$ e $n_0 = max(0,12) = 12$</p>
-<p>A expressão vale.</p>
-<p>Logo $\frac{1}{2}n^2-3n=\theta(n^2)$</p>
-<p>$\blacksquare$</p>
+<h3 id="controle-de-acesso-compartilhado-multiusuários">Controle de acesso compartilhado (multiusuários)<a hidden class="anchor" aria-hidden="true" href="#controle-de-acesso-compartilhado-multiusuários">#</a></h3>
+<p>Como previnir o uso excessivo de recursos do computador por um usuário?</p>
+<ul>
+<li>Timesharing - Compartilhamento de tempo da CPU.</li>
+<li>Virtualização de memória - Ilusão de acesso exclusivo à memória.</li>
+</ul>
+<p>Essas tarefas eram feitas pelo <strong>Supervisor</strong>:</p>
+<p><img alt="Supervisor do Atlas" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Ferranti_Atlas_computer_control_console_from_the_University_of_London%2C_about_1964_-_Science_Museum%2C_London_-_DSC05584.jpg"></p>
+<h3 id="multics-e-unix">Multics e UNIX<a hidden class="anchor" aria-hidden="true" href="#multics-e-unix">#</a></h3>
+<p><strong>Multics</strong> foi um SO que implementava:</p>
+<ul>
+<li>Multiprogramação</li>
+<li>Timesharing</li>
+<li>Virtualização de memória</li>
+<li>Muito mais&hellip;</li>
+</ul>
+<p>Então <em>Dennis Ritchie</em> e <em>Ken Thompson</em> reescreveram em <strong>C</strong> o Multics em uma versão mais simples, gerando o <strong>UNIX</strong>, que era mais modular e adaptável.</p>
+<h3 id="tipos-de-sistema">Tipos de sistema<a hidden class="anchor" aria-hidden="true" href="#tipos-de-sistema">#</a></h3>
+<ul>
+<li>Sistemas Interativos - Sistemas padrão do dia a dia.
+<img alt="KDE Plasma" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/a/a1/A_Dell_Inspiron%2C_running_Manjaro_24.0_%22Wynsdey%22_%28KDE_Plasma_6%29.jpg"></li>
+<li>Sistemas de Tempo Real (RTOS) - As tarefas possuem prazo e a troca de contexto precisa ser feita de forma muito rápida
+<img alt="Robô em marte" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d8/NASA_Mars_Rover.jpg"></li>
+</ul>
+<h3 id="papeis-do-sistema-operacional">Papeis do Sistema Operacional<a hidden class="anchor" aria-hidden="true" href="#papeis-do-sistema-operacional">#</a></h3>
+<ul>
+<li>Fornecer uma API composta por chamadas de sistema (<strong>syscalls</strong>).</li>
+<li>Gerenciar recursos do sistema.</li>
+</ul>
+<h3 id="chamadas-de-sistema-syscalls">Chamadas de sistema (syscalls)<a hidden class="anchor" aria-hidden="true" href="#chamadas-de-sistema-syscalls">#</a></h3>
+<p>Maneira que uma aplicação requisita um serviço do SO, geralmente relacionado ao hardware (acessar a câmera, acessar um arquivo, etc.).</p>
+<p>Exemplos de APIs:</p>
+<ul>
+<li>Windows: Win32</li>
+<li><strong>UNIX: POSIX</strong></li>
+<li>Java</li>
+</ul>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/revis%C3%A3o/">Revisão</a></li>
-      <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
-      <li><a href="http://localhost:1313/tags/big-o/">Big O</a></li>
+      <li><a href="http://localhost:1313/tags/hardware/">Hardware</a></li>
+      <li><a href="http://localhost:1313/tags/unix/">UNIX</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/aula-5/">
+  <a class="prev" href="http://localhost:1313/posts/aula-7/">
     <span class="title">« Prev</span>
     <br>
-    <span>Vetores, Pilhas e Filas em Java</span>
+    <span>Definição de software</span>
   </a>
-  <a class="next" href="http://localhost:1313/posts/aula-2/">
+  <a class="next" href="http://localhost:1313/posts/aula-5/">
     <span class="title">Next »</span>
     <br>
-    <span>Técnicas de Projetos de Algoritmos</span>
+    <span>Vetores, Pilhas e Filas em Java</span>
   </a>
 </nav>
 

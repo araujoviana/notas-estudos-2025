@@ -6,8 +6,36 @@
     <description>Recent content on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Feb 2025 19:28:32 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 19 Feb 2025 16:41:58 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introdução a Probabilidades</title>
+      <link>http://localhost:1313/posts/aula-8/</link>
+      <pubDate>Wed, 19 Feb 2025 16:41:58 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-8/</guid>
+      <description>Conceitos Básicos Experimento aleatório Procedimento cujo resultado é incerto
+Exemplos:
+Jogar uma moeda Sortear um número inteiro de um a cem Lançar um dado Espaço amostral O conjunto de todos os resultados possíveis de um experimento aleatório, representado por $\Omega$
+Exemplos:
+Jogar uma moeda $\Omega = $ {$\text{cara}, \text{coroa}$} Sortear um número inteiro de um a cem $\Omega = $ {$1,2,\dots,99,100$} Lançar um dado $\Omega = $ {$1,2,3,4,5,6$} Evento Qualquer subconjunto do espaço amostral, ou seja,</description>
+    </item>
+    <item>
+      <title>Definição de software</title>
+      <link>http://localhost:1313/posts/aula-7/</link>
+      <pubDate>Wed, 19 Feb 2025 14:53:31 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-7/</guid>
+      <description> Essa página é bem vaga mesmo 🤷
+Escopo do Software Abrange:
+Programa Instruções Dados pré-determinísticos Hardware Ideia Solução de problemas Abstração Comunição Requisitos Passo a passo:
+Coletar dados Planejar (diagramas) Entregar Engenheiro de Software Dev Arquiteto de Software (modelagem) Processos de Software Processo de negócio </description>
+    </item>
+    <item>
+      <title>Evolução do Gerenciamento de Processos</title>
+      <link>http://localhost:1313/posts/aula-6/</link>
+      <pubDate>Tue, 18 Feb 2025 15:16:46 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-6/</guid>
+      <description>Sistemas Tipos de tratamento de programas Sistemas monoprogramados - Carrega apenas um programa por vez. Sistemas multiprogramados - Carrega múltiplos programas na memória. Problemas dos computadores (da época) A CPU ficava ociosa quando precisava interagir com um dispositivo de E/S. Programadores precisavam levar em consideração as particularidades de hardware de cada sistema para programar. Soluções Problema 1 (CPU ociosa) Preemptividade: Sistema era capaz de pausar um processo que estivesse aguardando por uma operação de E/S, liberando a CPU (Troca de contexto).</description>
+    </item>
     <item>
       <title>Vetores, Pilhas e Filas em Java</title>
       <link>http://localhost:1313/posts/aula-5/</link>
