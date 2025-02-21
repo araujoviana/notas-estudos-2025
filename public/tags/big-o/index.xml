@@ -6,8 +6,16 @@
     <description>Recent content in Big O on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Feb 2025 15:18:20 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 21 Feb 2025 14:28:49 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Análise de Algoritmos Iterativos</title>
+      <link>http://localhost:1313/posts/aula-10/</link>
+      <pubDate>Fri, 21 Feb 2025 14:28:49 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-10/</guid>
+      <description> Essa aula é só código
+for (int i = 0; i &amp;lt; n; i++) { printf(&amp;#34;%d&amp;#34;, n); } Tempo: $\theta(n)$ </description>
+    </item>
     <item>
       <title>Provas de Complexidade - O(n), Ω(n), θ(n)</title>
       <link>http://localhost:1313/posts/aula-3/</link>

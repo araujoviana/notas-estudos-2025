@@ -49,16 +49,16 @@ Porém devido ao tamanho limitado dos registradores, temos que usar uma das duas
 ## Aritmética com ponto flutuante
 
 Denotando $fl(x)$ e $fl(y)$ as operações em ponto flutuante são definidas pelas seguintes igualdades:
-- **soma**:
+- **Soma**:
   $$ x \oplus y = fl( fl(x) + fl(y) ) $$
 
-- **subtração**:
+- **Subtração**:
   $$ x \ominus y = fl( fl(x) - fl(y) ) $$
 
-- **multiplicação**:
+- **Multiplicação**:
   $$ x \otimes y = fl( fl(x) \times fl(y) ) $$
 
-- **divisão**:
+- **Divisão**:
   $$ x \oslash y = fl( fl(x) / fl(y) ) $$
 
 ### Erro absoluto e relativo
