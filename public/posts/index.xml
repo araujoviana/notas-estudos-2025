@@ -6,15 +6,23 @@
     <description>Recent content in Posts on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Feb 2025 14:28:49 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 24 Feb 2025 13:25:08 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Árvores</title>
+      <link>http://localhost:1313/posts/aula-11/</link>
+      <pubDate>Mon, 24 Feb 2025 13:25:08 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-11/</guid>
+      <description>O que são árvores para a computação? Estruturas que armazenam dados. Capacidade de armazenamento dinâmica (ao contrário de arrays que são estáticos). Compostas por: Nós: onde os dados são armazenados. Arestas: interligam os nós. Possuem um único nó raiz. Possuem uma ou mais folhas. Cada nó possui zero ou mais filhos. Nós sem filhos são chamados folhas. Alguns tipos de árvores? Árvores Binárias: Cada nó possui 0, 1 ou 2 filhos.</description>
+    </item>
     <item>
       <title>Análise de Algoritmos Iterativos</title>
       <link>http://localhost:1313/posts/aula-10/</link>
       <pubDate>Fri, 21 Feb 2025 14:28:49 -0300</pubDate>
       <guid>http://localhost:1313/posts/aula-10/</guid>
-      <description> Essa aula é só código
-for (int i = 0; i &amp;lt; n; i++) { printf(&amp;#34;%d&amp;#34;, n); } Tempo: $\theta(n)$ </description>
+      <description>Vale lembrar que $O$ é diferente de $\theta$, então essa análise assintótica é do caso médio e não do pior caso.
+for (int i = 0; i &amp;lt; n; i++) { printf(&amp;#34;%d&amp;#34;, n); } O loop percorre por toda a estrutura n.
+Tempo: $\theta(n)$ for (int i = 0; i &amp;lt; n; i++) { for (int j = 0; j &amp;lt; n; j++) { printf(&amp;#34;%d&amp;#34;, n); } } O loop percorre por toda a estrutura n, n vezes.</description>
     </item>
     <item>
       <title>Números de ponto flutuante</title>

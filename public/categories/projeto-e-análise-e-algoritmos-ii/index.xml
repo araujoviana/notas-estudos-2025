@@ -13,8 +13,9 @@
       <link>http://localhost:1313/posts/aula-10/</link>
       <pubDate>Fri, 21 Feb 2025 14:28:49 -0300</pubDate>
       <guid>http://localhost:1313/posts/aula-10/</guid>
-      <description> Essa aula é só código
-for (int i = 0; i &amp;lt; n; i++) { printf(&amp;#34;%d&amp;#34;, n); } Tempo: $\theta(n)$ </description>
+      <description>Vale lembrar que $O$ é diferente de $\theta$, então essa análise assintótica é do caso médio e não do pior caso.
+for (int i = 0; i &amp;lt; n; i++) { printf(&amp;#34;%d&amp;#34;, n); } O loop percorre por toda a estrutura n.
+Tempo: $\theta(n)$ for (int i = 0; i &amp;lt; n; i++) { for (int j = 0; j &amp;lt; n; j++) { printf(&amp;#34;%d&amp;#34;, n); } } O loop percorre por toda a estrutura n, n vezes.</description>
     </item>
   </channel>
 </rss>
