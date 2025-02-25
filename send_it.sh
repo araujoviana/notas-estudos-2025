@@ -7,7 +7,7 @@
 
 set -e # Sai do script imediatamente se um comando falhar
 
-git add -u
+git add .
 
 SEARCH_DIR="./content/posts"
 UPLOAD_DIR=$(ls content/posts -lt | sed -n '2p' | awk '{print $NF}')
