@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Kernel | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Hardware, Software">
+<meta name="description" content="Definição de Kernel Serve como uma ponte entre o hardware e o software, além de gerenciar os recursos da máquina para que os programas usem os componentes da maneira correta.
+Nível de Privilégio Mecanismo que determina quais instruções um programa pode exectuar e quais recursos pode acessar.
+Exemplos principais (existem mais):
+Modo Kernel (privilegiado): Permite acesso completo ao hardware e execução de instruções privilegiadas. Modo usuário (não privilegiado): Restringe acesso direto ao hardware e proíbe instruções privilegiadas, sendo necessárias o uso de chamadas do sistema (syscalls).">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-12/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-12/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Kernel
+    </h1>
+    <div class="post-meta"><span title='2025-02-25 13:04:32 -0300 -03'>February 25, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#defini%c3%a7%c3%a3o-de-kernel" aria-label="Definição de Kernel">Definição de Kernel</a></li>
+                <li>
+                    <a href="#n%c3%advel-de-privil%c3%a9gio" aria-label="Nível de Privilégio">Nível de Privilégio</a></li>
+                <li>
+                    <a href="#funcionamento-das-syscalls" aria-label="Funcionamento das Syscalls">Funcionamento das Syscalls</a></li>
+                <li>
+                    <a href="#tipos-de-kernel" aria-label="Tipos de Kernel">Tipos de Kernel</a><ul>
+                        
+                <li>
+                    <a href="#kernel-monol%c3%adtico" aria-label="Kernel Monolítico">Kernel Monolítico</a><ul>
+                        
+                <li>
+                    <a href="#pros" aria-label="Pros">Pros</a></li>
+                <li>
+                    <a href="#cons" aria-label="Cons">Cons</a></li></ul>
+                </li>
+                <li>
+                    <a href="#microkernel" aria-label="Microkernel">Microkernel</a><ul>
+                        
+                <li>
+                    <a href="#pros-1" aria-label="Pros">Pros</a></li>
+                <li>
+                    <a href="#cons-1" aria-label="Cons">Cons</a></li></ul>
+                </li>
+                <li>
+                    <a href="#kernel-h%c3%adbrido" aria-label="Kernel Híbrido">Kernel Híbrido</a></li></ul>
+                </li>
+                <li>
+                    <a href="#mecanismos-e-pol%c3%adticas" aria-label="Mecanismos e Políticas">Mecanismos e Políticas</a><ul>
+                        
+                <li>
+                    <a href="#mecanismos" aria-label="Mecanismos">Mecanismos</a><ul>
+                        
+                <li>
+                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#pol%c3%adticas" aria-label="Políticas">Políticas</a></li></ul>
+                </li>
+                <li>
+                    <a href="#interrup%c3%a7%c3%b5es" aria-label="Interrupções">Interrupções</a><ul>
+                        
+                <li>
+                    <a href="#import%c3%a2ncia" aria-label="Importância">Importância</a></li>
+                <li>
+                    <a href="#exemplos-1" aria-label="Exemplos">Exemplos</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="definição-de-kernel">Definição de Kernel<a hidden class="anchor" aria-hidden="true" href="#definição-de-kernel">#</a></h2>
+<p>Serve como uma <strong>ponte entre o hardware e o software</strong>, além de <strong>gerenciar os recursos da máquina</strong> para que os programas usem os componentes da maneira correta.</p>
+<h2 id="nível-de-privilégio">Nível de Privilégio<a hidden class="anchor" aria-hidden="true" href="#nível-de-privilégio">#</a></h2>
+<p>Mecanismo que determina quais instruções um programa pode exectuar e quais recursos pode acessar.</p>
+<p>Exemplos principais (existem mais):</p>
+<ul>
+<li><strong>Modo Kernel (privilegiado)</strong>: Permite acesso completo ao hardware e execução de instruções privilegiadas.</li>
+<li><strong>Modo usuário (não privilegiado)</strong>: Restringe acesso direto ao hardware e proíbe instruções privilegiadas, sendo necessárias o uso de <em>chamadas do sistema (syscalls)</em>.</li>
+</ul>
+<h2 id="funcionamento-das-syscalls">Funcionamento das Syscalls<a hidden class="anchor" aria-hidden="true" href="#funcionamento-das-syscalls">#</a></h2>
+<blockquote>
+<p>Vou chamar chamadas de sistema de <em>syscalls</em></p>
+</blockquote>
+<ol>
+<li>As syscalls fazem a transição de níveis de privilégio, ao permitirem que um programa executando em modo usuário faça uma solicitação ao SO para executar uma operação em modo kernel.</li>
+<li>Ao ser executada, a syscall gera uma trap (interrupção gerada por software) à CPU, forçando-a a trocar de <em>modo</em> (os da sessão anterior).</li>
+<li>Após essa interrupção, o kernel assume o controle da CPU para atender à solicitação do programa que executou a chamada de sistema.</li>
+<li>O resultado da solicitação é colocado em um registrador ou área de memória acessível ao programa.</li>
+</ol>
+<p><img alt="Esquema de syscalls" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Linux_kernel_System_Call_Interface_and_glibc.svg">
+<em>Imagem licenciada como CC-BY-SA 3.0 por Shmuel Csaba Otto Traian, disponível em <a href="https://pt.wikipedia.org/wiki/Chamada_de_sistema">https://pt.wikipedia.org/wiki/Chamada_de_sistema</a></em></p>
+<h2 id="tipos-de-kernel">Tipos de Kernel<a hidden class="anchor" aria-hidden="true" href="#tipos-de-kernel">#</a></h2>
+<p><img alt="Tipos de Kernel" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/OS-structure2.svg"></p>
+<h3 id="kernel-monolítico">Kernel Monolítico<a hidden class="anchor" aria-hidden="true" href="#kernel-monolítico">#</a></h3>
+<p>Todos os serviços do SO executam em modo kernel.</p>
+<h4 id="pros">Pros<a hidden class="anchor" aria-hidden="true" href="#pros">#</a></h4>
+<ul>
+<li>Melhor desempenho por conta da comunicação direta entre componentes</li>
+<li>Design mais simples e direto</li>
+</ul>
+<h4 id="cons">Cons<a hidden class="anchor" aria-hidden="true" href="#cons">#</a></h4>
+<ul>
+<li>- Modularidade</li>
+<li>+ Manutenção</li>
+<li>Falhas em qualquer componente podem derrubar o sistema</li>
+</ul>
+<h3 id="microkernel">Microkernel<a hidden class="anchor" aria-hidden="true" href="#microkernel">#</a></h3>
+<p>Apenas funções essenciais executam em modo kernel, enquanto serviços são implementados como processos em modo usuário.</p>
+<h4 id="pros-1">Pros<a hidden class="anchor" aria-hidden="true" href="#pros-1">#</a></h4>
+<ul>
+<li>+ Modularidade</li>
+<li>Melhor isolamento de falhas</li>
+<li>Manutenção mais fácil</li>
+</ul>
+<h4 id="cons-1">Cons<a hidden class="anchor" aria-hidden="true" href="#cons-1">#</a></h4>
+<ul>
+<li>Desempenho potencialmente menor</li>
+<li>Complexidade na comunicação entre componentes</li>
+<li>Mais trocas de contexto (overhead)</li>
+</ul>
+<h3 id="kernel-híbrido">Kernel Híbrido<a hidden class="anchor" aria-hidden="true" href="#kernel-híbrido">#</a></h3>
+<p>Combina características de ambas as abordagens, mantendo alguns serviços em modo kernel por razões de desempenho.</p>
+<h2 id="mecanismos-e-políticas">Mecanismos e Políticas<a hidden class="anchor" aria-hidden="true" href="#mecanismos-e-políticas">#</a></h2>
+<h3 id="mecanismos">Mecanismos<a hidden class="anchor" aria-hidden="true" href="#mecanismos">#</a></h3>
+<p>Implementação de baixo nível que fornece funcionalidade.</p>
+<h4 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h4>
+<ul>
+<li>Troca de Contexto</li>
+<li>Paginação</li>
+<li>Interrupções</li>
+</ul>
+<h3 id="políticas">Políticas<a hidden class="anchor" aria-hidden="true" href="#políticas">#</a></h3>
+<p>Algoritmo ou estratégia que decide como o mecanismo será utilizado.</p>
+<ul>
+<li>Algoritmo de Escalonamento</li>
+<li>Algoritmo de Substituição</li>
+<li>Política de Tratamento de interrupções</li>
+</ul>
+<h2 id="interrupções">Interrupções<a hidden class="anchor" aria-hidden="true" href="#interrupções">#</a></h2>
+<p>Mecanismo que permite ao hardware sinalizar eventos ao processador.</p>
+<ul>
+<li>Propósito: Permite que a CPU responda a eventos externos sem verificação constante.</li>
+<li>Funcionamento: Interrompe a execução atual, salva o contexto, executa rotina de tratamento.</li>
+<li>Tipos principais: Hardware (dispositivos de e/s) e Software (traps e exceções)</li>
+</ul>
+<h3 id="importância">Importância<a hidden class="anchor" aria-hidden="true" href="#importância">#</a></h3>
+<ul>
+<li>Permite E/S assíncrona</li>
+<li>Possibilita multitarefa</li>
+<li>Economiza tempo de CPU</li>
+<li>Base para implementação de chamadas de sistema</li>
+</ul>
+<h3 id="exemplos-1">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos-1">#</a></h3>
+<ul>
+<li>Interrupção de Timer: Permite ao SO retomar controle periodicamente</li>
+<li>Interrupção de Teclado: Notifica quando uma tecla é pressionada</li>
+<li>Interrupção de Disco: Sinaliza conclusão de operação de leitura/escrita</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/hardware/">Hardware</a></li>
+      <li><a href="http://localhost:1313/tags/software/">Software</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-11/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Árvores</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

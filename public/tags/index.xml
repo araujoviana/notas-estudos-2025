@@ -16,10 +16,10 @@
       <description></description>
     </item>
     <item>
-      <title>Big O</title>
-      <link>http://localhost:1313/tags/big-o/</link>
+      <title>O</title>
+      <link>http://localhost:1313/tags/o/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/big-o/</guid>
+      <guid>http://localhost:1313/tags/o/</guid>
       <description></description>
     </item>
     <item>
@@ -27,6 +27,13 @@
       <link>http://localhost:1313/tags/revis%C3%A3o/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Big O</title>
+      <link>http://localhost:1313/tags/big-o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/big-o/</guid>
       <description></description>
     </item>
     <item>
