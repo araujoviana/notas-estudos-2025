@@ -30,7 +30,7 @@ COMMIT_MSG=$(gum input --placeholder "$COMMIT_MSG_PLACEHOLDER" --prompt "Mensage
 gum spin --spinner dot --title "Realizando Commit..." -- git commit -m "$COMMIT_MSG" >"commit-$(date +%Y-%m-%dT%H:%M:%S%z).log"
 
 if gum confirm "Publicar alterações no Github?"; then
-	git push origin main >"push-$(date +%Y-%m-%dT%H:%M:%S%z).log"
+	git push origin main
 	gum style "Alterações publicadas com sucesso!" --foreground green --bold
 else
 	gum style "Publicação cancelada." --foreground yellow --bold
