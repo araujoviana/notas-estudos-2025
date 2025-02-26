@@ -6,8 +6,18 @@
     <description>Recent content on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2025 13:04:32 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 14:38:14 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variáveis Aleatórias Discretas</title>
+      <link>http://localhost:1313/posts/aula-13/</link>
+      <pubDate>Wed, 26 Feb 2025 14:38:14 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-13/</guid>
+      <description>Probabilidade e Estatística Aplicadas O slide têm os gráficos e imagens pra essa aula
+Exemplo Introdutório: Lucro de um Comerciante Considere o seguinte cenário:
+Um comerciante adquire 5 unidades de um produto para venda semanal. A demanda semanal é uma variável aleatória com a seguinte distribuição de probabilidades:
+Demanda 0 1 2 3 4 5 6 7 8 Probabilidades 0,05 0,1 0,1 0,1 0,2 0,2 0,1 0,1 0,05 Cada item é comprado por 2.</description>
+    </item>
     <item>
       <title>Kernel</title>
       <link>http://localhost:1313/posts/aula-12/</link>
@@ -125,6 +135,14 @@ Dados que o menor e o maior salário dos 60 funcionários da Empresa X são resp
       <guid>http://localhost:1313/posts/aula-4/</guid>
       <description>Definição de computador Computador :: Entrada -&amp;gt; Saida Computador entrada = ... Todo computador deve ter entradas e saídas.
 ENIAC Usava válvulas Operadores de Computador Sistema monoprogramado (1 programa por vez) Sistema em lote (BATCH) Sistema gerencia a fila Cada processo -&amp;gt; job Sem interação com o usuário jobs independentes Dispositivos de E/S Programadores precisavam conhecer as particularidades do hardware de cada dispositivo </description>
+    </item>
+    <item>
+      <title>Framework W5 2H</title>
+      <link>http://localhost:1313/posts/aula-14/</link>
+      <pubDate>Mon, 01 Jan 2024 10:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-14/</guid>
+      <description>Introdução ao W5 2H na Gestão de Projetos de Software O método W5 2H é uma ferramenta eficaz para planejar e gerenciar projetos de software, assegurando que todos os aspectos cruciais sejam considerados. Ele se baseia em sete perguntas fundamentais: What, Why, Where, When, Who, How, How Much.
+Aplicação do W5 2H na Gestão de Projetos: W5 (Cinco Perguntas &amp;ldquo;W&amp;rdquo;) What? (O quê?) Desenvolver software para atender clientes ou mercados. Definir escopo, requisitos, funcionalidades e metas do projeto.</description>
     </item>
   </channel>
 </rss>

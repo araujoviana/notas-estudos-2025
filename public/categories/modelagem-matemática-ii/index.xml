@@ -6,8 +6,18 @@
     <description>Recent content in Modelagem Matemática II on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 19 Feb 2025 16:41:58 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 14:38:14 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Variáveis Aleatórias Discretas</title>
+      <link>http://localhost:1313/posts/aula-13/</link>
+      <pubDate>Wed, 26 Feb 2025 14:38:14 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-13/</guid>
+      <description>Probabilidade e Estatística Aplicadas O slide têm os gráficos e imagens pra essa aula
+Exemplo Introdutório: Lucro de um Comerciante Considere o seguinte cenário:
+Um comerciante adquire 5 unidades de um produto para venda semanal. A demanda semanal é uma variável aleatória com a seguinte distribuição de probabilidades:
+Demanda 0 1 2 3 4 5 6 7 8 Probabilidades 0,05 0,1 0,1 0,1 0,2 0,2 0,1 0,1 0,05 Cada item é comprado por 2.</description>
+    </item>
     <item>
       <title>Introdução a Probabilidades</title>
       <link>http://localhost:1313/posts/aula-8/</link>

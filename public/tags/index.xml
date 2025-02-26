@@ -6,34 +6,13 @@
     <description>Recent content in Tags on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2025 13:25:08 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2025 14:38:14 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Algoritmos</title>
-      <link>http://localhost:1313/tags/algoritmos/</link>
+      <title>Difícil</title>
+      <link>http://localhost:1313/tags/dif%C3%ADcil/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/algoritmos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>O</title>
-      <link>http://localhost:1313/tags/o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/o/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Revisão</title>
-      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Big O</title>
-      <link>http://localhost:1313/tags/big-o/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/big-o/</guid>
+      <guid>http://localhost:1313/tags/dif%C3%ADcil/</guid>
       <description></description>
     </item>
     <item>
@@ -51,6 +30,13 @@
       <description></description>
     </item>
     <item>
+      <title>Hardware</title>
+      <link>http://localhost:1313/tags/hardware/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/hardware/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Software</title>
       <link>http://localhost:1313/tags/software/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -58,10 +44,31 @@
       <description></description>
     </item>
     <item>
-      <title>Hardware</title>
-      <link>http://localhost:1313/tags/hardware/</link>
+      <title>Algoritmos</title>
+      <link>http://localhost:1313/tags/algoritmos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/hardware/</guid>
+      <guid>http://localhost:1313/tags/algoritmos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estruturas De Dados</title>
+      <link>http://localhost:1313/tags/estruturas-de-dados/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/estruturas-de-dados/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Big O</title>
+      <link>http://localhost:1313/tags/big-o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/big-o/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Revisão</title>
+      <link>http://localhost:1313/tags/revis%C3%A3o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/revis%C3%A3o/</guid>
       <description></description>
     </item>
     <item>
@@ -93,10 +100,17 @@
       <description></description>
     </item>
     <item>
-      <title>Difícil</title>
-      <link>http://localhost:1313/tags/dif%C3%ADcil/</link>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dif%C3%ADcil/</guid>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
       <description></description>
     </item>
   </channel>

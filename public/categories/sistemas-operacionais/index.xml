@@ -6,8 +6,18 @@
     <description>Recent content in Sistemas Operacionais on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Feb 2025 15:16:46 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2025 13:04:32 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/sistemas-operacionais/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kernel</title>
+      <link>http://localhost:1313/posts/aula-12/</link>
+      <pubDate>Tue, 25 Feb 2025 13:04:32 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-12/</guid>
+      <description>Definição de Kernel Serve como uma ponte entre o hardware e o software, além de gerenciar os recursos da máquina para que os programas usem os componentes da maneira correta.
+Nível de Privilégio Mecanismo que determina quais instruções um programa pode exectuar e quais recursos pode acessar.
+Exemplos principais (existem mais):
+Modo Kernel (privilegiado): Permite acesso completo ao hardware e execução de instruções privilegiadas. Modo usuário (não privilegiado): Restringe acesso direto ao hardware e proíbe instruções privilegiadas, sendo necessárias o uso de chamadas do sistema (syscalls).</description>
+    </item>
     <item>
       <title>Evolução do Gerenciamento de Processos</title>
       <link>http://localhost:1313/posts/aula-6/</link>

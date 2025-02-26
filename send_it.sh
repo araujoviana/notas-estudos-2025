@@ -24,8 +24,8 @@ if [ -z "$LATEST_MD_FILE" ]; then
 fi
 
 PLACEHOLDER_COMMIT_MSG=$(head "$LATEST_MD_FILE" | grep -oP "^title.*?('\K[^']+(?=')|$)")
-COMMIT_MSG_PLACEHOLDER="${PLACEHOLDER_COMMIT_MSG:-Nova anotação}"
-COMMIT_MSG=$(gum input --placeholder "$COMMIT_MSG_PLACEHOLDER" --prompt "Mensagem do Commit -> ")
+echo "$PLACEHOLDER_COMMIT_MSG"
+COMMIT_MSG=$(gum input --placeholder "$PLACEHOLDER_COMMIT_MSG" --prompt "Mensagem do Commit -> ")
 
 gum spin --spinner dot --title "Realizando Commit..." -- git commit -m "$COMMIT_MSG" >"commit-$(date +%Y-%m-%dT%H:%M:%S%z).log"
 
