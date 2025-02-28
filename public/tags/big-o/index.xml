@@ -6,8 +6,28 @@
     <description>Recent content in Big O on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Feb 2025 14:28:49 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 14:17:13 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resolução de Recorrências</title>
+      <link>http://localhost:1313/posts/aula-16/</link>
+      <pubDate>Fri, 28 Feb 2025 14:17:13 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-16/</guid>
+      <description>Métodos para Resolver Recorrências Substituição Iterativos Árvore de Recursão Método Mestre 1. Substituição A ideia é arriscar um palpite para a solução da recorrência
+e, em seguida, usar indução matemática para provar que o palpite está correto.
+Exemplo 1 int f(int n) { if (n &amp;gt; 0) { printf(&amp;#34;%d&amp;#34;, n); f(n - 1); } return 0; } Recorrência:
+$T(n) = 1$ se $n = 0$ $T(n) = T(n-1) + 1$ se $n &amp;gt; 0$ Palpite:</description>
+    </item>
+    <item>
+      <title>Análise Númerica</title>
+      <link>http://localhost:1313/posts/aula-15/</link>
+      <pubDate>Fri, 28 Feb 2025 13:51:39 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-15/</guid>
+      <description>Definição Algoritmos numéricos são métodos que buscam soluções numéricas para problemas, podendo ser exatas ou aproximadas. Eles são essenciais para resolver equações complexas, integrais e derivadas.
+Complexidade de algoritmos A complexidade indica o desempenho de um algoritmo à medida que o tamanho da entrada cresce. Utiliza-se a notação assintótica:
+Cota superior (Big-O): Limite máximo de crescimento. $$ f(n) = O(g(n)) $$
+Cota inferior (Omega): Limite mínimo de crescimento. $$ f(n) = \Omega(g(n)) $$</description>
+    </item>
     <item>
       <title>Análise de Algoritmos Iterativos</title>
       <link>http://localhost:1313/posts/aula-10/</link>

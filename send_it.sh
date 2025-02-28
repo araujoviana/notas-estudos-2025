@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# Script feito pra facilitar a publicação das
-# minhas anotações no Github
-
+# Script para facilitar a publicação das minhas anotações no Github
 # REQUER GUM
 
-set -e # Sai do script imediatamente se um comando falhar
+# set -e  # Descomente se desejar que o script pare imediatamente em caso de erro
 
 git add .
 
@@ -27,7 +25,8 @@ PLACEHOLDER_COMMIT_MSG=$(head "$LATEST_MD_FILE" | grep -oP "^title.*?('\K[^']+(?
 echo "$PLACEHOLDER_COMMIT_MSG"
 COMMIT_MSG=$(gum input --placeholder "$PLACEHOLDER_COMMIT_MSG" --prompt "Mensagem do Commit -> ")
 
-gum spin --spinner dot --title "Realizando Commit..." -- git commit -m "$COMMIT_MSG" >"commit-$(date +%Y-%m-%dT%H:%M:%S%z).log"
+# Executa o commit com o spinner, sem redirecionamento de log
+gum spin --spinner dot --title "Realizando Commit..." -- git commit -m "$COMMIT_MSG"
 
 if gum confirm "Publicar alterações no Github?"; then
 	git push origin main

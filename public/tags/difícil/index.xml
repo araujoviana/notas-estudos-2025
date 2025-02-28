@@ -6,14 +6,24 @@
     <description>Recent content in Difícil on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2025 14:38:14 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2025 14:17:13 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/dif%C3%ADcil/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resolução de Recorrências</title>
+      <link>http://localhost:1313/posts/aula-16/</link>
+      <pubDate>Fri, 28 Feb 2025 14:17:13 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-16/</guid>
+      <description>Métodos para Resolver Recorrências Substituição Iterativos Árvore de Recursão Método Mestre 1. Substituição A ideia é arriscar um palpite para a solução da recorrência
+e, em seguida, usar indução matemática para provar que o palpite está correto.
+Exemplo 1 int f(int n) { if (n &amp;gt; 0) { printf(&amp;#34;%d&amp;#34;, n); f(n - 1); } return 0; } Recorrência:
+$T(n) = 1$ se $n = 0$ $T(n) = T(n-1) + 1$ se $n &amp;gt; 0$ Palpite:</description>
+    </item>
     <item>
       <title>Variáveis Aleatórias Discretas</title>
       <link>http://localhost:1313/posts/aula-13/</link>
       <pubDate>Wed, 26 Feb 2025 14:38:14 -0300</pubDate>
       <guid>http://localhost:1313/posts/aula-13/</guid>
-      <description>Probabilidade e Estatística Aplicadas O slide têm os gráficos e imagens pra essa aula
+      <description>Probabilidade e Estatística Aplicadas O slide têm os gráficos e imagens pra essa aula.
 Exemplo Introdutório: Lucro de um Comerciante Considere o seguinte cenário:
 Um comerciante adquire 5 unidades de um produto para venda semanal. A demanda semanal é uma variável aleatória com a seguinte distribuição de probabilidades:
 Demanda 0 1 2 3 4 5 6 7 8 Probabilidades 0,05 0,1 0,1 0,1 0,2 0,2 0,1 0,1 0,05 Cada item é comprado por 2.</description>
