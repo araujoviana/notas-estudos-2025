@@ -36,3 +36,7 @@ params:
   ShowPostNavLinks: true
 
   ShowCodeCopyButtons: true
+
+  assets:
+    disableHLJS: true
+    favicon: "favicon.ico"
