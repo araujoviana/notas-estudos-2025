@@ -25,7 +25,9 @@ PLACEHOLDER_COMMIT_MSG=$(head "$LATEST_MD_FILE" | grep -oP "^title.*?('\K[^']+(?
 echo "$PLACEHOLDER_COMMIT_MSG"
 COMMIT_MSG=$(gum input --placeholder "$PLACEHOLDER_COMMIT_MSG" --prompt "Mensagem do Commit -> ")
 
-# Executa o commit com o spinner, sem redirecionamento de log
+# Se o input estiver vazio, usa o placeholder
+COMMIT_MSG="${COMMIT_MSG:-$PLACEHOLDER_COMMIT_MSG}"
+
 gum spin --spinner dot --title "Realizando Commit..." -- git commit -m "$COMMIT_MSG"
 
 if gum confirm "Publicar alterações no Github?"; then

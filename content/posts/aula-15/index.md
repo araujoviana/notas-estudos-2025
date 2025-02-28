@@ -8,7 +8,7 @@ tags = ["Big O", "Algoritmos", "Cálculo"]
 
 ## Definição
 
-Algoritmos numéricos são métodos que buscam soluções numéricas para problemas, podendo ser exatas ou aproximadas. Eles são essenciais para resolver equações complexas, integrais e derivadas.
+Algoritmos numéricos são métodos que buscam soluções numéricas para problemas, podendo ser exatas ou aproximadas. Eles são essenciais para resolver equações complexas, integrais e derivadas
 
 ## Complexidade de algoritmos
 
