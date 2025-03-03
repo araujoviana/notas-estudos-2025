@@ -2,7 +2,7 @@
 title = 'Resolução de Recorrências'
 date = 2025-02-28T14:17:13-03:00
 draft = false
-categories = ["Projeto e Análise de Algoritmos"]
+categories = ["Projeto e Análise de Algoritmos II"]
 tags = ["Big O", "Algoritmos", "Recursão", "Difícil"]
 +++
 

@@ -2,7 +2,7 @@
 title = 'Análise de Algoritmos Iterativos'
 date = 2025-02-21T14:28:49-03:00
 draft = false
-categories = ['Projeto e Análise e Algoritmos II']
+categories = ['Projeto e Análise de Algoritmos II']
 tags = ['Algoritmos', 'Big O', 'Revisão']
 +++
 
