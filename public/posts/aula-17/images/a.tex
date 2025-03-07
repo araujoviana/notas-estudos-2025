@@ -1,0 +1,17 @@
+\documentclass[tikz,border=2mm]{standalone}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\begin{document}
+\begin{tikzpicture}
+\node at (0,0) {
+    $a_{ij}^{(k)} =
+    \begin{cases}
+        a_{ij}^{(k-1)} & \text{se } i = 1, 2, ..., k-1 \text{ e } j = 1, 2, ..., n+1 \\
+        0 & \text{se } i = k, k+1, ..., n \text{ e } j = 1, 2, ..., k-1 \\
+        a_{ij}^{(k-1)} - \frac{a_{ik-1}^{(k-1)}}{a_{k-1,k-1}^{(k-1)}} a_{k-1,j}^{(k-1)} & \text{se } i = k, k+1, ..., n \text{ e } j = k, k+1, ..., n+1
+    \end{cases}$
+};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Resolução de Sistemas Lineares I | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Algoritmos, Difícil, Recursão">
+<meta name="description" content="Método de Gauss para Resolução de Sistemas Lineares O método de Gauss é um algoritmo para resolver sistemas de equações lineares, transformando o sistema original em um sistema triangular superior equivalente.
+Eliminação Gaussiana com Substituição Inversa Algoritmo Entrada (INPUT): Número de incógnitas e equações ($n$), e a matriz aumentada $A = [a_{ij}]$, onde $1 \leq i \leq n$ e $1 \leq j \leq n&#43;1$.
+Saída (OUTPUT): Solução $x_1, x_2, &hellip;, x_n$, ou uma mensagem indicando que não existe solução única.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-17/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.ico">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-17/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Resolução de Sistemas Lineares I
+    </h1>
+    <div class="post-meta"><span title='2025-03-07 15:30:03 -0300 -03'>March 7, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#m%c3%a9todo-de-gauss-para-resolu%c3%a7%c3%a3o-de-sistemas-lineares" aria-label="Método de Gauss para Resolução de Sistemas Lineares">Método de Gauss para Resolução de Sistemas Lineares</a><ul>
+                        
+                <li>
+                    <a href="#elimina%c3%a7%c3%a3o-gaussiana-com-substitui%c3%a7%c3%a3o-inversa" aria-label="Eliminação Gaussiana com Substituição Inversa">Eliminação Gaussiana com Substituição Inversa</a><ul>
+                        
+                <li>
+                    <a href="#algoritmo" aria-label="Algoritmo">Algoritmo</a></li>
+                <li>
+                    <a href="#exemplo-b%c3%a1sico-2x2" aria-label="Exemplo Básico (2x2)">Exemplo Básico (2x2)</a></li>
+                <li>
+                    <a href="#exemplo-3x3-no-formato-triangular" aria-label="Exemplo 3x3 no Formato Triangular">Exemplo 3x3 no Formato Triangular</a></li></ul>
+                </li>
+                <li>
+                    <a href="#complexidade-do-algoritmo-triangular" aria-label="Complexidade do Algoritmo Triangular">Complexidade do Algoritmo Triangular</a><ul>
+                        
+                <li>
+                    <a href="#multiplica%c3%a7%c3%b5esdivis%c3%b5es" aria-label="Multiplicações/Divisões:">Multiplicações/Divisões:</a></li>
+                <li>
+                    <a href="#adi%c3%a7%c3%b5essubtra%c3%a7%c3%b5es" aria-label="Adições/Subtrações:">Adições/Subtrações:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#algoritmo-de-pivotamento" aria-label="Algoritmo de Pivotamento">Algoritmo de Pivotamento</a><ul>
+                        
+                <li>
+                    <a href="#matriz-aumentada" aria-label="Matriz Aumentada:">Matriz Aumentada:</a></li>
+                <li>
+                    <a href="#passos-do-pivotamento" aria-label="Passos do Pivotamento:">Passos do Pivotamento:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#opera%c3%a7%c3%b5es-elementares" aria-label="Operações Elementares">Operações Elementares</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="método-de-gauss-para-resolução-de-sistemas-lineares">Método de Gauss para Resolução de Sistemas Lineares<a hidden class="anchor" aria-hidden="true" href="#método-de-gauss-para-resolução-de-sistemas-lineares">#</a></h2>
+<p>O método de Gauss é um algoritmo para resolver sistemas de equações lineares, transformando o sistema original em um <em>sistema triangular superior equivalente</em>.</p>
+<h3 id="eliminação-gaussiana-com-substituição-inversa">Eliminação Gaussiana com Substituição Inversa<a hidden class="anchor" aria-hidden="true" href="#eliminação-gaussiana-com-substituição-inversa">#</a></h3>
+<h4 id="algoritmo">Algoritmo<a hidden class="anchor" aria-hidden="true" href="#algoritmo">#</a></h4>
+<ol>
+<li>
+<p><strong>Entrada (INPUT):</strong> Número de incógnitas e equações ($n$), e a matriz aumentada $A = [a_{ij}]$, onde $1 \leq i \leq n$ e $1 \leq j \leq n+1$.</p>
+</li>
+<li>
+<p><strong>Saída (OUTPUT):</strong> Solução $x_1, x_2, &hellip;, x_n$, ou uma mensagem indicando que não existe solução única.</p>
+</li>
+<li>
+<p><strong>Processo de Eliminação:</strong></p>
+<p>Para $i = 1, &hellip;, n-1$, realizar os seguintes passos:</p>
+<ul>
+<li>
+<p>Encontrar o menor inteiro $p$ tal que $i \leq p \leq n$ e $a_{pi} \neq 0$. Se não existir tal $p$, então não existe solução única (OUTPUT).</p>
+</li>
+<li>
+<p>Se $p \neq i$, trocar as linhas $E_p$ e $E_i$.</p>
+</li>
+<li>
+<p>Para $j = i+1, &hellip;, n$, realizar:</p>
+<ul>
+<li>Calcular $m_{ji} = \frac{a_{ji}}{a_{ii}}$.</li>
+<li>Realizar a operação $E_j - m_{ji}E_i \rightarrow E_j$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Se $a_{nn} = 0$, então não existe solução única (OUTPUT).</p>
+</li>
+<li>
+<p><strong>Substituição Inversa:</strong></p>
+<ul>
+<li>
+<p>Calcular $x_n = \frac{a_{n,n+1}}{a_{nn}}$.</p>
+</li>
+<li>
+<p>Para $i = n-1, &hellip;, 1$, calcular</p>
+<p>$$
+x_i = \frac{a_{i,n+1} - \sum_{j=i+1}^{n} a_{ij}x_j}{a_{ii}}
+$$</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Saída (OUTPUT):</strong> Solução $x_1, &hellip;, x_n$.</p>
+</li>
+</ol>
+<h4 id="exemplo-básico-2x2">Exemplo Básico (2x2)<a hidden class="anchor" aria-hidden="true" href="#exemplo-básico-2x2">#</a></h4>
+<p>Considere o sistema:</p>
+<p>$$
+x_1 - x_2 = 1
+$$</p>
+<p>$$
+2x_1 + x_2 = 5
+$$</p>
+<p>Resolvendo por substituição:</p>
+<p>$$
+x_1 = \frac{5 - x_2}{2}
+$$</p>
+<p>Substituindo na primeira equação:</p>
+<p>$$
+\frac{5 - x_2}{2} - x_2 = 1 \Rightarrow x_2 = 1
+$$</p>
+<p>$$
+x_1 = 2
+$$</p>
+<p>Resolvendo por escalonamento com matriz:</p>
+<p>$$
+\begin{bmatrix}
+1 &amp; -1 &amp; 1
+\end{bmatrix}
+$$
+$$
+\begin{bmatrix}
+2 &amp; 1 &amp; 5
+\end{bmatrix}
+$$</p>
+<p>Operações:</p>
+<ul>
+<li>$(E_2 - 2E_1) \rightarrow E_2$</li>
+</ul>
+<p>$$
+\begin{bmatrix}
+1 &amp; -1 &amp; 1
+\end{bmatrix}
+$$
+$$
+\begin{bmatrix}
+0 &amp; 3 &amp; 3
+\end{bmatrix}
+$$</p>
+<p>$$
+3x_2 = 3 \Rightarrow x_2 = 1
+$$</p>
+<h4 id="exemplo-3x3-no-formato-triangular">Exemplo 3x3 no Formato Triangular<a hidden class="anchor" aria-hidden="true" href="#exemplo-3x3-no-formato-triangular">#</a></h4>
+<p>Um sistema triangular 3x3 tem a forma:</p>
+<p>$$
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = a_{14}
+$$</p>
+<p>$$
+a_{22}x_2 + a_{23}x_3 = a_{24}
+$$</p>
+<p>$$
+a_{33}x_3 = a_{34}
+$$</p>
+<p>A solução é encontrada por substituição inversa:</p>
+<p>$$
+x_3 = \frac{a_{34}}{a_{33}}
+$$</p>
+<p>$$
+x_2 = \frac{a_{24} - a_{23}x_3}{a_{22}}
+$$</p>
+<p>$$
+x_1 = \frac{a_{14} - a_{13}x_3 - a_{12}x_2}{a_{11}}
+$$</p>
+<h3 id="complexidade-do-algoritmo-triangular">Complexidade do Algoritmo Triangular<a hidden class="anchor" aria-hidden="true" href="#complexidade-do-algoritmo-triangular">#</a></h3>
+<p>A complexidade do algoritmo triangular é determinada pelo número de multiplicações/divisões e adições/subtrações.</p>
+<h4 id="multiplicaçõesdivisões">Multiplicações/Divisões:<a hidden class="anchor" aria-hidden="true" href="#multiplicaçõesdivisões">#</a></h4>
+<p>$$
+\sum_{i=1}^{n-1} (n-i) = \frac{n^2 - n}{2}
+$$</p>
+<h4 id="adiçõessubtrações">Adições/Subtrações:<a hidden class="anchor" aria-hidden="true" href="#adiçõessubtrações">#</a></h4>
+<p>$$
+\sum_{i=1}^{n-1} i = \frac{n^2 - n}{2}
+$$</p>
+<h3 id="algoritmo-de-pivotamento">Algoritmo de Pivotamento<a hidden class="anchor" aria-hidden="true" href="#algoritmo-de-pivotamento">#</a></h3>
+<p>O pivotamento é uma técnica utilizada no método de Gauss para melhorar a estabilidade numérica do algoritmo.</p>
+<h4 id="matriz-aumentada">Matriz Aumentada:<a hidden class="anchor" aria-hidden="true" href="#matriz-aumentada">#</a></h4>
+<p><img alt="matriz" loading="lazy" src="/posts/aula-17/images/pivotamento.png"></p>
+<h4 id="passos-do-pivotamento">Passos do Pivotamento:<a hidden class="anchor" aria-hidden="true" href="#passos-do-pivotamento">#</a></h4>
+<p>Para $k = 1, 2, &hellip;, n$:</p>
+<p><img alt="matriz" loading="lazy" src="/posts/aula-17/images/passospivot.png"></p>
+<p>Onde $a_{ij}^{(k)}$ representa o elemento na linha $i$ e coluna $j$ após o $k$-ésimo passo do pivotamento.</p>
+<h3 id="operações-elementares">Operações Elementares<a hidden class="anchor" aria-hidden="true" href="#operações-elementares">#</a></h3>
+<p>As seguintes operações elementares podem ser aplicadas nas equações de um sistema linear sem alterar a solução:</p>
+<ol>
+<li>Multiplicar uma equação por uma constante não nula: $(\lambda E_i) \rightarrow (E_i)$.</li>
+<li>Adicionar um múltiplo de uma equação a outra: $(E_j + \lambda E_i) \rightarrow E_j$.</li>
+<li>Trocar a posição de duas equações: $(E_i) \leftrightarrow (E_j)$.</li>
+</ol>
+<p>O método de Gauss consiste em transformar o sistema original em um sistema triangular superior equivalente, utilizando estas operações elementares.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
+      <li><a href="http://localhost:1313/tags/dif%C3%ADcil/">Difícil</a></li>
+      <li><a href="http://localhost:1313/tags/recurs%C3%A3o/">Recursão</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/aula-18/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Método Mestre e Decremento e Conquista</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/aula-16/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Resolução de Recorrências</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

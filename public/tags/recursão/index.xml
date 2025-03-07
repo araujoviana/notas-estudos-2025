@@ -6,8 +6,17 @@
     <description>Recent content in Recursão on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2025 14:17:13 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 07 Mar 2025 15:30:03 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/recurs%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Resolução de Sistemas Lineares I</title>
+      <link>http://localhost:1313/posts/aula-17/</link>
+      <pubDate>Fri, 07 Mar 2025 15:30:03 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-17/</guid>
+      <description>Método de Gauss para Resolução de Sistemas Lineares O método de Gauss é um algoritmo para resolver sistemas de equações lineares, transformando o sistema original em um sistema triangular superior equivalente.
+Eliminação Gaussiana com Substituição Inversa Algoritmo Entrada (INPUT): Número de incógnitas e equações ($n$), e a matriz aumentada $A = [a_{ij}]$, onde $1 \leq i \leq n$ e $1 \leq j \leq n+1$.
+Saída (OUTPUT): Solução $x_1, x_2, &amp;hellip;, x_n$, ou uma mensagem indicando que não existe solução única.</description>
+    </item>
     <item>
       <title>Resolução de Recorrências</title>
       <link>http://localhost:1313/posts/aula-16/</link>
