@@ -6,8 +6,27 @@
     <description>Recent content in Big O on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2025 14:17:13 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 10 Mar 2025 12:48:03 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lemas de Árvores Binárias</title>
+      <link>http://localhost:1313/posts/aula-19/</link>
+      <pubDate>Mon, 10 Mar 2025 12:48:03 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-19/</guid>
+      <description>Continuação de Árvores Binárias Características Lema 1 O número máximo de nós em um nível $i$ é $2^i$, tal que $0 \leq i \leq k$.
+Lema 2 Se a altura de uma árvore binária é $k$ tal que $(x \geq 0)$, então o número máximo de nós da árvore é $2^{k+1}-1$
+Lema 3 Se:
+$n_0$ = quantidade de nós com grau 0 (ou seja, $n_0$ é a quantidade de nós folhas da árvore) $n_1$ = quantidade de nós com grau 1 $n_2$ = quantidade de nós com grau 2 Então $$n_0 = n_2 + 1$$</description>
+    </item>
+    <item>
+      <title>Método Mestre e Decremento e Conquista</title>
+      <link>http://localhost:1313/posts/aula-18/</link>
+      <pubDate>Fri, 07 Mar 2025 16:00:03 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-18/</guid>
+      <description>Essas anotações foram convertidas das anotações do caderno via OCR então talvez hajam alguns errinhos minimos, mas o que eu vi eu arrumei 😮‍💨
+Análise de Código com Árvores Todas as análises aqui podem ser feitas usando árvores.
+Função F(int N) void F(int N) { if (N &amp;gt; 0) { printf(&amp;#34;%d &amp;#34;, N); F(N - 1); } } Recorrência $T(N)$ $$ T(N) = 1 \text{, se } N = 0 $$ $$ T(N) = 2T(N-1) + 1 \text{, se } N &amp;gt; 0 $$</description>
+    </item>
     <item>
       <title>Resolução de Recorrências</title>
       <link>http://localhost:1313/posts/aula-16/</link>

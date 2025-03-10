@@ -2,7 +2,7 @@
 title = 'Análise Númerica'
 date = 2025-02-28T13:51:39-03:00
 draft = false 
-categories = ["Algoritmos Númericos"]
+categories = ["Algoritmos Numéricos"]
 tags = ["Big O", "Algoritmos", "Cálculo"]
 +++
 

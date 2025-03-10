@@ -6,8 +6,17 @@
     <description>Recent content in Revisão on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Feb 2025 14:28:49 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 07 Mar 2025 16:00:03 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/revis%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Método Mestre e Decremento e Conquista</title>
+      <link>http://localhost:1313/posts/aula-18/</link>
+      <pubDate>Fri, 07 Mar 2025 16:00:03 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-18/</guid>
+      <description>Essas anotações foram convertidas das anotações do caderno via OCR então talvez hajam alguns errinhos minimos, mas o que eu vi eu arrumei 😮‍💨
+Análise de Código com Árvores Todas as análises aqui podem ser feitas usando árvores.
+Função F(int N) void F(int N) { if (N &amp;gt; 0) { printf(&amp;#34;%d &amp;#34;, N); F(N - 1); } } Recorrência $T(N)$ $$ T(N) = 1 \text{, se } N = 0 $$ $$ T(N) = 2T(N-1) + 1 \text{, se } N &amp;gt; 0 $$</description>
+    </item>
     <item>
       <title>Análise de Algoritmos Iterativos</title>
       <link>http://localhost:1313/posts/aula-10/</link>

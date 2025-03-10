@@ -3,37 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/algoritmos/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/big-o/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/estrutura-de-dados-ii/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-19/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dif%C3%ADcil/</loc>
+    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-18/</loc>
+    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/projeto-e-an%C3%A1lise-de-algoritmos-ii/</loc>
+    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/recurs%C3%A3o/</loc>
+    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/revis%C3%A3o/</loc>
+    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/algoritmos-num%C3%A9ricos/</loc>
     <lastmod>2025-03-07T15:30:03-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dif%C3%ADcil/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/recurs%C3%A3o/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/aula-17/</loc>
     <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/big-o/</loc>
-    <lastmod>2025-02-28T14:17:13-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/projeto-e-an%C3%A1lise-de-algoritmos-ii/</loc>
-    <lastmod>2025-02-28T14:17:13-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-16/</loc>
     <lastmod>2025-02-28T14:17:13-03:00</lastmod>
@@ -80,9 +92,6 @@
     <loc>http://localhost:1313/posts/aula-10/</loc>
     <lastmod>2025-02-21T14:28:49-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/revis%C3%A3o/</loc>
-    <lastmod>2025-02-21T14:28:49-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/aula-9/</loc>
     <lastmod>2025-02-21T13:47:00-03:00</lastmod>
   </url><url>
@@ -100,9 +109,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/unix/</loc>
     <lastmod>2025-02-18T15:16:46-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/estrutura-de-dados-ii/</loc>
-    <lastmod>2025-02-17T19:28:32-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java/</loc>
     <lastmod>2025-02-17T19:28:32-03:00</lastmod>
