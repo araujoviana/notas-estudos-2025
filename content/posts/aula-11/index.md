@@ -2,7 +2,7 @@
 title = 'Árvores'
 date = 2025-02-24T13:25:08-03:00
 draft = false
-categories = ['Projeto e Análise de Algoritmos II']
+categories = ['Estruturas de Dados II']
 tags = ['Algoritmos', 'Estruturas de Dados']
 +++
 
