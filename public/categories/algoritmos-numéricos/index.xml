@@ -6,8 +6,21 @@
     <description>Recent content in Algoritmos Numéricos on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Mar 2025 15:30:03 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 15:30:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/algoritmos-num%C3%A9ricos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Método Iterativo de Jacobi</title>
+      <link>http://localhost:1313/posts/aula-22/</link>
+      <pubDate>Sun, 16 Mar 2025 15:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-22/</guid>
+      <description>Método Iterativo de Jacobi A ideia central é, a partir de uma aproximação inicial, calcular aproximações sucessivas até que uma tolerância de erro seja alcançada.
+Passo 1: Isolamento das Variáveis
+Dado um sistema linear, isolamos cada variável:
+$$x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j \right)$$
+Passo 2: Processo Iterativo
+A partir do isolamento, define-se o processo iterativo:
+$$x_i^{(k)} = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j^{(k-1)} \right)$$</description>
+    </item>
     <item>
       <title>Resolução de Sistemas Lineares I</title>
       <link>http://localhost:1313/posts/aula-17/</link>
@@ -16,6 +29,16 @@
       <description>Método de Gauss para Resolução de Sistemas Lineares O método de Gauss é um algoritmo para resolver sistemas de equações lineares, transformando o sistema original em um sistema triangular superior equivalente.
 Eliminação Gaussiana com Substituição Inversa Algoritmo Entrada (INPUT): Número de incógnitas e equações ($n$), e a matriz aumentada $A = [a_{ij}]$, onde $1 \leq i \leq n$ e $1 \leq j \leq n+1$.
 Saída (OUTPUT): Solução $x_1, x_2, &amp;hellip;, x_n$, ou uma mensagem indicando que não existe solução única.</description>
+    </item>
+    <item>
+      <title>Análise Númerica</title>
+      <link>http://localhost:1313/posts/aula-15/</link>
+      <pubDate>Fri, 28 Feb 2025 13:51:39 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-15/</guid>
+      <description>Definição Algoritmos numéricos são métodos que buscam soluções numéricas para problemas, podendo ser exatas ou aproximadas. Eles são essenciais para resolver equações complexas, integrais e derivadas
+Complexidade de algoritmos A complexidade indica o desempenho de um algoritmo à medida que o tamanho da entrada cresce. Utiliza-se a notação assintótica:
+Cota superior (Big-O): Limite máximo de crescimento. $$ f(n) = O(g(n)) $$
+Cota inferior (Omega): Limite mínimo de crescimento. $$ f(n) = \Omega(g(n)) $$</description>
     </item>
     <item>
       <title>Números de ponto flutuante</title>

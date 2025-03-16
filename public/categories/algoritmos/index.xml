@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Algoritmos on Anotações de Estudos - 2025</title>
+    <link>http://localhost:1313/categories/algoritmos/</link>
+    <description>Recent content in Algoritmos on Anotações de Estudos - 2025</description>
+    <generator>Hugo -- 0.126.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Mar 2025 16:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/algoritmos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Divisão e Conquista</title>
+      <link>http://localhost:1313/posts/aula-23/</link>
+      <pubDate>Sun, 16 Mar 2025 16:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-23/</guid>
+      <description>Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
+Divisão e Conquista A técnica consiste em:
+Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor.</description>
+    </item>
+  </channel>
+</rss>

@@ -6,8 +6,18 @@
     <description>Recent content in Modelagem Matemática II on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Feb 2025 14:38:14 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 14:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modelos Discretos de Probabilidade</title>
+      <link>http://localhost:1313/posts/aula-21/</link>
+      <pubDate>Sun, 16 Mar 2025 14:00:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-21/</guid>
+      <description>Consulte o PDF para os detalhes, isso é um grande resumo
+Introdução Em diversas situações, variáveis aleatórias surgem com frequência, permitindo que suas distribuições de probabilidade sejam expressas de forma concisa através de uma lei. Por exemplo, a probabilidade de uma variável W assumir valores de 1 a 6 pode ser representada como $$P(W = k) = \frac{k}{21}$$.
+Onde $k = 1,2,3 \dots, 6$.
+Modelo Uniforme Discreto Uma variável aleatória X segue o modelo uniforme discreto $ (X \sim U(1, k))$ se atribui a mesma probabilidade $ \frac{1}{k} $ a cada um dos seus k valores possíveis.</description>
+    </item>
     <item>
       <title>Variáveis Aleatórias Discretas</title>
       <link>http://localhost:1313/posts/aula-13/</link>

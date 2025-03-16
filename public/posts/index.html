@@ -141,6 +141,67 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Divisão e Conquista
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
+Divisão e Conquista A técnica consiste em:
+Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-16 16:30:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;3 min</footer>
+  <a class="entry-link" aria-label="post link to Divisão e Conquista" href="http://localhost:1313/posts/aula-23/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Método Iterativo de Jacobi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Método Iterativo de Jacobi A ideia central é, a partir de uma aproximação inicial, calcular aproximações sucessivas até que uma tolerância de erro seja alcançada.
+Passo 1: Isolamento das Variáveis
+Dado um sistema linear, isolamos cada variável:
+$$x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j \right)$$
+Passo 2: Processo Iterativo
+A partir do isolamento, define-se o processo iterativo:
+$$x_i^{(k)} = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j^{(k-1)} \right)$$...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-16 15:30:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Método Iterativo de Jacobi" href="http://localhost:1313/posts/aula-22/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Modelos Discretos de Probabilidade
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Consulte o PDF para os detalhes, isso é um grande resumo
+Introdução Em diversas situações, variáveis aleatórias surgem com frequência, permitindo que suas distribuições de probabilidade sejam expressas de forma concisa através de uma lei. Por exemplo, a probabilidade de uma variável W assumir valores de 1 a 6 pode ser representada como $$P(W = k) = \frac{k}{21}$$.
+Onde $k = 1,2,3 \dots, 6$.
+Modelo Uniforme Discreto Uma variável aleatória X segue o modelo uniforme discreto $ (X \sim U(1, k))$ se atribui a mesma probabilidade $ \frac{1}{k} $ a cada um dos seus k valores possíveis....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-16 14:00:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;3 min</footer>
+  <a class="entry-link" aria-label="post link to Modelos Discretos de Probabilidade" href="http://localhost:1313/posts/aula-21/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Processos
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Consulte o slide original para as ilustrações que são bem úteis
+Programas Vs. Processos Programas Conjunto de instruções armazenados na memória secundária Passivo, não consome recursos além do armazenamento Processos Execução ativa de um programa pelo sistema operacional Ativo, utiliza recursos do sistema como memória RAM, CPU e I/O Quando um programa é executado, um processo é criado no SO
+Estados dos processos Novo Pronto (admitido na fila de prontos) Executando (ele foi escalonado, pode voltar pra fila de prontos) Terminado (concluiu todas as instruções ou sofreu um erro fatal) Esperando (quando solicita uma instrução de I/O, depois volta pra fila de prontos) Onde o processo existe Um processo existe na memória principal enquanto está sendo executado....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-11 12:06:13 -0300 -03'>March 11, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Processos" href="http://localhost:1313/posts/aula-20/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Lemas de Árvores Binárias
     </h2>
   </header>
@@ -225,61 +286,6 @@ Demanda 0 1 2 3 4 5 6 7 8 Probabilidades 0,05 0,1 0,1 0,1 0,2 0,2 0,1 0,1 0,05 C
   </div>
   <footer class="entry-footer"><span title='2025-02-26 14:38:14 -0300 -03'>February 26, 2025</span>&nbsp;·&nbsp;6 min</footer>
   <a class="entry-link" aria-label="post link to Variáveis Aleatórias Discretas" href="http://localhost:1313/posts/aula-13/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Kernel
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Definição de Kernel Serve como uma ponte entre o hardware e o software, além de gerenciar os recursos da máquina para que os programas usem os componentes da maneira correta.
-Nível de Privilégio Mecanismo que determina quais instruções um programa pode exectuar e quais recursos pode acessar.
-Exemplos principais (existem mais):
-Modo Kernel (privilegiado): Permite acesso completo ao hardware e execução de instruções privilegiadas. Modo usuário (não privilegiado): Restringe acesso direto ao hardware e proíbe instruções privilegiadas, sendo necessárias o uso de chamadas do sistema (syscalls)....</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-25 13:04:32 -0300 -03'>February 25, 2025</span>&nbsp;·&nbsp;3 min</footer>
-  <a class="entry-link" aria-label="post link to Kernel" href="http://localhost:1313/posts/aula-12/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Árvores
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>O que são árvores para a computação? Estruturas que armazenam dados. Capacidade de armazenamento dinâmica (ao contrário de arrays que são estáticos). Compostas por: Nós: onde os dados são armazenados. Arestas: interligam os nós. Possuem um único nó raiz. Possuem uma ou mais folhas. Cada nó possui zero ou mais filhos. Nós sem filhos são chamados folhas. Alguns tipos de árvores? Árvores Binárias: Cada nó possui 0, 1 ou 2 filhos....</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-24 13:25:08 -0300 -03'>February 24, 2025</span>&nbsp;·&nbsp;3 min</footer>
-  <a class="entry-link" aria-label="post link to Árvores" href="http://localhost:1313/posts/aula-11/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Análise de Algoritmos Iterativos
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Vale lembrar que $O$ é diferente de $\theta$, então essa análise assintótica é do caso médio e não do pior caso.
-for (int i = 0; i &lt; n; i&#43;&#43;) { printf(&#34;%d&#34;, n); } O loop percorre por toda a estrutura n.
-Tempo: $\theta(n)$ for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; n; j&#43;&#43;) { printf(&#34;%d&#34;, n); } } O loop percorre por toda a estrutura n, n vezes....</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-21 14:28:49 -0300 -03'>February 21, 2025</span>&nbsp;·&nbsp;4 min</footer>
-  <a class="entry-link" aria-label="post link to Análise de Algoritmos Iterativos" href="http://localhost:1313/posts/aula-10/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Números de ponto flutuante
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Origem da representação Em 1985, o IEEE publicou um relatório que especificava formatos para precisão simples, dupla e estendida, que ficou conhecido como IEEE 754, e é seguido por desenvolvedores que manipulam ponto flutuante.
-São denominados:
-Float - Número real de precisão de precisão simples (32 bits) Double - Número real de precisão dupla (64 bits) Recuperação de doubles Para a recuperação do tipo double, em particular, usamos a seguinte fórmula:...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-21 13:47:00 -0300 -03'>February 21, 2025</span>&nbsp;·&nbsp;2 min</footer>
-  <a class="entry-link" aria-label="post link to Números de ponto flutuante" href="http://localhost:1313/posts/aula-9/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

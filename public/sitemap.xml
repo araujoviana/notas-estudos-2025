@@ -3,15 +3,72 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/algoritmos/</loc>
-    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/algoritmos/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/big-o/</loc>
-    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dif%C3%ADcil/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-23/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/divis%C3%A3o-e-conquista/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-03-16T16:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/algoritmos-num%C3%A9ricos/</loc>
+    <lastmod>2025-03-16T15:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/itera%C3%A7%C3%A3o/</loc>
+    <lastmod>2025-03-16T15:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-22/</loc>
+    <lastmod>2025-03-16T15:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/python/</loc>
+    <lastmod>2025-03-16T15:30:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/estat%C3%ADstica/</loc>
+    <lastmod>2025-03-16T14:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</loc>
+    <lastmod>2025-03-16T14:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-21/</loc>
+    <lastmod>2025-03-16T14:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/probabilidade/</loc>
+    <lastmod>2025-03-16T14:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/hardware/</loc>
+    <lastmod>2025-03-11T12:06:13-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/aula-20/</loc>
+    <lastmod>2025-03-11T12:06:13-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/sistemas-operacionais/</loc>
+    <lastmod>2025-03-11T12:06:13-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/software/</loc>
+    <lastmod>2025-03-11T12:06:13-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/unix/</loc>
+    <lastmod>2025-03-11T12:06:13-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/big-o/</loc>
     <lastmod>2025-03-10T12:48:03-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/estrutura-de-dados-ii/</loc>
@@ -19,15 +76,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/aula-19/</loc>
     <lastmod>2025-03-10T12:48:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-03-10T12:48:03-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/dif%C3%ADcil/</loc>
-    <lastmod>2025-03-07T16:00:03-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-18/</loc>
     <lastmod>2025-03-07T16:00:03-03:00</lastmod>
@@ -41,17 +89,11 @@
     <loc>http://localhost:1313/tags/revis%C3%A3o/</loc>
     <lastmod>2025-03-07T16:00:03-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/algoritmos-num%C3%A9ricos/</loc>
-    <lastmod>2025-03-07T15:30:03-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/aula-17/</loc>
     <lastmod>2025-03-07T15:30:03-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-16/</loc>
     <lastmod>2025-02-28T14:17:13-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/algoritmos-n%C3%BAmericos/</loc>
-    <lastmod>2025-02-28T13:51:39-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-15/</loc>
     <lastmod>2025-02-28T13:51:39-03:00</lastmod>
@@ -59,28 +101,10 @@
     <loc>http://localhost:1313/tags/c%C3%A1lculo/</loc>
     <lastmod>2025-02-28T13:51:39-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/estat%C3%ADstica/</loc>
-    <lastmod>2025-02-26T14:38:14-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</loc>
-    <lastmod>2025-02-26T14:38:14-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/probabilidade/</loc>
-    <lastmod>2025-02-26T14:38:14-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/aula-13/</loc>
     <lastmod>2025-02-26T14:38:14-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/hardware/</loc>
-    <lastmod>2025-02-25T13:04:32-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/aula-12/</loc>
-    <lastmod>2025-02-25T13:04:32-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/sistemas-operacionais/</loc>
-    <lastmod>2025-02-25T13:04:32-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/software/</loc>
     <lastmod>2025-02-25T13:04:32-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-11/</loc>
@@ -105,9 +129,6 @@
     <lastmod>2025-02-19T14:53:31-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/aula-6/</loc>
-    <lastmod>2025-02-18T15:16:46-03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/unix/</loc>
     <lastmod>2025-02-18T15:16:46-03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/java/</loc>
@@ -137,10 +158,31 @@
     <loc>http://localhost:1313/posts/aula-14/</loc>
     <lastmod>2024-01-01T10:00:00-03:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
-    <lastmod>2024-01-01T10:00:00-03:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/sql/</loc>
     <lastmod>2024-01-01T10:00:00-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/an%C3%A1lise-num%C3%A9rica/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/busca-bin%C3%A1ria/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/invers%C3%B5es/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/iterativo/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/karatsuba/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/m%C3%A9todo-de-jacobi/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/multiplica%C3%A7%C3%A3o-de-inteiros/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/multiplica%C3%A7%C3%A3o-de-matrizes/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/potencia%C3%A7%C3%A3o/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/sele%C3%A7%C3%A3o/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/sistemas-lineares/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/strassen/</loc>
   </url>
 </urlset>

@@ -141,6 +141,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Método Iterativo de Jacobi
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Método Iterativo de Jacobi A ideia central é, a partir de uma aproximação inicial, calcular aproximações sucessivas até que uma tolerância de erro seja alcançada.
+Passo 1: Isolamento das Variáveis
+Dado um sistema linear, isolamos cada variável:
+$$x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j \right)$$
+Passo 2: Processo Iterativo
+A partir do isolamento, define-se o processo iterativo:
+$$x_i^{(k)} = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j^{(k-1)} \right)$$...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-03-16 15:30:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Método Iterativo de Jacobi" href="http://localhost:1313/posts/aula-22/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Resolução de Sistemas Lineares I
     </h2>
   </header>
@@ -151,6 +169,21 @@ Saída (OUTPUT): Solução $x_1, x_2, …, x_n$, ou uma mensagem indicando que n
   </div>
   <footer class="entry-footer"><span title='2025-03-07 15:30:03 -0300 -03'>March 7, 2025</span>&nbsp;·&nbsp;3 min</footer>
   <a class="entry-link" aria-label="post link to Resolução de Sistemas Lineares I" href="http://localhost:1313/posts/aula-17/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Análise Númerica
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Definição Algoritmos numéricos são métodos que buscam soluções numéricas para problemas, podendo ser exatas ou aproximadas. Eles são essenciais para resolver equações complexas, integrais e derivadas
+Complexidade de algoritmos A complexidade indica o desempenho de um algoritmo à medida que o tamanho da entrada cresce. Utiliza-se a notação assintótica:
+Cota superior (Big-O): Limite máximo de crescimento. $$ f(n) = O(g(n)) $$
+Cota inferior (Omega): Limite mínimo de crescimento. $$ f(n) = \Omega(g(n)) $$...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-28 13:51:39 -0300 -03'>February 28, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Análise Númerica" href="http://localhost:1313/posts/aula-15/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 

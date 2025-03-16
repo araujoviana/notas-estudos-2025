@@ -141,6 +141,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Kernel
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Definição de Kernel Serve como uma ponte entre o hardware e o software, além de gerenciar os recursos da máquina para que os programas usem os componentes da maneira correta.
+Nível de Privilégio Mecanismo que determina quais instruções um programa pode exectuar e quais recursos pode acessar.
+Exemplos principais (existem mais):
+Modo Kernel (privilegiado): Permite acesso completo ao hardware e execução de instruções privilegiadas. Modo usuário (não privilegiado): Restringe acesso direto ao hardware e proíbe instruções privilegiadas, sendo necessárias o uso de chamadas do sistema (syscalls)....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-25 13:04:32 -0300 -03'>February 25, 2025</span>&nbsp;·&nbsp;3 min</footer>
+  <a class="entry-link" aria-label="post link to Kernel" href="http://localhost:1313/posts/aula-12/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Árvores
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>O que são árvores para a computação? Estruturas que armazenam dados. Capacidade de armazenamento dinâmica (ao contrário de arrays que são estáticos). Compostas por: Nós: onde os dados são armazenados. Arestas: interligam os nós. Possuem um único nó raiz. Possuem uma ou mais folhas. Cada nó possui zero ou mais filhos. Nós sem filhos são chamados folhas. Alguns tipos de árvores? Árvores Binárias: Cada nó possui 0, 1 ou 2 filhos....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-24 13:25:08 -0300 -03'>February 24, 2025</span>&nbsp;·&nbsp;3 min</footer>
+  <a class="entry-link" aria-label="post link to Árvores" href="http://localhost:1313/posts/aula-11/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Análise de Algoritmos Iterativos
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Vale lembrar que $O$ é diferente de $\theta$, então essa análise assintótica é do caso médio e não do pior caso.
+for (int i = 0; i &lt; n; i&#43;&#43;) { printf(&#34;%d&#34;, n); } O loop percorre por toda a estrutura n.
+Tempo: $\theta(n)$ for (int i = 0; i &lt; n; i&#43;&#43;) { for (int j = 0; j &lt; n; j&#43;&#43;) { printf(&#34;%d&#34;, n); } } O loop percorre por toda a estrutura n, n vezes....</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-21 14:28:49 -0300 -03'>February 21, 2025</span>&nbsp;·&nbsp;4 min</footer>
+  <a class="entry-link" aria-label="post link to Análise de Algoritmos Iterativos" href="http://localhost:1313/posts/aula-10/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Números de ponto flutuante
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Origem da representação Em 1985, o IEEE publicou um relatório que especificava formatos para precisão simples, dupla e estendida, que ficou conhecido como IEEE 754, e é seguido por desenvolvedores que manipulam ponto flutuante.
+São denominados:
+Float - Número real de precisão de precisão simples (32 bits) Double - Número real de precisão dupla (64 bits) Recuperação de doubles Para a recuperação do tipo double, em particular, usamos a seguinte fórmula:...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-02-21 13:47:00 -0300 -03'>February 21, 2025</span>&nbsp;·&nbsp;2 min</footer>
+  <a class="entry-link" aria-label="post link to Números de ponto flutuante" href="http://localhost:1313/posts/aula-9/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Introdução a Probabilidades
     </h2>
   </header>
@@ -225,64 +280,12 @@ Um exemplo de uso é o Problema das oito damas, onde oito damas devem ser posici
   <footer class="entry-footer"><span title='2025-02-13 13:26:05 -0300 -03'>February 13, 2025</span>&nbsp;·&nbsp;3 min</footer>
   <a class="entry-link" aria-label="post link to Técnicas de Projetos de Algoritmos" href="http://localhost:1313/posts/aula-2/"></a>
 </article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Classes em Java
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Classes em Java Linguagens como Java, C# e C&#43;&#43; seguem o paradigma da Programação orientada a objeto, onde os componentes do programa são designados por classes e objetos.
-Cachorro Definição Exemplo de uma classe do tipo Cachorro em Java, contendo os componentes básicos de uma classe.
-// Classe public class Cachorro { // Atributos // Constantes private final int anoDeNascimento; private final String raca; private final String cor; // Variáveis mutáveis private int energia; private boolean acordado; // Métodos // Construtores public Cachorro() { anoDeNascimento = 2025; raca = &#34;Vira lata&#34;; cor = &#34;Caramelo&#34;; energia = 5; acordado = true; } public Cachorro(int anoDeNascimento, String raca, String cor) { this....</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-13 13:14:22 -0300 -03'>February 13, 2025</span>&nbsp;·&nbsp;2 min</footer>
-  <a class="entry-link" aria-label="post link to Classes em Java" href="http://localhost:1313/posts/aula-1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Revisão de Estatística
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>⚠️ - As contas e lógica precisam ser verificadas, dado que a revisão não teve explicação.
-Enunciado Ao longo dessa explicação será usado o seguinte problema de exemplo:
-Dados que o menor e o maior salário dos 60 funcionários da Empresa X são respectivamente 600,00 reais e 30000,00 reais e sabendo que os dados foram agrupados em 6 classes com amplitude de 5000,00 reais e as frequências das classes são respectivamente: 21, 16, 12, 7, 3, 1:...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-11 17:39:43 -0300 -03'>February 11, 2025</span>&nbsp;·&nbsp;5 min</footer>
-  <a class="entry-link" aria-label="post link to Revisão de Estatística" href="http://localhost:1313/posts/aula-0/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">ENIAC e Sistemas em Lote
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Definição de computador Computador :: Entrada -&gt; Saida Computador entrada = ... Todo computador deve ter entradas e saídas.
-ENIAC Usava válvulas Operadores de Computador Sistema monoprogramado (1 programa por vez) Sistema em lote (BATCH) Sistema gerencia a fila Cada processo -&gt; job Sem interação com o usuário jobs independentes Dispositivos de E/S Programadores precisavam conhecer as particularidades do hardware de cada dispositivo </p>
-  </div>
-  <footer class="entry-footer"><span title='2025-02-11 15:04:39 -0300 -03'>February 11, 2025</span>&nbsp;·&nbsp;1 min</footer>
-  <a class="entry-link" aria-label="post link to ENIAC e Sistemas em Lote" href="http://localhost:1313/posts/aula-4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Framework W5 2H
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introdução ao W5 2H na Gestão de Projetos de Software O método W5 2H é uma ferramenta eficaz para planejar e gerenciar projetos de software, assegurando que todos os aspectos cruciais sejam considerados. Ele se baseia em sete perguntas fundamentais: What, Why, Where, When, Who, How, How Much.
-Aplicação do W5 2H na Gestão de Projetos: W5 (Cinco Perguntas “W”) What? (O quê?) Desenvolver software para atender clientes ou mercados. Definir escopo, requisitos, funcionalidades e metas do projeto....</p>
-  </div>
-  <footer class="entry-footer"><span title='2024-01-01 10:00:00 -0300 -03'>January 1, 2024</span>&nbsp;·&nbsp;3 min</footer>
-  <a class="entry-link" aria-label="post link to Framework W5 2H" href="http://localhost:1313/posts/aula-14/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="http://localhost:1313/posts/">
       «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="http://localhost:1313/posts/page/3/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>

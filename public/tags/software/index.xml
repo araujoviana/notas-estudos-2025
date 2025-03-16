@@ -6,8 +6,17 @@
     <description>Recent content in Software on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2025 13:04:32 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 11 Mar 2025 12:06:13 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Processos</title>
+      <link>http://localhost:1313/posts/aula-20/</link>
+      <pubDate>Tue, 11 Mar 2025 12:06:13 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-20/</guid>
+      <description>Consulte o slide original para as ilustrações que são bem úteis
+Programas Vs. Processos Programas Conjunto de instruções armazenados na memória secundária Passivo, não consome recursos além do armazenamento Processos Execução ativa de um programa pelo sistema operacional Ativo, utiliza recursos do sistema como memória RAM, CPU e I/O Quando um programa é executado, um processo é criado no SO
+Estados dos processos Novo Pronto (admitido na fila de prontos) Executando (ele foi escalonado, pode voltar pra fila de prontos) Terminado (concluiu todas as instruções ou sofreu um erro fatal) Esperando (quando solicita uma instrução de I/O, depois volta pra fila de prontos) Onde o processo existe Um processo existe na memória principal enquanto está sendo executado.</description>
+    </item>
     <item>
       <title>Kernel</title>
       <link>http://localhost:1313/posts/aula-12/</link>

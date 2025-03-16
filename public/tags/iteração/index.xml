@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Iteração on Anotações de Estudos - 2025</title>
+    <link>http://localhost:1313/tags/itera%C3%A7%C3%A3o/</link>
+    <description>Recent content in Iteração on Anotações de Estudos - 2025</description>
+    <generator>Hugo -- 0.126.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Mar 2025 15:30:00 -0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/itera%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Método Iterativo de Jacobi</title>
+      <link>http://localhost:1313/posts/aula-22/</link>
+      <pubDate>Sun, 16 Mar 2025 15:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-22/</guid>
+      <description>Método Iterativo de Jacobi A ideia central é, a partir de uma aproximação inicial, calcular aproximações sucessivas até que uma tolerância de erro seja alcançada.
+Passo 1: Isolamento das Variáveis
+Dado um sistema linear, isolamos cada variável:
+$$x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j \right)$$
+Passo 2: Processo Iterativo
+A partir do isolamento, define-se o processo iterativo:
+$$x_i^{(k)} = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j^{(k-1)} \right)$$</description>
+    </item>
+  </channel>
+</rss>

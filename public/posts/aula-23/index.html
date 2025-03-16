@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Divisão e Conquista | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Divisão e Conquista, Difícil, Algoritmos">
+<meta name="description" content="Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
+Divisão e Conquista A técnica consiste em:
+Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-23/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.ico">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-23/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Divisão e Conquista
+    </h1>
+    <div class="post-meta"><span title='2025-03-16 16:30:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;3 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#introdu%c3%a7%c3%a3o" aria-label="Introdução">Introdução</a></li>
+                <li>
+                    <a href="#divis%c3%a3o-e-conquista" aria-label="Divisão e Conquista">Divisão e Conquista</a></li>
+                <li>
+                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a><ul>
+                        
+                <li>
+                    <a href="#busca-bin%c3%a1ria" aria-label="Busca Binária">Busca Binária</a></li>
+                <li>
+                    <a href="#pot%c3%aancia-de-um-n%c3%bamero" aria-label="Potência de um Número">Potência de um Número</a></li>
+                <li>
+                    <a href="#contagem-de-invers%c3%b5es" aria-label="Contagem de Inversões">Contagem de Inversões</a></li>
+                <li>
+                    <a href="#multiplica%c3%a7%c3%a3o-de-inteiros-karatsuba" aria-label="Multiplicação de Inteiros (Karatsuba)">Multiplicação de Inteiros (Karatsuba)</a></li>
+                <li>
+                    <a href="#multiplica%c3%a7%c3%a3o-de-matrizes" aria-label="Multiplicação de Matrizes">Multiplicação de Matrizes</a></li>
+                <li>
+                    <a href="#sele%c3%a7%c3%a3o-do-k-%c3%a9simo-m%c3%adnimo" aria-label="Seleção do k-ésimo Mínimo">Seleção do k-ésimo Mínimo</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="introdução">Introdução<a hidden class="anchor" aria-hidden="true" href="#introdução">#</a></h2>
+<p>Este documento aborda a técnica de <strong>divisão e conquista</strong> para análise e projeto de algoritmos.</p>
+<h2 id="divisão-e-conquista">Divisão e Conquista<a hidden class="anchor" aria-hidden="true" href="#divisão-e-conquista">#</a></h2>
+<p>A técnica consiste em:</p>
+<ol>
+<li><strong>Dividir:</strong> Quebrar o problema original em subproblemas menores.</li>
+<li><strong>Conquistar:</strong> Resolver os subproblemas recursivamente.</li>
+<li><strong>Combinar:</strong> Combinar as soluções dos subproblemas para obter a solução do problema original.</li>
+</ol>
+<h2 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h2>
+<h3 id="busca-binária">Busca Binária<a hidden class="anchor" aria-hidden="true" href="#busca-binária">#</a></h3>
+<ul>
+<li><strong>Problema:</strong> Encontrar um elemento $x$ em um vetor ordenado.</li>
+<li><strong>Divisão:</strong> Comparar $x$ com o elemento do meio do vetor.</li>
+<li><strong>Conquista:</strong> Aplicar a busca recursivamente em um dos subvetores (esquerda ou direita).</li>
+<li><strong>Combinar:</strong> Simples (retornar o resultado da busca recursiva).</li>
+<li><strong>Complexidade:</strong> $T(n) = T(n/2) + 1$, resultando em $T(n) = \Theta(\lg n)$.</li>
+</ul>
+<h3 id="potência-de-um-número">Potência de um Número<a hidden class="anchor" aria-hidden="true" href="#potência-de-um-número">#</a></h3>
+<ul>
+<li><strong>Problema:</strong> Calcular $x^n$, dado um número $x$ e um inteiro $n \geq 0$.</li>
+<li><strong>Algoritmo Ingênuo:</strong> Multiplicar $x$ por si mesmo $n$ vezes ($O(n)$).</li>
+<li><strong>Divisão e Conquista:</strong>
+<ul>
+<li>Se $n$ é par: $x^n = x^{n/2} \cdot x^{n/2}$.</li>
+<li>Se $n$ é ímpar: $x^n = x^{(n-1)/2} \cdot x^{(n-1)/2} \cdot x$.</li>
+</ul>
+</li>
+<li><strong>Complexidade:</strong> $T(n) = T(n/2) + \Theta(1)$, resultando em $T(n) = \Theta(\log n)$.</li>
+</ul>
+<h3 id="contagem-de-inversões">Contagem de Inversões<a hidden class="anchor" aria-hidden="true" href="#contagem-de-inversões">#</a></h3>
+<ul>
+<li><strong>Problema:</strong> Dada uma permutação $p[1..n]$, determinar o número de inversões (pares $(i, j)$ tal que $i &lt; j$ e $p[i] &gt; p[j]$).</li>
+<li><strong>Algoritmo Ingênuo:</strong> Verificar todos os pares possíveis ($O(n^2)$).</li>
+<li><strong>Divisão e Conquista (adaptação do Merge-Sort):</strong>
+<ul>
+<li><strong>Dividir:</strong> Dividir a permutação em duas metades.</li>
+<li><strong>Conquistar:</strong> Contar inversões recursivamente em cada metade (e ordená-las).</li>
+<li><strong>Combinar:</strong> Contar inversões entre as duas metades durante a intercalação (merge).</li>
+</ul>
+</li>
+<li><strong>Complexidade:</strong> $T(n) = 2T(n/2) + n$, resultando em $T(n) = O(n \lg n)$.</li>
+</ul>
+<h3 id="multiplicação-de-inteiros-karatsuba">Multiplicação de Inteiros (Karatsuba)<a hidden class="anchor" aria-hidden="true" href="#multiplicação-de-inteiros-karatsuba">#</a></h3>
+<ul>
+<li>Problema: Dado dois números $x$ e $y$ com $n$ digítos, encontrar o produto.</li>
+<li><strong>Divisão</strong>: Divida em $x = 10^{\frac{n}{2}}a + b$ e $ y = 10^{\frac{n}{2}}c + d$</li>
+<li><strong>Conquistar</strong>: Recursivamente compute $ac$, $bd$ e $(a+b)(c+d)$.</li>
+<li><strong>Combinar</strong>: Use $(3) - (2) - (1)$ para encontrar $ad + bc$.</li>
+<li><strong>Complexidade:</strong> $$T(n) = 3T(\frac{n}{2}) + n = \Theta(n^{\log_23})$$</li>
+</ul>
+<h3 id="multiplicação-de-matrizes">Multiplicação de Matrizes<a hidden class="anchor" aria-hidden="true" href="#multiplicação-de-matrizes">#</a></h3>
+<ul>
+<li>
+<p><strong>Problema:</strong> Dadas duas matrizes $A$ e $B$, calcular o produto $C = A \cdot B$.</p>
+</li>
+<li>
+<p><strong>Algoritmo Ingênuo:</strong> Calcular cada elemento $c_{ij}$ diretamente ($O(n^3)$).</p>
+</li>
+<li>
+<p><strong>Divisão e Conquista (ingênuo):</strong></p>
+<ul>
+<li>Dividir as matrizes em 4 submatrizes de tamanho $n/2 \times n/2$.</li>
+<li>Realizar 8 multiplicações de submatrizes recursivamente.</li>
+<li>Realizar 4 somas de submatrizes ($O(n^2)$).</li>
+<li>Complexidade:  $T(n) = 8T(n/2) + \Theta(n^2)$, resultando em $T(n) = \Theta(n^3)$ (não melhora o algoritmo ingênuo).</li>
+</ul>
+</li>
+<li>
+<p><strong>Algoritmo de Strassen:</strong></p>
+<ul>
+<li>Reduz o número de multiplicações recursivas para 7, através de manipulações algébricas (cálculo de produtos intermediários $P_1, P_2, &hellip;, P_7$).</li>
+<li>Complexidade: $T(n) = 7T(n/2) + \Theta(n^2)$, resultando em $T(n) = \Theta(n^{\lg 7}) = O(n^{2.81})$.</li>
+</ul>
+</li>
+</ul>
+<h3 id="seleção-do-k-ésimo-mínimo">Seleção do k-ésimo Mínimo<a hidden class="anchor" aria-hidden="true" href="#seleção-do-k-ésimo-mínimo">#</a></h3>
+<ul>
+<li>
+<p><strong>Problema:</strong> Dado um vetor $A[1..n]$ e um inteiro $k$, encontrar o <em>k</em>-ésimo menor elemento de $A$.</p>
+</li>
+<li>
+<p><strong>Solução simples</strong>: ordenar o vetor $O(n \log(n))$</p>
+</li>
+<li>
+<p><strong>Divisão e conquista, particionamento:</strong></p>
+<ol>
+<li>Particionar o vetor utilizando a lógica do <em>QuickSort</em>.
+<ul>
+<li>Se a posição do pivô ($m$) for igual a $k$, o pivô é o elemento procurado.</li>
+<li>Se $k &lt; m$, buscar recursivamente no subvetor à esquerda do pivô.</li>
+<li>Se $k &gt; m$, buscar recursivamente no subvetor à direita do pivô, ajustando o valor de $k$.</li>
+</ul>
+</li>
+<li>Pior caso é $$O(n^2)$$</li>
+</ol>
+</li>
+<li>
+<p><strong>Algoritmo recursivo (linear):</strong></p>
+<ul>
+<li><strong>Escolha do pivô &ldquo;mediana das medianas&rdquo;:</strong>
+<ol>
+<li>Dividir o vetor em grupos de 5 elementos.</li>
+<li>Ordenar cada grupo.</li>
+<li>Encontrar a mediana de cada grupo.</li>
+<li>Encontrar a mediana das medianas ($m$) recursivamente.</li>
+<li>Usar $m$ como pivô.</li>
+</ol>
+</li>
+<li><strong>Divisão:</strong> Particionar o vetor em três sublistas: elementos menores que $m$ ($L_1$), elementos iguais a $m$ ($L_2$), e elementos maiores que $m$ ($L_3$).</li>
+<li><strong>Conquista:</strong>
+<ul>
+<li>Se $|L_1| \geq k$, buscar recursivamente o <em>k</em>-ésimo menor em $L_1$.</li>
+<li>Se $|L_1| + |L_2| \geq k$, o <em>k</em>-ésimo menor é $m$.</li>
+<li>Senão, buscar recursivamente o $(k - |L_1| - |L_2|)$-ésimo menor em $L_3$.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Complexidade:</strong> $T(n) \leq T(n/5) + T(3n/4) + cn$, mostrando (por indução) que $T(n) \leq 20cn$, portanto, $T(n) = O(n)$.</p>
+</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/divis%C3%A3o-e-conquista/">Divisão E Conquista</a></li>
+      <li><a href="http://localhost:1313/tags/dif%C3%ADcil/">Difícil</a></li>
+      <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/aula-22/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Método Iterativo de Jacobi</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

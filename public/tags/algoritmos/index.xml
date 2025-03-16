@@ -6,8 +6,30 @@
     <description>Recent content in Algoritmos on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Mar 2025 12:48:03 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 16:30:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/algoritmos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Divisão e Conquista</title>
+      <link>http://localhost:1313/posts/aula-23/</link>
+      <pubDate>Sun, 16 Mar 2025 16:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-23/</guid>
+      <description>Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
+Divisão e Conquista A técnica consiste em:
+Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor.</description>
+    </item>
+    <item>
+      <title>Método Iterativo de Jacobi</title>
+      <link>http://localhost:1313/posts/aula-22/</link>
+      <pubDate>Sun, 16 Mar 2025 15:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-22/</guid>
+      <description>Método Iterativo de Jacobi A ideia central é, a partir de uma aproximação inicial, calcular aproximações sucessivas até que uma tolerância de erro seja alcançada.
+Passo 1: Isolamento das Variáveis
+Dado um sistema linear, isolamos cada variável:
+$$x_i = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j \right)$$
+Passo 2: Processo Iterativo
+A partir do isolamento, define-se o processo iterativo:
+$$x_i^{(k)} = \frac{1}{a_{ii}} \left( b_i - \sum_{\substack{j=1 \ j \neq i}}^{n} a_{ij}x_j^{(k-1)} \right)$$</description>
+    </item>
     <item>
       <title>Lemas de Árvores Binárias</title>
       <link>http://localhost:1313/posts/aula-19/</link>

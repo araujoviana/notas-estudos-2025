@@ -6,8 +6,22 @@
     <description>Recent content in Categories on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 10 Mar 2025 12:48:03 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 14:00:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modelagem Matemática II</title>
+      <link>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sistemas Operacionais</title>
+      <link>http://localhost:1313/categories/sistemas-operacionais/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/sistemas-operacionais/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Estrutura De Dados II</title>
       <link>http://localhost:1313/categories/estrutura-de-dados-ii/</link>
@@ -27,27 +41,6 @@
       <link>http://localhost:1313/categories/algoritmos-num%C3%A9ricos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/algoritmos-num%C3%A9ricos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Algoritmos Númericos</title>
-      <link>http://localhost:1313/categories/algoritmos-n%C3%BAmericos/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/algoritmos-n%C3%BAmericos/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Modelagem Matemática II</title>
-      <link>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/modelagem-matem%C3%A1tica-ii/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sistemas Operacionais</title>
-      <link>http://localhost:1313/categories/sistemas-operacionais/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/sistemas-operacionais/</guid>
       <description></description>
     </item>
     <item>
