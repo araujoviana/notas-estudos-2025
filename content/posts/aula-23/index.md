@@ -2,7 +2,7 @@
 title = "Divisão e Conquista"
 date = 2025-03-16T16:30:00-03:00
 draft = false
-categories = ["Algoritmos"]
+categories = ["Projeto e Análise de Algoritmos"]
 tags = ["Divisão e Conquista", "Difícil", "Algoritmos"]
 +++
 
