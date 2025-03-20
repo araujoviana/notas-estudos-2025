@@ -6,8 +6,29 @@
     <description>Recent content on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Mar 2025 16:30:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2025 14:20:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algoritmos de Enumeração</title>
+      <link>http://localhost:1313/posts/aula-25/</link>
+      <pubDate>Tue, 18 Mar 2025 14:20:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-25/</guid>
+      <description>É bom implementar pelo menos uma vez um código em backtracking pra entender mesmo
+Algoritmos de Enumeração Problema de enumeração estão intimamente ligados com a técnica de programação
+Sequência Os objetos do exemplo serão sequencias de números inteiros, uma sequência pode ser representada pelo vetor $s[1\dots k]$.
+Sequência vs. Conjuntos No conjunto a ordem não importa e os elementos não podem ser repetidos ao contrário da sequência.
+Comparação Sequências são comparadas lexicograficamente.</description>
+    </item>
+    <item>
+      <title>Algoritmos de Escalonamento</title>
+      <link>http://localhost:1313/posts/aula-24/</link>
+      <pubDate>Tue, 18 Mar 2025 14:20:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-24/</guid>
+      <description>Politicas de Escalonamento Carga de trabalho Conjunto de processos que precisma ser executados em um sistema
+Exemplo $P1, P2,P3,P4$ sãp processos que possuem tarefas a realizar. Nesse caso, a carga de trabalho é composta por $P1, P2,P3,P4$ e cada um tem suas próprias caracteristicas.
+Suposições sobre carga de trabalho Essas suposições vão se tornando inválidas
+Todos os processos precisam do mesmo tempo para finalizar suas tarefas. Todos os processos serão admitidos ao mesmo tempo Um processo será executado ininterruptamente até concluir (preemptividade).</description>
+    </item>
     <item>
       <title>Divisão e Conquista</title>
       <link>http://localhost:1313/posts/aula-23/</link>

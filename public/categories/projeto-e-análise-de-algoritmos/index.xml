@@ -6,17 +6,16 @@
     <description>Recent content in Projeto E Análise De Algoritmos on Anotações de Estudos - 2025</description>
     <generator>Hugo -- 0.126.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Feb 2025 14:17:13 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Mar 2025 16:30:00 -0300</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/projeto-e-an%C3%A1lise-de-algoritmos/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Resolução de Recorrências</title>
-      <link>http://localhost:1313/posts/aula-16/</link>
-      <pubDate>Fri, 28 Feb 2025 14:17:13 -0300</pubDate>
-      <guid>http://localhost:1313/posts/aula-16/</guid>
-      <description>Métodos para Resolver Recorrências Substituição Iterativos Árvore de Recursão Método Mestre 1. Substituição A ideia é arriscar um palpite para a solução da recorrência
-e, em seguida, usar indução matemática para provar que o palpite está correto.
-Exemplo 1 int f(int n) { if (n &amp;gt; 0) { printf(&amp;#34;%d&amp;#34;, n); f(n - 1); } return 0; } Recorrência:
-$T(n) = 1$ se $n = 0$ $T(n) = T(n-1) + 1$ se $n &amp;gt; 0$ Palpite:</description>
+      <title>Divisão e Conquista</title>
+      <link>http://localhost:1313/posts/aula-23/</link>
+      <pubDate>Sun, 16 Mar 2025 16:30:00 -0300</pubDate>
+      <guid>http://localhost:1313/posts/aula-23/</guid>
+      <description>Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
+Divisão e Conquista A técnica consiste em:
+Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor.</description>
     </item>
   </channel>
 </rss>

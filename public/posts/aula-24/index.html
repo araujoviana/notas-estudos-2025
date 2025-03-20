@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Algoritmos de Escalonamento | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="UNIX, Hardware, Software">
+<meta name="description" content="Politicas de Escalonamento Carga de trabalho Conjunto de processos que precisma ser executados em um sistema
+Exemplo $P1, P2,P3,P4$ sãp processos que possuem tarefas a realizar. Nesse caso, a carga de trabalho é composta por $P1, P2,P3,P4$ e cada um tem suas próprias caracteristicas.
+Suposições sobre carga de trabalho Essas suposições vão se tornando inválidas
+Todos os processos precisam do mesmo tempo para finalizar suas tarefas. Todos os processos serão admitidos ao mesmo tempo Um processo será executado ininterruptamente até concluir (preemptividade).">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/aula-24/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.ico">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-24/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+        ]
+    });
+});
+</script>
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Anotações de Estudos - 2025 (Alt + H)">Anotações de Estudos - 2025</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categorias">
+                    <span>Categorias</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Algoritmos de Escalonamento
+    </h1>
+    <div class="post-meta"><span title='2025-03-18 14:20:00 -0300 -03'>March 18, 2025</span>&nbsp;·&nbsp;4 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#politicas-de-escalonamento" aria-label="Politicas de Escalonamento">Politicas de Escalonamento</a><ul>
+                        
+                <li>
+                    <a href="#carga-de-trabalho" aria-label="Carga de trabalho">Carga de trabalho</a><ul>
+                        
+                <li>
+                    <a href="#exemplo" aria-label="Exemplo">Exemplo</a></li></ul>
+                </li>
+                <li>
+                    <a href="#suposi%c3%a7%c3%b5es-sobre-carga-de-trabalho" aria-label="Suposições sobre carga de trabalho">Suposições sobre carga de trabalho</a></li></ul>
+                </li>
+                <li>
+                    <a href="#m%c3%a9tricas-de-escalonamento" aria-label="Métricas de Escalonamento">Métricas de Escalonamento</a></li>
+                <li>
+                    <a href="#algoritmos-de-escalonamento-n%c3%a3o-preemptivos" aria-label="Algoritmos de Escalonamento (não-preemptivos)">Algoritmos de Escalonamento (não-preemptivos)</a><ul>
+                        
+                <li>
+                    <a href="#first-in-first-out-fifo" aria-label="First In, First Out (FIFO)">First In, First Out (FIFO)</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-1" aria-label="Exemplo 1">Exemplo 1</a></li>
+                <li>
+                    <a href="#exemplo-2" aria-label="Exemplo 2">Exemplo 2</a></li></ul>
+                </li>
+                <li>
+                    <a href="#shortest-job-first-sjf" aria-label="Shortest Job First (SJF)">Shortest Job First (SJF)</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-2-com-sjf" aria-label="Exemplo 2 (Com SJF)">Exemplo 2 (Com SJF)</a></li>
+                <li>
+                    <a href="#exemplo-3" aria-label="Exemplo 3">Exemplo 3</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#troca-de-contexto" aria-label="Troca de Contexto">Troca de Contexto</a></li>
+                <li>
+                    <a href="#algoritmos-de-escalonamento-preemptivos" aria-label="Algoritmos de Escalonamento (preemptivos)">Algoritmos de Escalonamento (preemptivos)</a><ul>
+                        
+                <li>
+                    <a href="#shortest-remaining-time-srt" aria-label="Shortest Remaining Time (SRT)">Shortest Remaining Time (SRT)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#nova-m%c3%a9trica-de-escalonamento" aria-label="Nova Métrica de Escalonamento">Nova Métrica de Escalonamento</a></li>
+                <li>
+                    <a href="#algoritmos-de-escalonamento-considerando-as-novas-demandas" aria-label="Algoritmos de Escalonamento (considerando as novas demandas)">Algoritmos de Escalonamento (considerando as novas demandas)</a><ul>
+                        
+                <li>
+                    <a href="#round-robin-rr" aria-label="Round Robin (RR)">Round Robin (RR)</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-4" aria-label="Exemplo 4">Exemplo 4</a></li></ul>
+                </li>
+                <li>
+                    <a href="#problema-com-overhead" aria-label="Problema com Overhead">Problema com Overhead</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="politicas-de-escalonamento">Politicas de Escalonamento<a hidden class="anchor" aria-hidden="true" href="#politicas-de-escalonamento">#</a></h2>
+<h3 id="carga-de-trabalho">Carga de trabalho<a hidden class="anchor" aria-hidden="true" href="#carga-de-trabalho">#</a></h3>
+<p>Conjunto de processos que precisma ser executados em um sistema</p>
+<h4 id="exemplo">Exemplo<a hidden class="anchor" aria-hidden="true" href="#exemplo">#</a></h4>
+<p>$P1, P2,P3,P4$ sãp processos que possuem tarefas a realizar. Nesse caso, a carga de trabalho é composta por $P1, P2,P3,P4$ e cada um tem suas próprias caracteristicas.</p>
+<h3 id="suposições-sobre-carga-de-trabalho">Suposições sobre carga de trabalho<a hidden class="anchor" aria-hidden="true" href="#suposições-sobre-carga-de-trabalho">#</a></h3>
+<blockquote>
+<p>Essas suposições vão se tornando inválidas</p>
+</blockquote>
+<ul>
+<li>Todos os processos precisam do mesmo tempo para finalizar suas tarefas.</li>
+<li>Todos os processos serão admitidos ao mesmo tempo</li>
+<li>Um processo será executado ininterruptamente até concluir (<em>preemptividade</em>).</li>
+<li>Todos os processos só irão utilizar a CPU (não usam I/O)</li>
+<li>Sabe-se previamente o tempo de execução necessário para cada processo.</li>
+</ul>
+<h2 id="métricas-de-escalonamento">Métricas de Escalonamento<a hidden class="anchor" aria-hidden="true" href="#métricas-de-escalonamento">#</a></h2>
+<p>Para comparar os algoritmos de escalonamento, precisamos de algumas métricas</p>
+<p>Por enquanto usamos o <strong>TURNAROUND</strong>:</p>
+<p>$$T_\text{TURNAROUND} = T_\text{CONCLUSÃO} - T_\text{CHEGADA}$$</p>
+<p>É uma métrica de <strong>performance</strong>, que mede o quão bem os recursos do sistema estão sendo utilizados.</p>
+<blockquote>
+<p>Tem outra métrica depois</p>
+</blockquote>
+<h2 id="algoritmos-de-escalonamento-não-preemptivos">Algoritmos de Escalonamento (não-preemptivos)<a hidden class="anchor" aria-hidden="true" href="#algoritmos-de-escalonamento-não-preemptivos">#</a></h2>
+<h3 id="first-in-first-out-fifo">First In, First Out (FIFO)<a hidden class="anchor" aria-hidden="true" href="#first-in-first-out-fifo">#</a></h3>
+<p>Os processos que chegam primeiro serão executados primeiro (como uma <em>fila</em>), e ele é <strong>não-preemptivo</strong>.</p>
+<h4 id="exemplo-1">Exemplo 1<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h4>
+<p>Considerando os processos $A,B,C$ na ordem respectiva, podemos calcular:</p>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>10</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 10$$
+$$T_\text{TURN B} = 20$$
+$$T_\text{TURN C} = 30$$
+$$T_\text{TURN MÉDIO} = 20$$</p>
+<h4 id="exemplo-2">Exemplo 2<a hidden class="anchor" aria-hidden="true" href="#exemplo-2">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+<td>10</td>
+<td>110</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>10</td>
+<td>120</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 100$$
+$$T_\text{TURN B} = 110$$
+$$T_\text{TURN C} = 120$$
+$$T_\text{TURN MÉDIO} = 110$$</p>
+<p>O processo $A$ acaba atrapalhando os processos menores, gerando o <strong>Efeito Comboio</strong></p>
+<h3 id="shortest-job-first-sjf">Shortest Job First (SJF)<a hidden class="anchor" aria-hidden="true" href="#shortest-job-first-sjf">#</a></h3>
+<p>Agora os processos que possuem o menor tempo de execução total serão executados primeiro, ele é <strong>não-preemptivo</strong>.</p>
+<h4 id="exemplo-2-com-sjf">Exemplo 2 (Com SJF)<a hidden class="anchor" aria-hidden="true" href="#exemplo-2-com-sjf">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td>0</td>
+<td>10</td>
+<td>10</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>100</td>
+<td>120</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 120$$
+$$T_\text{TURN B} = 10$$
+$$T_\text{TURN C} = 20$$
+$$T_\text{TURN MÉDIO} = 50$$</p>
+<h4 id="exemplo-3">Exemplo 3<a hidden class="anchor" aria-hidden="true" href="#exemplo-3">#</a></h4>
+<p>E se A chegar em $t=0$ só que B e C chegarem ambos em $t=10$?</p>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>100</td>
+<td>100</td>
+</tr>
+<tr>
+<td>B</td>
+<td>10</td>
+<td>10</td>
+<td>110</td>
+</tr>
+<tr>
+<td>C</td>
+<td>10</td>
+<td>10</td>
+<td>120</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 100$$
+$$T_\text{TURN B} = 100$$
+$$T_\text{TURN C} = 110$$
+$$T_\text{TURN MÉDIO} = 103,3333\dots$$</p>
+<p>A performance acaba semelhante ao <em>FIFO</em>, então precisamos de um algoritmo <strong>preemptivo</strong></p>
+<blockquote>
+<p>A partir daqui algumas das suposições propostas anteriormente já são inválidas</p>
+</blockquote>
+<h2 id="troca-de-contexto">Troca de Contexto<a hidden class="anchor" aria-hidden="true" href="#troca-de-contexto">#</a></h2>
+<p>Toda vez que um processo é interrompido, uma troca de contexto é realizada.</p>
+<p>Toda troca de contexto possui um custo de desempenho ao sistema.</p>
+<h2 id="algoritmos-de-escalonamento-preemptivos">Algoritmos de Escalonamento (preemptivos)<a hidden class="anchor" aria-hidden="true" href="#algoritmos-de-escalonamento-preemptivos">#</a></h2>
+<h3 id="shortest-remaining-time-srt">Shortest Remaining Time (SRT)<a hidden class="anchor" aria-hidden="true" href="#shortest-remaining-time-srt">#</a></h3>
+<p>Algoritmo <strong>preemptivo</strong>, ele é semelhante ao SJF, porém ele realiza uma troca de contexto <em>sempre que um novo processo é admitido na fila</em> ou outro processo termina.</p>
+<blockquote>
+<p>Ele acha os menores tempos <strong>restantes</strong> dos processos</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>100</td>
+<td>120</td>
+</tr>
+<tr>
+<td>B</td>
+<td>10</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>C</td>
+<td>10</td>
+<td>10</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 120$$
+$$T_\text{TURN B} = 10$$
+$$T_\text{TURN C} = 20$$
+$$T_\text{TURN MÉDIO} = 50$$</p>
+<h2 id="nova-métrica-de-escalonamento">Nova Métrica de Escalonamento<a hidden class="anchor" aria-hidden="true" href="#nova-métrica-de-escalonamento">#</a></h2>
+<p>Quando estamos lidando com sistemas interativos precisamos de uma nova métrica para medir a responsividade do sistema:</p>
+<ul>
+<li><strong>Tempo de Resposta</strong></li>
+</ul>
+<p>$$T_\text{RESPOSTA} = T_\text{PRIM. EXECUÇÃO} - T\text{CHEGADA}$$</p>
+<h2 id="algoritmos-de-escalonamento-considerando-as-novas-demandas">Algoritmos de Escalonamento (considerando as novas demandas)<a hidden class="anchor" aria-hidden="true" href="#algoritmos-de-escalonamento-considerando-as-novas-demandas">#</a></h2>
+<h3 id="round-robin-rr">Round Robin (RR)<a hidden class="anchor" aria-hidden="true" href="#round-robin-rr">#</a></h3>
+<p>Ao invés de esperar os processos até terminarem, o Round Robin atribui a cada processo uma <strong>fatia de tempo (quantum)</strong>, onde cada processo é executado pela duração dessa fatia antes de ser interrompido para dar lugar ao próximo processo da fila.</p>
+<blockquote>
+<p>Faltou escrever sobre <em>Fairness</em> aqui, pesquise depois&hellip;</p>
+</blockquote>
+<h4 id="exemplo-4">Exemplo 4<a hidden class="anchor" aria-hidden="true" href="#exemplo-4">#</a></h4>
+<p>Suponho $\text{Quantum} = 1$, considerando a casrga de trabalho</p>
+<table>
+<thead>
+<tr>
+<th>Processo</th>
+<th>Chega</th>
+<th>Execução</th>
+<th>Conclusão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>0</td>
+<td>5</td>
+<td>-</td>
+</tr>
+<tr>
+<td>B</td>
+<td>0</td>
+<td>5</td>
+<td>-</td>
+</tr>
+<tr>
+<td>C</td>
+<td>0</td>
+<td>5</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p>$$T_\text{TURN A} = 120$$
+$$T_\text{TURN B} = 10$$
+$$T_\text{TURN C} = 20$$
+$$T_\text{TURN MÉDIO} = 50$$</p>
+<h3 id="problema-com-overhead">Problema com Overhead<a hidden class="anchor" aria-hidden="true" href="#problema-com-overhead">#</a></h3>
+<p>Por conta das trocas de contexto ele possui um dos piores turnarounds, e o overhead dele também acaba sendo maior.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/unix/">UNIX</a></li>
+      <li><a href="http://localhost:1313/tags/hardware/">Hardware</a></li>
+      <li><a href="http://localhost:1313/tags/software/">Software</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/aula-25/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Algoritmos de Enumeração</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/aula-23/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Divisão e Conquista</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Anotações de Estudos - 2025</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

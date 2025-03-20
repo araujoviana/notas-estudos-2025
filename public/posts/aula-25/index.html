@@ -5,13 +5,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Divisão e Conquista | Anotações de Estudos - 2025</title>
-<meta name="keywords" content="Divisão e Conquista, Difícil, Algoritmos">
-<meta name="description" content="Introdução Este documento aborda a técnica de divisão e conquista para análise e projeto de algoritmos.
-Divisão e Conquista A técnica consiste em:
-Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolver os subproblemas recursivamente. Combinar: Combinar as soluções dos subproblemas para obter a solução do problema original. Exemplos Busca Binária Problema: Encontrar um elemento $x$ em um vetor ordenado. Divisão: Comparar $x$ com o elemento do meio do vetor.">
+<title>Algoritmos de Enumeração | Anotações de Estudos - 2025</title>
+<meta name="keywords" content="Backtracking, Recursão, Iteração, Difícil, Algoritmos">
+<meta name="description" content="É bom implementar pelo menos uma vez um código em backtracking pra entender mesmo
+Algoritmos de Enumeração Problema de enumeração estão intimamente ligados com a técnica de programação
+Sequência Os objetos do exemplo serão sequencias de números inteiros, uma sequência pode ser representada pelo vetor $s[1\dots k]$.
+Sequência vs. Conjuntos No conjunto a ordem não importa e os elementos não podem ser repetidos ao contrário da sequência.
+Comparação Sequências são comparadas lexicograficamente.">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/aula-23/">
+<link rel="canonical" href="http://localhost:1313/posts/aula-25/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.45e028aa8ce0961349adf411b013ee39406be2c0bc80d4ea3fc04555f7f4611a.css" integrity="sha256-ReAoqozglhNJrfQRsBPuOUBr4sC8gNTqP8BFVff0YRo=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.ico">
@@ -20,7 +22,7 @@ Dividir: Quebrar o problema original em subproblemas menores. Conquistar: Resolv
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-23/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/aula-25/">
 <noscript>
     <style>
         #theme-toggle,
@@ -139,9 +141,9 @@ document.addEventListener("DOMContentLoaded", function() {
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      Divisão e Conquista
+      Algoritmos de Enumeração
     </h1>
-    <div class="post-meta"><span title='2025-03-16 16:30:00 -0300 -03'>March 16, 2025</span>&nbsp;·&nbsp;3 min
+    <div class="post-meta"><span title='2025-03-18 14:20:00 -0300 -03'>March 18, 2025</span>&nbsp;·&nbsp;2 min
 
 </div>
   </header> <div class="toc">
@@ -152,25 +154,36 @@ document.addEventListener("DOMContentLoaded", function() {
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#introdu%c3%a7%c3%a3o" aria-label="Introdução">Introdução</a></li>
-                <li>
-                    <a href="#divis%c3%a3o-e-conquista" aria-label="Divisão e Conquista">Divisão e Conquista</a></li>
-                <li>
-                    <a href="#exemplos" aria-label="Exemplos">Exemplos</a><ul>
+                    <a href="#algoritmos-de-enumera%c3%a7%c3%a3o" aria-label="Algoritmos de Enumeração">Algoritmos de Enumeração</a><ul>
                         
                 <li>
-                    <a href="#busca-bin%c3%a1ria" aria-label="Busca Binária">Busca Binária</a></li>
+                    <a href="#sequ%c3%aancia" aria-label="Sequência">Sequência</a><ul>
+                        
                 <li>
-                    <a href="#pot%c3%aancia-de-um-n%c3%bamero" aria-label="Potência de um Número">Potência de um Número</a></li>
+                    <a href="#sequ%c3%aancia-vs-conjuntos" aria-label="Sequência vs. Conjuntos">Sequência vs. Conjuntos</a></li>
                 <li>
-                    <a href="#contagem-de-invers%c3%b5es" aria-label="Contagem de Inversões">Contagem de Inversões</a></li>
+                    <a href="#compara%c3%a7%c3%a3o" aria-label="Comparação">Comparação</a><ul>
+                        
                 <li>
-                    <a href="#multiplica%c3%a7%c3%a3o-de-inteiros-karatsuba" aria-label="Multiplicação de Inteiros (Karatsuba)">Multiplicação de Inteiros (Karatsuba)</a></li>
-                <li>
-                    <a href="#multiplica%c3%a7%c3%a3o-de-matrizes" aria-label="Multiplicação de Matrizes">Multiplicação de Matrizes</a></li>
-                <li>
-                    <a href="#sele%c3%a7%c3%a3o-do-k-%c3%a9simo-m%c3%adnimo" aria-label="Seleção do k-ésimo Mínimo">Seleção do k-ésimo Mínimo</a>
+                    <a href="#regras" aria-label="Regras">Regras</a></li></ul>
                 </li>
+                <li>
+                    <a href="#prefixos-e-sufixos" aria-label="Prefixos e sufixos">Prefixos e sufixos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#for%c3%a7a-bruta" aria-label="Força Bruta">Força Bruta</a><ul>
+                        
+                <li>
+                    <a href="#menor-dist%c3%a2ncia-entre-dois-pontos" aria-label="Menor distância entre dois pontos">Menor distância entre dois pontos</a></li></ul>
+                </li>
+                <li>
+                    <a href="#backtracking" aria-label="Backtracking">Backtracking</a><ul>
+                        
+                <li>
+                    <a href="#exemplo-1" aria-label="Exemplo 1">Exemplo 1</a>
+                </li>
+            </ul>
+            </li>
             </ul>
             </li>
             </ul>
@@ -178,149 +191,63 @@ document.addEventListener("DOMContentLoaded", function() {
     </details>
 </div>
 
-  <div class="post-content"><h2 id="introdução">Introdução<a hidden class="anchor" aria-hidden="true" href="#introdução">#</a></h2>
-<p>Este documento aborda a técnica de <strong>divisão e conquista</strong> para análise e projeto de algoritmos.</p>
-<h2 id="divisão-e-conquista">Divisão e Conquista<a hidden class="anchor" aria-hidden="true" href="#divisão-e-conquista">#</a></h2>
-<p>A técnica consiste em:</p>
+  <div class="post-content"><blockquote>
+<p>É bom implementar pelo menos uma vez um código em <em>backtracking</em> pra entender mesmo</p>
+</blockquote>
+<h1 id="algoritmos-de-enumeração">Algoritmos de Enumeração<a hidden class="anchor" aria-hidden="true" href="#algoritmos-de-enumeração">#</a></h1>
+<p>Problema de enumeração estão intimamente ligados com a técnica de programação</p>
+<h2 id="sequência">Sequência<a hidden class="anchor" aria-hidden="true" href="#sequência">#</a></h2>
+<p>Os objetos do exemplo serão sequencias de números inteiros, uma <strong>sequência</strong> pode ser representada pelo vetor $s[1\dots k]$.</p>
+<h3 id="sequência-vs-conjuntos">Sequência vs. Conjuntos<a hidden class="anchor" aria-hidden="true" href="#sequência-vs-conjuntos">#</a></h3>
+<p>No conjunto a ordem não importa e os elementos não podem ser repetidos ao contrário da sequência.</p>
+<h3 id="comparação">Comparação<a hidden class="anchor" aria-hidden="true" href="#comparação">#</a></h3>
+<p>Sequências são comparadas <em>lexicograficamente</em>.</p>
+<h4 id="regras">Regras<a hidden class="anchor" aria-hidden="true" href="#regras">#</a></h4>
+<p>Uma sequência  $r[1\dots k]$ é lexicograficamente menor ($\leq$) que outra sequência  $s[1\dots k]$ se:</p>
 <ol>
-<li><strong>Dividir:</strong> Quebrar o problema original em subproblemas menores.</li>
-<li><strong>Conquistar:</strong> Resolver os subproblemas recursivamente.</li>
-<li><strong>Combinar:</strong> Combinar as soluções dos subproblemas para obter a solução do problema original.</li>
+<li>Existe $i$ tal que $r[1\dots i - 1] = s[1\dots i - 1 ]$ e $r[i] \leq s[i]$</li>
+<li>$j \leq k$ e $r[1 \dots k] = s[1 \dots k]$</li>
 </ol>
-<h2 id="exemplos">Exemplos<a hidden class="anchor" aria-hidden="true" href="#exemplos">#</a></h2>
-<h3 id="busca-binária">Busca Binária<a hidden class="anchor" aria-hidden="true" href="#busca-binária">#</a></h3>
+<p>Também podemos definir que  $s[1\dots k]$ é lexicograficamente maior que  $r[1\dots k]$</p>
+<h3 id="prefixos-e-sufixos">Prefixos e sufixos<a hidden class="anchor" aria-hidden="true" href="#prefixos-e-sufixos">#</a></h3>
+<p>Um <strong>prefixo</strong> de uma sequência é um segmento que contém os primeiros termos da sequência.</p>
+<p>Um <strong>sufixo</strong> de uma sequência é um segmento que contém os últimos termos da sequência.</p>
+<h2 id="força-bruta">Força Bruta<a hidden class="anchor" aria-hidden="true" href="#força-bruta">#</a></h2>
+<p>É um tipo de algoritmo de uso geral que consiste em enumerar todos os possíveis candidatos de uma solução e verificar se cada um satisfaz o problema.</p>
+<p>Costuma ser usado quando não sabemos um algoritmo mais eficiente.</p>
+<p>Para alguns problemas pode ser até razoável.</p>
 <ul>
-<li><strong>Problema:</strong> Encontrar um elemento $x$ em um vetor ordenado.</li>
-<li><strong>Divisão:</strong> Comparar $x$ com o elemento do meio do vetor.</li>
-<li><strong>Conquista:</strong> Aplicar a busca recursivamente em um dos subvetores (esquerda ou direita).</li>
-<li><strong>Combinar:</strong> Simples (retornar o resultado da busca recursiva).</li>
-<li><strong>Complexidade:</strong> $T(n) = T(n/2) + 1$, resultando em $T(n) = \Theta(\lg n)$.</li>
+<li>Exemplo: busca sequencial.</li>
 </ul>
-<h3 id="potência-de-um-número">Potência de um Número<a hidden class="anchor" aria-hidden="true" href="#potência-de-um-número">#</a></h3>
-<ul>
-<li><strong>Problema:</strong> Calcular $x^n$, dado um número $x$ e um inteiro $n \geq 0$.</li>
-<li><strong>Algoritmo Ingênuo:</strong> Multiplicar $x$ por si mesmo $n$ vezes ($O(n)$).</li>
-<li><strong>Divisão e Conquista:</strong>
-<ul>
-<li>Se $n$ é par: $x^n = x^{n/2} \cdot x^{n/2}$.</li>
-<li>Se $n$ é ímpar: $x^n = x^{(n-1)/2} \cdot x^{(n-1)/2} \cdot x$.</li>
-</ul>
-</li>
-<li><strong>Complexidade:</strong> $T(n) = T(n/2) + \Theta(1)$, resultando em $T(n) = \Theta(\log n)$.</li>
-</ul>
-<h3 id="contagem-de-inversões">Contagem de Inversões<a hidden class="anchor" aria-hidden="true" href="#contagem-de-inversões">#</a></h3>
-<ul>
-<li><strong>Problema:</strong> Dada uma permutação $p[1..n]$, determinar o número de inversões (pares $(i, j)$ tal que $i &lt; j$ e $p[i] &gt; p[j]$).</li>
-<li><strong>Algoritmo Ingênuo:</strong> Verificar todos os pares possíveis ($O(n^2)$).</li>
-<li><strong>Divisão e Conquista (adaptação do Merge-Sort):</strong>
-<ul>
-<li><strong>Dividir:</strong> Dividir a permutação em duas metades.</li>
-<li><strong>Conquistar:</strong> Contar inversões recursivamente em cada metade (e ordená-las).</li>
-<li><strong>Combinar:</strong> Contar inversões entre as duas metades durante a intercalação (merge).</li>
-</ul>
-</li>
-<li><strong>Complexidade:</strong> $T(n) = 2T(n/2) + n$, resultando em $T(n) = O(n \lg n)$.</li>
-</ul>
-<h3 id="multiplicação-de-inteiros-karatsuba">Multiplicação de Inteiros (Karatsuba)<a hidden class="anchor" aria-hidden="true" href="#multiplicação-de-inteiros-karatsuba">#</a></h3>
-<ul>
-<li>Problema: Dado dois números $x$ e $y$ com $n$ digítos, encontrar o produto.</li>
-<li><strong>Divisão</strong>: Divida em $x = 10^{\frac{n}{2}}a + b$ e $ y = 10^{\frac{n}{2}}c + d$</li>
-<li><strong>Conquistar</strong>: Recursivamente compute $ac$, $bd$ e $(a+b)(c+d)$.</li>
-<li><strong>Combinar</strong>: Use $(3) - (2) - (1)$ para encontrar $ad + bc$.</li>
-<li><strong>Complexidade:</strong> $$T(n) = 3T(\frac{n}{2}) + n = \Theta(n^{\log_23})$$</li>
-</ul>
-<h3 id="multiplicação-de-matrizes">Multiplicação de Matrizes<a hidden class="anchor" aria-hidden="true" href="#multiplicação-de-matrizes">#</a></h3>
-<ul>
-<li>
-<p><strong>Problema:</strong> Dadas duas matrizes $A$ e $B$, calcular o produto $C = A \cdot B$.</p>
-</li>
-<li>
-<p><strong>Algoritmo Ingênuo:</strong> Calcular cada elemento $c_{ij}$ diretamente ($O(n^3)$).</p>
-</li>
-<li>
-<p><strong>Divisão e Conquista (ingênuo):</strong></p>
-<ul>
-<li>Dividir as matrizes em 4 submatrizes de tamanho $n/2 \times n/2$.</li>
-<li>Realizar 8 multiplicações de submatrizes recursivamente.</li>
-<li>Realizar 4 somas de submatrizes ($O(n^2)$).</li>
-<li>Complexidade:  $T(n) = 8T(n/2) + \Theta(n^2)$, resultando em $T(n) = \Theta(n^3)$ (não melhora o algoritmo ingênuo).</li>
-</ul>
-</li>
-<li>
-<p><strong>Algoritmo de Strassen:</strong></p>
-<ul>
-<li>Reduz o número de multiplicações recursivas para 7, através de manipulações algébricas (cálculo de produtos intermediários $P_1, P_2, &hellip;, P_7$).</li>
-<li>Complexidade: $T(n) = 7T(n/2) + \Theta(n^2)$, resultando em $T(n) = \Theta(n^{\lg 7}) = O(n^{2.81})$.</li>
-</ul>
-</li>
-</ul>
-<h3 id="seleção-do-k-ésimo-mínimo">Seleção do k-ésimo Mínimo<a hidden class="anchor" aria-hidden="true" href="#seleção-do-k-ésimo-mínimo">#</a></h3>
-<ul>
-<li>
-<p><strong>Problema:</strong> Dado um vetor $A[1..n]$ e um inteiro $k$, encontrar o <em>k</em>-ésimo menor elemento de $A$.</p>
-</li>
-<li>
-<p><strong>Solução simples</strong>: ordenar o vetor $O(n \log(n))$</p>
-</li>
-<li>
-<p><strong>Divisão e conquista, particionamento:</strong></p>
-<ol>
-<li>Particionar o vetor utilizando a lógica do <em>QuickSort</em>.
-<ul>
-<li>Se a posição do pivô ($m$) for igual a $k$, o pivô é o elemento procurado.</li>
-<li>Se $k &lt; m$, buscar recursivamente no subvetor à esquerda do pivô.</li>
-<li>Se $k &gt; m$, buscar recursivamente no subvetor à direita do pivô, ajustando o valor de $k$.</li>
-</ul>
-</li>
-<li>Pior caso é $$O(n^2)$$</li>
-</ol>
-</li>
-<li>
-<p><strong>Algoritmo recursivo (linear):</strong></p>
-<ul>
-<li><strong>Escolha do pivô &ldquo;mediana das medianas&rdquo;:</strong>
-<ol>
-<li>Dividir o vetor em grupos de 5 elementos.</li>
-<li>Ordenar cada grupo.</li>
-<li>Encontrar a mediana de cada grupo.</li>
-<li>Encontrar a mediana das medianas ($m$) recursivamente.</li>
-<li>Usar $m$ como pivô.</li>
-</ol>
-</li>
-<li><strong>Divisão:</strong> Particionar o vetor em três sublistas: elementos menores que $m$ ($L_1$), elementos iguais a $m$ ($L_2$), e elementos maiores que $m$ ($L_3$).</li>
-<li><strong>Conquista:</strong>
-<ul>
-<li>Se $|L_1| \geq k$, buscar recursivamente o <em>k</em>-ésimo menor em $L_1$.</li>
-<li>Se $|L_1| + |L_2| \geq k$, o <em>k</em>-ésimo menor é $m$.</li>
-<li>Senão, buscar recursivamente o $(k - |L_1| - |L_2|)$-ésimo menor em $L_3$.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>Complexidade:</strong> $T(n) \leq T(n/5) + T(3n/4) + cn$, mostrando (por indução) que $T(n) \leq 20cn$, portanto, $T(n) = O(n)$.</p>
-</li>
-</ul>
+<h3 id="menor-distância-entre-dois-pontos">Menor distância entre dois pontos<a hidden class="anchor" aria-hidden="true" href="#menor-distância-entre-dois-pontos">#</a></h3>
+<blockquote>
+<p>Tem como fazer divisão e conquista</p>
+</blockquote>
+<h2 id="backtracking">Backtracking<a hidden class="anchor" aria-hidden="true" href="#backtracking">#</a></h2>
+<p>Refinamento da técnica de força bruta.</p>
+<p>Considera uma série de tomadas de decisões entre várias opções. Algumas consequências de decisões podem conduzir a uma solução do problema.</p>
+<h3 id="exemplo-1">Exemplo 1<a hidden class="anchor" aria-hidden="true" href="#exemplo-1">#</a></h3>
+<p>Gerar todas as sequências possíveis de 3 dígitos com os dígitos 1, 2 e 3 armazenados no vetor $v[0\dots n - 1]$, onde $n = 3$</p>
+<p>Solução: $111,112,113,\dots,332,333$</p>
+<p>A quantidade é de $3^3 = 27$ sequências.</p>
+<p><em>Esse algoritmo pode ser implementado com backtracking!</em></p>
 
 
   </div>
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/divis%C3%A3o-e-conquista/">Divisão E Conquista</a></li>
+      <li><a href="http://localhost:1313/tags/backtracking/">Backtracking</a></li>
+      <li><a href="http://localhost:1313/tags/recurs%C3%A3o/">Recursão</a></li>
+      <li><a href="http://localhost:1313/tags/itera%C3%A7%C3%A3o/">Iteração</a></li>
       <li><a href="http://localhost:1313/tags/dif%C3%ADcil/">Difícil</a></li>
       <li><a href="http://localhost:1313/tags/algoritmos/">Algoritmos</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:1313/posts/aula-24/">
-    <span class="title">« Prev</span>
-    <br>
-    <span>Algoritmos de Escalonamento</span>
-  </a>
-  <a class="next" href="http://localhost:1313/posts/aula-22/">
+  <a class="next" href="http://localhost:1313/posts/aula-24/">
     <span class="title">Next »</span>
     <br>
-    <span>Método Iterativo de Jacobi</span>
+    <span>Algoritmos de Escalonamento</span>
   </a>
 </nav>
 
